@@ -1,0 +1,33 @@
+---
+interface Link {
+  href: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  links: Link[];
+  heading?: string;
+}
+
+const { links, heading = 'Related Resources' } = Astro.props;
+---
+<section class="mt-12">
+  <h2 class="text-2xl font-bold text-gray-900 mb-6">{heading}</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {links.map((link) => (
+      <a
+        href={link.href}
+        class="block p-5 bg-white border border-gray-200 rounded-lg hover:border-blue-400 hover:shadow-md transition-all group"
+      >
+        <h3 class="font-semibold text-gray-900 group-hover:text-blue-700 mb-2 transition-colors">
+          {link.title}
+        </h3>
+        <p class="text-sm text-gray-500">{link.description}</p>
+        <span class="mt-3 inline-block text-sm font-medium text-blue-600 group-hover:text-blue-800">
+          Learn more &rarr;
+        </span>
+      </a>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,27 @@
+---
+import Base from './Base.astro';
+import PayStubForm from '../components/PayStubForm';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  h1: string;
+}
+
+const { title, description, canonical, ogImage, h1 } = Astro.props;
+---
+<Base title={title} description={description} canonical={canonical} ogImage={ogImage}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-gray-900 mb-3">{h1}</h1>
+    </div>
+
+    <PayStubForm client:load />
+
+    <div class="mt-12 prose prose-lg max-w-none text-gray-700">
+      <slot />
+    </div>
+  </div>
+</Base>
