@@ -1,0 +1,79 @@
+---
+import Base from '../layouts/Base.astro';
+import PayStubForm from '../components/PayStubForm.tsx';
+---
+<Base
+  title="Pay Stub for Personal Loan | Income Verification Guide"
+  description="What banks and online lenders want for personal loan income verification. Pay frequency impact on monthly income, DTI requirements, and what to prepare."
+  canonical="https://paystub.fyi/pay-stub-for-loan"
+>
+  <main class="max-w-4xl mx-auto px-4 py-8 prose prose-lg max-w-none text-gray-700">
+    <h1>Pay Stub for Personal Loan -- Income Verification Guide</h1>
+
+    <p>Personal loans are one of the more flexible credit products when it comes to income documentation. Unlike mortgages, which have federally standardized documentation requirements, personal loan lenders set their own policies. This creates meaningful variation across lender types -- what a credit union needs is different from what a large bank requires, which is different again from what an online lender accepts.</p>
+
+    <h2>What Each Lender Type Typically Requires</h2>
+
+    <h3>Traditional banks (Chase, Wells Fargo, Bank of America)</h3>
+    <p>Large banks tend toward conservative documentation standards. The typical requirement for a personal loan is two to three of the most recent pay stubs, often alongside proof of employment (the loan officer may call your employer's HR department). Banks also commonly require that the stubs be within 30-45 days of the application date -- old stubs from four months ago usually will not satisfy the recency requirement.</p>
+    <p>Self-employed applicants at traditional banks typically face additional requirements: the most recent two years of federal tax returns, including Schedule C, plus a year-to-date profit-and-loss statement. Banks apply the more stringent standard because they are regulated differently from non-bank lenders and have less flexibility in their underwriting guidelines.</p>
+
+    <h3>Online lenders (SoFi, LightStream, Marcus, Discover Personal Loans)</h3>
+    <p>Online lenders often offer more flexibility. Several accept bank statements as income verification in addition to or instead of pay stubs, recognizing that many applicants -- gig workers, freelancers, self-employed people -- do not have traditional pay stubs. LightStream's stated policy allows bank statements for income verification. SoFi's guidelines note that self-employed applicants can provide tax returns and bank statements.</p>
+    <p>Online lenders also tend to be faster with decisions and often provide pre-qualification with only a soft credit pull, which helps you understand your approval odds before formally applying.</p>
+
+    <h3>Credit unions</h3>
+    <p>Credit unions are generally the most flexible lenders for people with non-traditional employment situations. As member-owned institutions, credit unions can apply more judgment to individual circumstances. A credit union that knows you (you have checking, savings, and perhaps an auto loan with them) has context for your financial behavior that a distant bank does not. Credit unions are more likely to work with self-employed income, accept alternative documentation, and provide personal service when your situation does not fit a template.</p>
+    <p>The tradeoff is that credit union membership is required, and their loan products may have lower maximum amounts than large banks or online lenders.</p>
+
+    <h2>Debt-to-Income Ratio: The Number That Controls Your Approval</h2>
+    <p>DTI is the ratio of your monthly debt obligations to your gross monthly income. Lenders use it to assess how much additional debt you can service without financial strain.</p>
+
+    <p>The calculation: add up all minimum monthly debt payments (credit cards, car loan, student loans, existing personal loans, rent or mortgage). Divide by gross monthly income. Multiply by 100 for a percentage.</p>
+
+    <p>Example: Monthly gross income $5,000. Monthly debt obligations: $800 rent, $300 car payment, $200 student loan minimum, $150 credit card minimums. Total debt = $1,450. DTI = $1,450 / $5,000 = 29%.</p>
+
+    <p>A new personal loan with a $300/month payment would push that to ($1,450 + $300) / $5,000 = 35%.</p>
+
+    <p>Most lenders want to see DTI below 36% after accounting for the new loan payment. Some accept up to 43%. A few online lenders go higher for well-qualified borrowers. Lenders above the 43% threshold are taking on meaningfully more risk and typically reflect it in higher interest rates.</p>
+
+    <h2>How Pay Frequency Affects Monthly Income Calculation</h2>
+    <p>Lenders calculate monthly income differently depending on your pay frequency. Getting this right matters because an incorrect calculation affects your DTI:</p>
+
+    <p><strong>Weekly pay (52 pay periods/year):</strong> Monthly income = weekly gross x 4.33 (not x 4). Four weeks is 28 days, not one month. Using x 4 understates monthly income by one paycheck per year. Lenders who know what they are doing use 4.33.</p>
+
+    <p><strong>Biweekly pay (26 pay periods/year):</strong> Monthly income = biweekly gross x 2.167 (not x 2). Same reason -- 24 biweekly periods would be 48 weeks, not 52. You receive two extra paychecks per year. Lenders use 2.167 for accuracy.</p>
+
+    <p><strong>Semi-monthly pay (24 pay periods/year):</strong> Monthly income = semi-monthly gross x 2, exactly. Semi-monthly means twice per month, which is exactly 24 times per year. No adjustment needed.</p>
+
+    <p><strong>Monthly pay (12 pay periods/year):</strong> Gross pay on each stub is your monthly income. No conversion needed.</p>
+
+    <p>For self-employed workers without a regular pay schedule, monthly income is calculated as annual income (from tax returns or bank statement average) divided by 12.</p>
+
+    <h2>What Self-Employed Borrowers Need for Personal Loans</h2>
+    <p>As a self-employed borrower, your income documentation package typically includes some combination of:</p>
+
+    <p>Recent pay stubs from your self-employment (self-generated, covering the past 60-90 days). Bank statements showing consistent deposits for two to three months. Most recent year's tax return, specifically Schedule C showing net profit. Business bank account statements if you operate through a business account. Current client contracts or invoices showing ongoing income.</p>
+
+    <p>The combination that works best depends on the lender. Online lenders tend to prioritize bank statements. Credit unions tend to take a holistic view. Traditional banks typically require tax returns for self-employed borrowers regardless of what else you provide.</p>
+
+    <h2>Generate Your Pay Stubs</h2>
+
+    <PayStubForm client:load />
+
+    <h2>Loan Application Strategy for Gig Workers and Freelancers</h2>
+    <p>The practical path to personal loan approval as a gig worker or freelancer:</p>
+
+    <p>First, check your credit score. Most personal loan approvals depend heavily on credit score, often more than income documentation. A strong credit score (720+) with self-employment income is a better loan application than a weak credit score with perfect W-2 employment documentation.</p>
+
+    <p>Second, use online pre-qualification to test approval odds before formally applying. Pre-qualifications use soft credit pulls (no credit score impact) and give you a realistic sense of your approval probability and rate before you commit to a hard inquiry.</p>
+
+    <p>Third, start with lenders you already have relationships with. Your credit union, your checking account bank, or any institution where you already have products is more likely to work with non-standard documentation because they have financial context on your behavior.</p>
+
+    <p>Fourth, be honest about income. Overstating income to obtain a loan constitutes fraud and creates a loan obligation you may not be able to service. Understating income (presenting conservative documented income rather than all your actual earnings) is not fraud but may limit your approval amount.</p>
+
+    <h2>Related Guides</h2>
+    <p>For apartment income documentation, see <a href="/pay-stub-for-apartment">pay stub for apartment applications</a>. For mortgage income requirements, which are substantially more complex, see <a href="/pay-stub-for-mortgage">pay stub for mortgage applications</a>. For car loan documentation, see <a href="/pay-stub-for-car-loan">pay stub for car loan applications</a>.</p>
+
+  </main>
+</Base>

@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import PayStubForm from '../components/PayStubForm.tsx';
+---
+<Base
+  title="Pay Stub for Car Loan | What Dealers and Banks Require"
+  description="What car dealers and lenders need for auto loan income verification. Dealership finance vs bank vs credit union, and what to do if you're self-employed."
+  canonical="https://paystub.fyi/pay-stub-for-car-loan"
+>
+  <main class="max-w-4xl mx-auto px-4 py-8 prose prose-lg max-w-none text-gray-700">
+    <h1>Pay Stub for Car Loan -- What Dealers and Banks Require</h1>
+
+    <p>Auto loan income documentation is generally less stringent than mortgage requirements but more standardized than personal loan requirements. Dealers and lenders have a clear picture of what they need, and walking in prepared with the right documents speeds up the approval process considerably.</p>
+
+    <h2>What Dealers Typically Want</h2>
+    <p>When you finance a car through a dealership (the most common path), the finance and insurance (F&amp;I) manager handles the loan application. Dealers work with a roster of lenders -- banks, credit unions, and captive finance companies (Ford Motor Credit, Toyota Financial Services, etc.) -- and submit your application to find the best approval.</p>
+
+    <p>Standard documentation for dealer-arranged financing:</p>
+    <p><strong>Pay stubs:</strong> The most recent one to two pay stubs. Unlike rental applications that want two to three months of stubs, car loan lenders typically want just the most recent paycheck stub or the last two. They are confirming current income, not establishing a long income history.</p>
+    <p><strong>Bank statement:</strong> One or two months of bank statements may be requested alongside stubs. This verifies that the net pay shown on the stub is actually being deposited.</p>
+    <p><strong>Proof of residence:</strong> A utility bill, bank statement, or other document showing your current address. This is required to register the vehicle.</p>
+    <p><strong>Driver's license or state ID.</strong></p>
+    <p><strong>Proof of insurance:</strong> Some dealers require proof that you have auto insurance or can obtain it before they release the vehicle. You can set up insurance before going to the dealership with coverage starting the day of purchase.</p>
+
+    <h2>Bank Direct Lending vs. Dealer Financing</h2>
+    <p>Many buyers get pre-approved for an auto loan directly from a bank or credit union before visiting the dealership. This approach has documentation requirements similar to dealer financing but is handled by the lender directly:</p>
+
+    <p><strong>Bank pre-approval:</strong> Two to three recent pay stubs, bank statements, and sometimes proof of employment. Pre-approval gives you a maximum loan amount and interest rate to shop with. You know your purchasing power before negotiating.</p>
+
+    <p><strong>Credit union auto loans:</strong> Credit unions tend to offer competitive auto loan rates and more flexible documentation requirements. If you are self-employed or have non-traditional income, your credit union is often the best first call for auto financing.</p>
+
+    <p>Bringing a pre-approval to the dealership puts you in a stronger negotiating position -- you do not need dealer financing and can take or leave their financing offer. If the dealer can beat your pre-approved rate, great. If not, you use your pre-approval.</p>
+
+    <h2>How Monthly Income Is Calculated for Auto Loans</h2>
+    <p>Auto lenders use gross monthly income for debt-to-income calculations:</p>
+
+    <p>For weekly pay: multiply weekly gross by 4.33</p>
+    <p>For biweekly pay: multiply biweekly gross by 2.167</p>
+    <p>For semi-monthly pay: multiply semi-monthly gross by 2</p>
+    <p>For monthly pay: the stub itself shows monthly gross</p>
+    <p>For hourly workers: multiply hourly rate by average weekly hours by 4.33</p>
+
+    <p>Auto lenders generally want your total debt-to-income ratio (all monthly debt payments including the new car payment divided by gross monthly income) to be under 43-50%. Many are more lenient than this for borrowers with strong credit scores -- a 780 credit score applicant may be approved at higher DTI than a 640 score applicant.</p>
+
+    <h2>What Self-Employed Buyers Face at Dealerships</h2>
+    <p>Self-employed car buyers at dealerships commonly encounter friction in the F&amp;I office. The standard scripts the F&amp;I manager follows assume W-2 pay stubs. When you present self-generated pay stubs or explain that you are a DoorDash driver, some F&amp;I managers do not know how to process this and default to saying the application requires additional documentation or that approval is unlikely.</p>
+
+    <p>The most effective approach for self-employed buyers:</p>
+
+    <p><strong>Come with a pre-approval from your credit union or bank.</strong> This removes the uncertainty from the dealership finance process. If you already have financing approved, the dealer cannot tell you it is unavailable -- they can only try to beat your rate.</p>
+
+    <p><strong>Bring a complete documentation package.</strong> Two to three months of self-generated pay stubs, three months of bank statements showing deposits matching the stub amounts, and your most recent year's tax return (for the lender's records). Having everything ready demonstrates preparation and credibility.</p>
+
+    <p><strong>Be clear about income type.</strong> "I am an independent contractor" is cleaner than explaining gig platforms in detail. The lender's documentation requirement is the same -- income documentation -- regardless of the specific source.</p>
+
+    <p><strong>Consider a larger down payment.</strong> A larger down payment reduces the loan amount (and monthly payment), which improves your debt-to-income ratio and reduces the lender's risk. This can compensate for income documentation that is less straightforward than a standard W-2.</p>
+
+    <h2>Generate Your Pay Stubs</h2>
+
+    <PayStubForm client:load />
+
+    <h2>Special Situations</h2>
+
+    <h3>First-time buyers with limited credit history</h3>
+    <p>Auto lenders often have special programs for first-time buyers, sometimes called "first time buyer programs" or "tier 1 credit builder programs." These come with higher rates but are accessible with limited credit history. Income documentation is particularly important for these applicants since credit history cannot compensate for income uncertainty.</p>
+
+    <h3>Buying from a private party</h3>
+    <p>Private party purchases require obtaining a loan independently rather than through a dealer. Your bank or credit union is the primary option. Documentation requirements are the same as for bank-direct auto loans: pay stubs, bank statements, proof of insurance, and vehicle information for the lender to process the loan and lien.</p>
+
+    <h3>Lease vs. purchase</h3>
+    <p>Lease applications have the same income documentation requirements as loan applications. Lease underwriting often has stricter credit score requirements than purchase financing, but income documentation standards are comparable.</p>
+
+    <h3>Trading in a vehicle with negative equity</h3>
+    <p>Rolling negative equity from a trade-in into a new loan increases the loan amount beyond the vehicle's purchase price. This creates a higher monthly payment and a higher DTI. Lenders see this frequently but factor the higher payment into their DTI analysis. If you already have tight DTI, negative equity roll-in can tip the application into decline territory.</p>
+
+    <h2>Related Guides</h2>
+    <p>For apartment income documentation, see <a href="/pay-stub-for-apartment">pay stub for apartment applications</a>. For personal loans (often an alternative to dealer financing for used vehicles), see <a href="/pay-stub-for-loan">pay stub for personal loans</a>. For self-employed income documentation overview, see <a href="/self-employed-pay-stub-generator">self-employed pay stub generator</a>.</p>
+
+  </main>
+</Base>

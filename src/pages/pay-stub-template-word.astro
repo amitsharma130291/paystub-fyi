@@ -1,0 +1,86 @@
+---
+import ToolPage from '../layouts/ToolPage.astro';
+---
+<ToolPage
+  title="Pay Stub Template for Word (Free) | PayStub.fyi"
+  description="Free pay stub template for Microsoft Word. Step-by-step instructions to fill it out manually, common calculation errors, and why a generator is more reliable."
+  canonical="https://paystub.fyi/pay-stub-template-word"
+  h1="Pay Stub Template for Word (Free)"
+  defaultState="CA"
+>
+
+<p>A pay stub template for Microsoft Word is a straightforward concept: a formatted document with tables and labels already in place, where you fill in the employee name, employer name, dates, and numbers. Word is by far the most widely installed desktop productivity software in the world, which is why people look for Word-specific templates -- they want something they can open immediately without learning new software.</p>
+
+<p>The challenge is that Word is a word processor, not a payroll calculation engine. The template can hold your numbers, but it cannot verify they are correct. That distinction matters more than it might seem, because calculating pay stub deductions manually requires knowing the current federal tax brackets, the Social Security wage base, your state's specific income tax rates, and a half-dozen other details that change every year.</p>
+
+<p>This page walks through how to use a Word pay stub template correctly, what calculations you need to do yourself, the most common errors people make, and when it makes more sense to use the generator above instead.</p>
+
+<h2>How to Fill Out a Pay Stub Template in Word</h2>
+
+<p>If you are committed to using a Word template, here is a complete step-by-step process for filling it in accurately:</p>
+
+<p><strong>Step 1: Enter the employer section.</strong> Fill in the employer's full legal name and address. For self-employed workers, this is your business name and address (or your own name and address if you operate as a sole proprietor). The employer name on your pay stubs should match what appears on your tax documents -- your company name or the name you filed your DBA under.</p>
+
+<p><strong>Step 2: Fill in the employee section.</strong> Your full legal name as it appears on your Social Security card and tax returns. Use this spelling consistently across all stubs -- inconsistencies raise questions. Add the last four digits of your SSN or your employee ID number. Include your address if the template has a field for it.</p>
+
+<p><strong>Step 3: Enter pay period dates.</strong> The pay period start date and end date define the time range this stub covers. The pay date is when the money was actually paid or transferred -- this is often 3-5 days after the period ends. Be consistent: if you are generating multiple stubs to cover 90 days of income, each stub's dates should be contiguous (no gaps, no overlaps).</p>
+
+<p><strong>Step 4: Calculate gross pay.</strong> For salary workers, divide your annual salary by your number of pay periods (52 for weekly, 26 for bi-weekly, 24 for semi-monthly, 12 for monthly). For hourly workers, multiply regular hours by your hourly rate. For overtime hours (hours over 40 in a workweek under federal law, or more protective state rules in California and Colorado), multiply those hours by your rate times 1.5. Add them for gross pay.</p>
+
+<p><strong>Step 5: Calculate Social Security tax.</strong> Multiply gross pay by 6.2%. However, this only applies up to the annual wage base ($168,600 in 2024). Once your year-to-date gross earnings exceed $168,600, Social Security stops being deducted. For most workers, you will simply multiply gross pay by 6.2% for each period without hitting this cap.</p>
+
+<p><strong>Step 6: Calculate Medicare tax.</strong> Multiply gross pay by 1.45%. There is no wage base cap for Medicare -- the 1.45% applies to all earnings. For wages above $200,000 annually, an additional 0.9% applies, but this is typically only relevant for very high earners and is handled at tax filing rather than pay period withholding.</p>
+
+<p><strong>Step 7: Calculate federal income tax.</strong> This is the hardest calculation. The IRS uses a wage bracket method or percentage method to determine withholding. The full federal withholding calculation involves: annualizing your gross pay (multiplying by pay periods per year), reducing by the withholding allowance from the employee's W-4, finding the tax using the current year's graduated bracket table, then dividing back down by pay periods. For 2024 federal income tax brackets for single filers, the rates are: 10% on income up to $11,600; 12% on $11,601-$47,150; 22% on $47,151-$100,525; 24% on $100,526-$191,950; 32% on $191,951-$243,725; 35% on $243,726-$609,350; 37% on income above $609,350. Applying the correct marginal rate to each portion of the annualized income and dividing by pay periods is the method, but it requires precision -- a simple rounding error can produce a withholding amount that does not match actual IRS tables.</p>
+
+<p><strong>Step 8: Calculate state income tax.</strong> Look up the current year's rates for your state. States with flat rates (Illinois: 4.95%, Pennsylvania: 3.07%, Arizona: 2.5%) are simpler -- multiply gross pay by the flat rate, adjusted slightly for any withholding allowances your state permits. States with graduated brackets (California, New York, Oregon, Minnesota, etc.) require the same multi-step annualize-calculate-divide process as federal. If you are not sure of your state's current rate, check your state's department of revenue website -- tax rates change annually in many states.</p>
+
+<p><strong>Step 9: Enter any other deductions.</strong> Health insurance premiums, 401(k) contributions, HSA contributions, and union dues are common pre-tax deductions. Note whether each deduction is pre-tax (reduces federal taxable income, so it should be subtracted before the federal tax calculation in Step 7) or post-tax (deducted from net pay but does not reduce taxable income).</p>
+
+<p><strong>Step 10: Calculate net pay.</strong> Gross pay minus total deductions equals net pay. Verify that all your individual deduction amounts add up to the total deductions figure, and that gross minus total deductions equals net. In a Word document with no formulas, this verification step is entirely manual -- check the arithmetic with a calculator.</p>
+
+<p><strong>Step 11: Update year-to-date totals.</strong> For each stub after your first one, add the current period's gross pay to the prior stub's YTD gross to get the new YTD gross. Do the same for each deduction category and for net pay. Track these running totals in a separate spreadsheet or notebook so you can reference them for each subsequent stub.</p>
+
+<h2>Common Errors with Word Pay Stub Templates</h2>
+
+<p><strong>Using the wrong federal tax year brackets.</strong> If you downloaded a template in 2022 or used one that was created then, it may contain a built-in explanation of 2022 brackets. The brackets adjust for inflation each year, and using the wrong year's brackets produces incorrect withholding calculations. Always verify brackets against the current IRS Publication 15-T.</p>
+
+<p><strong>Applying a flat rate instead of progressive brackets for federal tax.</strong> A very common error is calculating federal tax as a flat percentage of gross income -- for example, applying a flat 22% to all income. That is not how federal income tax works. The 22% rate only applies to income above $47,150 (for single filers in 2024) -- income up to that threshold is taxed at lower rates. Using a flat rate instead of the progressive calculation either dramatically overstates or understates federal withholding depending on your income level.</p>
+
+<p><strong>Forgetting to annualize for bracket calculation.</strong> Federal tax withholding is calculated by treating each pay period's wages as representative of the full year. If you earn $3,000 bi-weekly, you annualize that to $78,000 ($3,000 x 26) before applying the brackets. Many people calculate tax on just the $3,000 per-period amount using the annual brackets -- this produces the wrong answer because the brackets are annual thresholds, not per-period ones.</p>
+
+<p><strong>Missing year-to-date totals entirely.</strong> A pay stub without year-to-date figures is incomplete. YTD totals tell lenders and landlords how much you have been paid and paid in taxes over the course of the year, providing context that a single period's numbers cannot. Some Word templates do not include YTD sections, and users submit stubs without them.</p>
+
+<p><strong>Formatting issues on print or PDF export.</strong> Word table formatting often behaves differently when printed vs. when viewed on screen. Tables can expand, shift, or clip when converted to PDF, especially if you have edited the template by adding rows or changing font sizes. Always export to PDF and review the result before using it for income documentation.</p>
+
+<h2>Why the Generator Above Is More Reliable Than a Word Template</h2>
+
+<p>The generator on this page eliminates every error risk described above. It applies the correct 2024 federal brackets with proper annualization and de-annualization. It applies the correct state income tax rate based on which state you select. It calculates Social Security with the wage base cap applied. Medicare is calculated flat with no mistakes. The gross minus deductions calculation is verified against net pay automatically.</p>
+
+<p>The output is a consistent, professional PDF that has the same format for every stub you generate. You do not need to worry about whether the table fits on the page, whether the YTD totals are correct, or whether you used the right year's brackets. For income documentation purposes where the accuracy of the numbers matters -- apartment applications, loan applications, mortgage pre-qualification -- the generator produces a more reliable document than a manually filled Word template.</p>
+
+<p>Use the Word template when you need an editable document for a specific non-standard purpose. Use the generator when you need accurate, verifiable income documentation. If you want to understand the format before using the generator, see the <a href="/blank-pay-stub-template">blank pay stub template</a> page for a complete field-by-field breakdown.</p>
+
+<h2>What Landlords and Lenders Actually Check</h2>
+
+<p>When a landlord reviews your pay stubs, they are looking for internal consistency: does gross pay minus deductions equal net pay? Do the deductions seem reasonable for the income level? Does the employer name match what you said on the application? Do the dates make sense -- are these recent stubs, not from 18 months ago?</p>
+
+<p>What they are NOT doing: verifying exact federal tax bracket calculations or auditing the specific percentages. However, a stub where the numbers clearly do not add up -- gross pay minus deductions does not equal net pay, for example -- is an immediate red flag. The arithmetic accuracy matters even if the specific tax rate applied is not scrutinized in detail.</p>
+
+<p>For specific guidance on what different landlords require in different markets, see our <a href="/pay-stub-for-apartment">pay stub for apartment applications</a> guide. For mortgage lender requirements, see the <a href="/pay-stub-for-mortgage">pay stub for mortgage</a> page. And for the salary-specific variant of pay stub documentation, see our <a href="/salary-pay-stub-template">salary pay stub template</a> page.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Can I modify a Word template to work for multiple employees?</h3>
+<p>Yes, but it is time-consuming. You would need to save a copy for each employee, update the name, SSN, pay period, and all calculated amounts for each. If you have more than one or two employees to pay, a dedicated payroll tool (Gusto starts at $40/month, QuickBooks Payroll at $45/month) is more efficient and legally safer than managing individual Word documents. For very small operations with one employee (like a household employer paying a nanny), a Word template can work if you are disciplined about the calculations.</p>
+
+<h3>Does a Word pay stub template work on Mac?</h3>
+<p>Microsoft Word for Mac can open and edit .docx pay stub templates without any compatibility issues for basic formatting. However, some templates use Windows-specific fonts that may render differently on Mac. If you notice font substitution issues, change the template font to Arial, Helvetica, or another cross-platform font before entering your information.</p>
+
+<h3>Should I password-protect my completed pay stub Word document?</h3>
+<p>If you are sharing the document electronically, converting to PDF before sharing is better than sharing a Word document. PDFs are not editable (without specialized software), which preserves the integrity of the document. Password-protecting the PDF adds an additional layer, but is generally not necessary for submitting to a landlord or lender -- they are not in the business of editing your documents.</p>
+
+<h3>How do I make a Word pay stub look more professional?</h3>
+<p>Use consistent fonts (one font family throughout), avoid excessive decoration, and ensure the table borders are clean and even. Match the formatting you see on actual payroll company pay stubs -- simple, clean, tabular layout with clear section headers (Earnings, Deductions, Net Pay, Year-to-Date). Avoid colored backgrounds or unusual fonts. The generator on this page produces a professionally formatted PDF that requires no additional design decisions on your part.</p>
+
+</ToolPage>

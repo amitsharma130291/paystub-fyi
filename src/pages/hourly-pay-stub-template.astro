@@ -1,0 +1,148 @@
+---
+import ToolPage from '../layouts/ToolPage.astro';
+---
+<ToolPage
+  title="Hourly Pay Stub Template -- Free Generator | PayStub.fyi"
+  description="Free hourly pay stub template and generator. Calculate regular pay, overtime (1.5x after 40 hrs), California double time. Correct gross calculation formula included."
+  canonical="https://paystub.fyi/hourly-pay-stub-template"
+  h1="Hourly Pay Stub Template -- Free Generator"
+  defaultState="CA"
+>
+
+<p>Hourly pay stubs are more complex than salary stubs because the gross pay amount changes with each pay period based on actual hours worked. An hourly worker's stub must show the hourly rate, regular hours, overtime hours (calculated separately at a higher rate), and the resulting gross pay -- all before any deductions are applied. For workers with variable hours, split shifts, multiple rates, or California-specific daily overtime, the earnings section of a pay stub can require careful calculation.</p>
+
+<p>This page covers exactly how to calculate hourly pay stubs correctly: the gross pay formula, federal and California overtime rules, how to structure the earnings section, how taxes apply to the gross, and how to use the generator above to produce a complete, accurate hourly pay stub PDF in minutes.</p>
+
+<h2>The Hourly Pay Gross Calculation Formula</h2>
+
+<p>Gross pay for an hourly worker is calculated using this formula:</p>
+
+<p><strong>Gross pay = (Regular hours × Regular rate) + (Overtime hours × Regular rate × 1.5)</strong></p>
+
+<p>Breaking this down:</p>
+<ul>
+  <li><strong>Regular hours:</strong> Hours worked at the standard rate, up to 40 hours in a workweek under federal FLSA (or 8 hours in a single day in California)</li>
+  <li><strong>Regular rate:</strong> Your base hourly wage (e.g., $18.50/hr)</li>
+  <li><strong>Overtime hours:</strong> Hours beyond 40 in a workweek (or beyond 8 in a day in California)</li>
+  <li><strong>Overtime rate:</strong> 1.5 times the regular rate ($18.50 × 1.5 = $27.75 for the example above)</li>
+</ul>
+
+<p><strong>Example calculation:</strong> A worker earning $18.50/hr who worked 48 hours in a workweek:</p>
+<ul>
+  <li>Regular hours: 40 × $18.50 = $740.00</li>
+  <li>Overtime hours: 8 × $18.50 × 1.5 = $222.00 (8 hours × $27.75)</li>
+  <li>Gross pay: $740.00 + $222.00 = $962.00</li>
+</ul>
+
+<p>For bi-weekly pay periods (two workweeks), this calculation applies separately to each workweek -- you cannot combine hours across two weeks. If someone works 50 hours in week one and 30 hours in week two, they have 10 hours of overtime in week one and no overtime in week two. Their gross for the period is: (40 × rate) + (10 × rate × 1.5) + (30 × rate). The two-week totals happen to equal 80 hours, but the overtime is determined week-by-week.</p>
+
+<h2>Federal Overtime Rules (FLSA)</h2>
+
+<p>The federal Fair Labor Standards Act (FLSA) requires overtime pay (at least 1.5 times the regular rate) for all hours worked beyond 40 in a single workweek. Key points:</p>
+
+<p><strong>Overtime is weekly, not daily:</strong> Under federal law, a worker can legally work 10-hour days Monday through Thursday (40 hours) and have Friday off with no overtime owed. Hours worked are averaged across the entire workweek (7 consecutive days). Only hours exceeding 40 in the week trigger FLSA overtime.</p>
+
+<p><strong>The workweek is fixed:</strong> An employer's "workweek" is a fixed, regularly recurring period of 168 hours -- seven consecutive 24-hour periods. A common workweek runs Sunday through Saturday or Monday through Sunday. Employers cannot manipulate their workweek definition to avoid overtime liability.</p>
+
+<p><strong>Overtime exemptions:</strong> Certain categories of employees are exempt from FLSA overtime: executive, administrative, and professional employees paid on a salary basis of at least $684/week (the current federal salary threshold, which the DOL has proposed increasing); highly compensated employees; computer professionals; outside sales employees; and various other specific categories. Hourly workers under $684/week cannot be classified as exempt.</p>
+
+<p><strong>Regular rate of pay:</strong> The overtime rate must be calculated on the "regular rate of pay," which includes not just base hourly wages but also most additional pay such as non-discretionary bonuses, shift differentials, and commissions. If you earned a $200 production bonus during the week, that bonus is added to your weekly wages and the total is divided by hours to determine the true regular rate, which then determines the overtime rate. This "blended rate" calculation is required by FLSA.</p>
+
+<h2>California Overtime Rules -- More Protective Than Federal</h2>
+
+<p>California has overtime requirements that go beyond the federal FLSA standard. If you work in California, these rules apply:</p>
+
+<p><strong>Daily overtime (after 8 hours):</strong> California requires time-and-a-half (1.5x) for any hours worked beyond 8 in a single workday. This is the critical difference from federal law: even if you work fewer than 40 hours in the week, hours beyond 8 in any single day are overtime. A California worker who works 9 hours on Tuesday earns 8 hours at regular rate and 1 hour at 1.5x, even if they work no other days that week.</p>
+
+<p><strong>Daily double time (after 12 hours):</strong> Hours worked beyond 12 in a single workday are paid at double time (2x the regular rate). If you work a 14-hour shift in California, the compensation structure is: 8 hours at regular rate, 4 hours (hours 9-12) at 1.5x, and 2 hours (hours 13-14) at 2x.</p>
+
+<p><strong>Seventh consecutive day:</strong> The first 8 hours worked on the seventh consecutive day in a workweek are paid at 1.5x. Hours beyond 8 on the seventh consecutive day are paid at 2x.</p>
+
+<p>California hourly pay stub example for a 14-hour shift day (at $20/hr base):</p>
+<ul>
+  <li>Hours 1-8: 8 hours × $20.00 = $160.00</li>
+  <li>Hours 9-12: 4 hours × $30.00 (1.5x) = $120.00</li>
+  <li>Hours 13-14: 2 hours × $40.00 (2x) = $80.00</li>
+  <li>Daily gross: $360.00</li>
+</ul>
+
+<p>A California pay stub for a worker with daily overtime must show each tier of hours and rates separately. Simply showing "14 hours" at the base rate is legally insufficient under California Labor Code Section 226.</p>
+
+<h2>How to Structure the Earnings Section of an Hourly Stub</h2>
+
+<p>A well-structured hourly pay stub earnings section for a two-week period might look like this:</p>
+
+<table>
+  <tr><th>Earnings Type</th><th>Rate</th><th>Hours</th><th>Amount</th></tr>
+  <tr><td>Regular Pay</td><td>$18.50/hr</td><td>74.0</td><td>$1,369.00</td></tr>
+  <tr><td>Overtime Pay</td><td>$27.75/hr</td><td>6.0</td><td>$166.50</td></tr>
+  <tr><td><strong>Gross Pay</strong></td><td></td><td><strong>80.0</strong></td><td><strong>$1,535.50</strong></td></tr>
+</table>
+
+<p>Each earnings type (regular, overtime, any additional types like holiday pay or shift differential) should be on a separate line with its rate, hours, and resulting pay amount. The total hours should add up correctly, and the extended amounts should equal rate times hours for each row.</p>
+
+<p>For California workers with daily overtime and double time, you would need additional rows:</p>
+
+<table>
+  <tr><th>Earnings Type</th><th>Rate</th><th>Hours</th><th>Amount</th></tr>
+  <tr><td>Regular Pay</td><td>$20.00/hr</td><td>64.0</td><td>$1,280.00</td></tr>
+  <tr><td>OT Pay (1.5x)</td><td>$30.00/hr</td><td>14.0</td><td>$420.00</td></tr>
+  <tr><td>Double Time (2x)</td><td>$40.00/hr</td><td>4.0</td><td>$160.00</td></tr>
+  <tr><td><strong>Gross Pay</strong></td><td></td><td><strong>82.0</strong></td><td><strong>$1,860.00</strong></td></tr>
+</table>
+
+<h2>How Taxes Apply to Hourly Gross Pay</h2>
+
+<p>Taxes are calculated on total gross pay -- the combined regular and overtime earnings. There is no special tax treatment for overtime wages. The IRS applies the same graduated federal income tax brackets to overtime pay as to regular pay. Some workers believe overtime is "taxed at a higher rate," but this is a misunderstanding of how marginal tax rates work: if overtime pushes your annualized income into a higher bracket, you pay the higher rate only on the portion above the bracket threshold, not on all your income for the period.</p>
+
+<p><strong>Social Security:</strong> 6.2% of total gross wages up to the $168,600 annual wage base (2024). Applies equally to regular and overtime pay.</p>
+
+<p><strong>Medicare:</strong> 1.45% of all gross wages. No cap.</p>
+
+<p><strong>Federal income tax:</strong> Applied to annualized gross (period gross × pay periods per year) using the progressive bracket table, then divided by pay periods. A bi-weekly paycheck with higher gross due to overtime is annualized with that higher gross, potentially pushing the annualized income into a higher bracket for that period's calculation.</p>
+
+<p><strong>State income tax:</strong> Applied according to your state's rules. Same gross pay (including overtime) is used as the basis.</p>
+
+<h2>Common Pay Scenarios for Hourly Workers</h2>
+
+<p><strong>Restaurant server paid tipped minimum wage:</strong> Many states allow employers to pay tipped employees a lower cash wage if tips bring total compensation up to the minimum wage. Your pay stub in this case shows the tipped minimum wage (e.g., $2.13/hr under federal law, higher in most states) as the cash wage, plus any allocated tips that are run through payroll. Total taxable wages are the sum of cash wages plus reported tips.</p>
+
+<p><strong>Construction worker with variable hours:</strong> Construction hours vary significantly by project, weather, and season. One bi-weekly period might be 90 hours (50 in week one, 40 in week two) while the next might be 60 hours (30 per week). The overtime calculation applies week-by-week: week one has 10 overtime hours, week two has none. Each period's stub accurately reflects that week's overtime, even if the pattern is inconsistent.</p>
+
+<p><strong>Healthcare worker with 12-hour shifts:</strong> Nurses and hospital technicians often work three 12-hour shifts per week. In a state without daily overtime (most states), 36 hours per week produces no overtime (36 < 40). In California, hours 9-12 each shift (4 hours per shift, three shifts = 12 hours per week) are daily overtime. The California nurse working three 12-hour shifts actually earns 24 regular hours and 12 overtime hours per week, not 36 regular hours -- a significant difference in gross pay.</p>
+
+<h2>Using the Generator for Hourly Pay Stubs</h2>
+
+<p>To generate an hourly pay stub with this tool:</p>
+
+<ol>
+  <li>Select "Hourly" under Pay Type</li>
+  <li>Enter your hourly rate in the Hourly Rate field</li>
+  <li>Enter regular hours in the Regular Hours field (typically 80 for a standard bi-weekly period, or whatever you actually worked)</li>
+  <li>Enter overtime hours in the Overtime Hours field (hours over 40 in the workweek)</li>
+  <li>Select your state for correct state income tax</li>
+  <li>Set your pay period dates and pay frequency</li>
+  <li>Click Calculate -- the generator computes regular pay, overtime pay, and total gross, then applies all taxes</li>
+  <li>Download the PDF pay stub</li>
+</ol>
+
+<p>Note: the generator applies the federal FLSA overtime standard (1.5x after 40 hours per week). For California daily overtime and double time, calculate your gross pay manually (regular + 1.5x hours + 2x hours) and enter it in the Salary field to use that as your pre-calculated gross instead of using the hourly calculator.</p>
+
+<h2>Frequently Asked Questions for Hourly Workers</h2>
+
+<h3>Is overtime taxed at a higher rate than regular pay?</h3>
+<p>No, but it can push you into a higher federal bracket. Overtime wages are ordinary income, taxed at the same marginal rates as regular wages. However, if a heavy overtime period significantly increases your annualized income for that period's calculation, more of your income may fall into a higher bracket. The effect is proportional -- only the portion of income above a bracket threshold is taxed at the higher rate. The payroll system distributes the tax impact mathematically across the year. At year-end, your total tax liability reflects your actual annual income -- no premium tax rate exists for overtime wages specifically.</p>
+
+<h3>My employer pays a "straight time" rate for overtime instead of 1.5x. Is that legal?</h3>
+<p>For most employees, no. FLSA requires a minimum of 1.5x the regular rate for overtime hours. However, there is a specific legal arrangement called a "Belo contract" or "fluctuating workweek" method where employees receive a fixed salary for all hours worked and then receive half-time (0.5x) additional pay for overtime hours. This is legal in limited circumstances but cannot be arranged to pay less than federal minimum wage for any hour. If your employer is paying you the same rate for overtime as for regular hours without a formal fluctuating workweek arrangement, they may be violating FLSA. Contact the Department of Labor's Wage and Hour Division to report suspected violations.</p>
+
+<h3>I work two jobs at two different hourly rates. How does overtime work?</h3>
+<p>If both jobs are with the same employer, the employer must combine your hours across both jobs and pay overtime after 40 combined hours at a weighted average blended rate. If the jobs are with different employers, each employer's workweek hours are tracked independently -- you do not aggregate hours across employers for FLSA purposes. If you work 30 hours for Employer A and 25 hours for Employer B in the same week, neither employer owes you overtime (30 < 40 and 25 < 40), even though your total week is 55 hours. Generate separate pay stubs for each employer reflecting each one's hours and pay independently.</p>
+
+<h3>Does holiday pay count toward the 40-hour overtime threshold?</h3>
+<p>Under federal FLSA, holiday pay (when you receive pay for a holiday but do not work) does not count as hours "worked" for overtime calculation purposes. If you received 8 hours of holiday pay and worked 35 hours in the same week (43 total hours on your stub), you are not entitled to FLSA overtime because you only worked 35 hours. However, many union contracts and employer policies voluntarily count holiday pay toward overtime thresholds -- this is a contractual benefit, not an FLSA requirement. Check your employment agreement or union contract for how holiday pay is treated.</p>
+
+<h3>I'm a non-exempt salaried employee. How does overtime work for me?</h3>
+<p>Non-exempt employees who are paid on a salary basis still receive overtime pay for hours over 40 in a workweek. For salaried non-exempt employees, the hourly equivalent is calculated by dividing the weekly salary by 40 hours to get the regular hourly rate, then multiplying that rate by 1.5 for overtime hours. A non-exempt employee earning $800/week who works 50 hours has an hourly rate of $20 ($800/40). Overtime pay for those 10 hours is 10 × $20 × 1.5 = $300 additional, for a total weekly gross of $1,100. For documentation purposes, see the <a href="/salary-pay-stub-template">salary pay stub template</a> for the base salary documentation and combine with the overtime calculation approach described on this page.</p>
+
+</ToolPage>

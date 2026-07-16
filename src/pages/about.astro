@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="About PayStub.fyi -- Why We Built This"
+  description="PayStub.fyi was built because existing pay stub tools were bad: watermarks, required signups, 2008-era PDFs. Here's what we did differently and who uses it."
+  canonical="https://paystub.fyi/about"
+>
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-gray-900 mb-6">About PayStub.fyi</h1>
+
+    <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+
+      <p>I built PayStub.fyi because every existing pay stub tool I tried was bad in the same specific ways: they put a huge watermark on the PDF unless you paid, required you to create an account before showing you anything, produced PDFs that looked like they came from a website built in 2008, and calculated taxes incorrectly on top of all that.</p>
+
+      <p>The use case is common. A DoorDash driver needs documentation of their income for an apartment application. A freelance designer needs a professional-looking stub to show a car dealership. A small business owner needs to give their one employee something that doesn't look like a middle school project. These are real needs. The tools available to serve them were consistently bad.</p>
+
+      <h2>What's Different Here</h2>
+
+      <h3>No Watermarks, Ever</h3>
+      <p>I hate watermarks on "free" products. A watermark defeats the purpose — you need a stub that looks professional, and a diagonal "SAMPLE" across a PDF is the opposite of professional. Every stub generated at PayStub.fyi is clean, watermark-free, and usable for its actual purpose.</p>
+
+      <p>Other tools argue the watermark is necessary because "how else do we make money?" The answer is: charge for features people actually want (stub history, multiple employer profiles, bulk generation) rather than gatekeeping the basic functionality behind a watermark.</p>
+
+      <h3>No Forced Sign-Up</h3>
+      <p>Creating an account to generate one document is friction that serves the product, not the user. If you need a pay stub, you need it now — not after you've verified an email address and set a password. The generator works immediately, with no account required. If you want to save your stub history or set up employer profiles, you can create an account and log in. But if you just need a PDF, you don't have to.</p>
+
+      <h3>Correct 2024 Tax Calculations</h3>
+      <p>The calculations matter. Federal income tax is not a flat percentage — it uses marginal brackets with a standard deduction applied first, then the IRS percentage method tables. Social Security is 6.2% up to the $168,600 wage base, then stops. Medicare is 1.45% with no cap, plus an additional 0.9% on wages over $200,000 for single filers. Pre-tax deductions like health insurance reduce your FICA wages, while 401(k) contributions only reduce your income tax wages, not your FICA.</p>
+
+      <p>Getting these right matters because landlords and lenders look at pay stubs professionally. A stub where the math doesn't add up correctly is a red flag. Our calculations use current year tables and apply them correctly.</p>
+
+      <p>Here's the math for a $3,500 bi-weekly paycheck for a single California filer, so you can verify:</p>
+      <ul>
+        <li>Gross: $3,500.00</li>
+        <li>Federal income tax (annualized to $91,000, standard deduction applied, 22% bracket on top portion): ~$560</li>
+        <li>Social Security: $3,500 × 6.2% = $217.00</li>
+        <li>Medicare: $3,500 × 1.45% = $50.75</li>
+        <li>California SDI: $3,500 × 0.9% = $31.50</li>
+        <li>CA state income tax (~6% effective): ~$210</li>
+        <li>Net: ~$2,431</li>
+      </ul>
+      <p>Every number is explainable. That's what a legitimate pay stub looks like.</p>
+
+      <h3>A Clean PDF That Looks Professional</h3>
+      <p>The PDF design matters more than it should, but it does. A 2008-era pay stub that looks like it was built in Microsoft Word creates doubt — even if every number is correct. The generated PDF uses a clean, modern layout with proper typography, clear delineation between sections, and the formatting that any HR professional or lender will immediately recognize as a standard pay stub.</p>
+
+      <h3>No Data Stored Server-Side (Free Tier)</h3>
+      <p>For free tier users, the calculation and PDF generation happen in your browser. Your income, your employer's name, your deductions — none of it reaches our servers. We genuinely cannot see what you generated because we don't have it. The Pro tier (coming soon) will store stub history on our servers (that's the whole point of the history feature), with clear disclosure about what's stored and how it's protected.</p>
+
+      <h2>Who Uses PayStub.fyi</h2>
+
+      <h3>W-2 Employees Who Lost Their Stubs</h3>
+      <p>Your HR portal went down. You switched employers and can't access the old portal. Your employer uses a paper system and you've lost the stubs. Whatever the reason — you need documentation of your income and you don't have it. If you know what your pay and deductions were, you can regenerate accurate documentation.</p>
+
+      <h3>DoorDash and Uber Drivers Applying for Apartments</h3>
+      <p>This is the most common single use case. Gig platforms don't issue pay stubs — they issue 1099-NEC forms and weekly earnings summaries. Neither is a pay stub. A landlord asking for "two months of pay stubs" is using a template designed for W-2 employees, and gig workers get caught in that gap constantly.</p>
+      <p>The solution: take your actual weekly DoorDash or Uber earnings, calculate your monthly average, and generate a professional stub documenting what you actually earned. Combine it with bank statements showing consistent platform deposits and your annual 1099-NEC. That package tells the same income story from three angles and satisfies most landlords.</p>
+
+      <h3>Freelancers and Independent Contractors</h3>
+      <p>A UX designer who works for several clients on contract, a copywriter with monthly retainers, a developer on a project basis — these workers have real income that doesn't come with standard employment documentation. When they need a car loan or want to rent an apartment, they need documentation in a format lenders recognize. Generating accurate stubs from actual invoice totals and bank deposits creates that documentation legitimately.</p>
+
+      <h3>Small Business Owners Paying a Few Employees</h3>
+      <p>If you have two or three employees and you're not using a full payroll service, generating pay stubs manually is a pain. PayStub.fyi handles the tax calculations so you don't have to run them yourself, and produces a professional PDF you can give to your employees. When you're ready for the Business tier, we'll add bulk generation and employee management to make this even faster.</p>
+
+      <h2>What We're Building Next</h2>
+
+      <p>The free generator is the foundation. What we're building on top of it:</p>
+
+      <p><strong>Pro tier ($9/month, coming soon):</strong> Stub history, saved employer profiles, premium PDF template, and the ability to generate stubs for multiple employees. For individuals who generate stubs regularly and don't want to re-enter information every time.</p>
+
+      <p><strong>Business tier ($29/month, coming soon):</strong> Up to 25 employees, bulk generation, Excel export for payroll records. For small business owners who need proper payroll documentation without the cost and complexity of a full payroll service.</p>
+
+      <p>Payments will go through LemonSqueezy, a payment processor built specifically for independent software products. No subscription to a complicated enterprise product. Simple, transparent pricing with no long-term commitments.</p>
+
+      <h2>A Note on Legitimate vs. Fraudulent Use</h2>
+
+      <p>PayStub.fyi is for documenting income you actually earned. Everything in the generator is designed to produce accurate documentation of real income. The tax calculations are correct. The PDF looks professional. The format is what lenders and landlords expect to see.</p>
+
+      <p>Using this tool to document income you didn't earn — fabricating an employer, inflating your salary, creating stubs for income that doesn't exist — is fraud. We don't prevent people from entering incorrect numbers, because there's no way to verify what anyone actually earns. But the tool's purpose is legitimate documentation, and we built it that way. If you've earned real income, this tool helps you document it properly. That's all.</p>
+
+      <h2>Contact</h2>
+
+      <p>If you find a bug in the tax calculations, a state that's not calculating correctly, or have feedback on what would make the tool more useful for your situation, reach out through the feedback form on the generator page. We're actively building this and take calculation accuracy seriously.</p>
+
+    </div>
+  </main>
+</Base>

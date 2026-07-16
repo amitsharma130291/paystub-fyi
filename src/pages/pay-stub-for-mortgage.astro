@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro';
+import PayStubForm from '../components/PayStubForm.tsx';
+---
+<Base
+  title="Pay Stub for Mortgage Application | Complete Guide"
+  description="What mortgage underwriters actually need for income verification. Fannie Mae guidelines, self-employed requirements, DTI ratios, and what triggers extra scrutiny."
+  canonical="https://paystub.fyi/pay-stub-for-mortgage"
+>
+  <main class="max-w-4xl mx-auto px-4 py-8 prose prose-lg max-w-none text-gray-700">
+    <h1>Pay Stub for Mortgage Application -- Complete Guide</h1>
+
+    <p>Mortgage income documentation is the most rigorous income verification process most people will encounter. The requirements are set at the federal level through Fannie Mae and Freddie Mac guidelines (for conventional loans), FHA guidelines (for FHA loans), and VA guidelines (for VA loans). Lenders must follow these requirements precisely to sell the mortgages into the secondary market -- deviation from guidelines is not at the lender's discretion.</p>
+
+    <h2>W-2 Employee Requirements (Fannie Mae Standard)</h2>
+    <p>If you receive a W-2 from an employer, the Fannie Mae guidelines for income documentation require:</p>
+
+    <p><strong>Pay stubs:</strong> The most recent 30-day period of pay stubs. If you are paid biweekly, that means two pay stubs. If weekly, four or five stubs. If monthly, one stub plus the one before it (to cover 30 days).</p>
+
+    <p><strong>W-2 forms:</strong> The most recent two years of W-2 forms from all employers. This establishes employment history, income trend, and that the job is genuine. A W-2 employee who just started a new job may face additional requirements to document job continuity and stability.</p>
+
+    <p><strong>Employment verification:</strong> Many lenders will verify employment directly with your employer's HR department. This typically happens during the underwriting process and again just before closing. Lenders are checking that you are still employed at the income level stated on your application.</p>
+
+    <p><strong>For salary income:</strong> If your income is consistent salary with no significant variation, the documentation above is typically sufficient. The underwriter will calculate your monthly gross income as annual salary divided by 12.</p>
+
+    <p><strong>For bonus or overtime income:</strong> These are included in qualifying income only if they are consistent and likely to continue. Underwriters typically average bonus/overtime income over the prior two years. A one-time bonus does not count. Consistent annual bonuses over two years do count.</p>
+
+    <h2>Self-Employed Borrower Requirements</h2>
+    <p>Self-employed borrowers face substantially more documentation requirements. The Fannie Mae definition of "self-employed" for mortgage purposes is any borrower who owns 25% or more of a business. This includes sole proprietors, LLC members, S-corp shareholders, and partners in partnerships.</p>
+
+    <p><strong>Two years of federal tax returns:</strong> Both personal (Form 1040) and business returns (Schedule C for sole proprietors, Form 1120S for S-corps, Form 1065 for partnerships) for the two most recent tax years. These are the foundation of self-employed income documentation for mortgages.</p>
+
+    <p><strong>Year-to-date profit and loss statement:</strong> A P&amp;L statement showing income and expenses from January 1 through the most recent month. For a mortgage closing in October, this would cover January through September. The P&amp;L must be prepared by a CPA or self-prepared on standard business financial statement format. This document bridges the gap between the last filed tax return (which may be 6-18 months old) and the current date.</p>
+
+    <p><strong>Business bank statements:</strong> Some underwriters request 12 months of business bank statements to verify that business revenue matches what the tax returns show.</p>
+
+    <p><strong>Income calculation:</strong> Underwriters use a specific method to calculate qualifying income for self-employed borrowers. They take the net income from Schedule C, add back certain non-cash deductions (depreciation, depletion, home office deduction in some cases), and average it over 24 months. The resulting monthly figure is what they use for DTI calculation. This number is often significantly lower than gross revenue -- which is why many self-employed borrowers are surprised by how small their qualifying income is for mortgage purposes despite solid business revenue.</p>
+
+    <h2>What Underwriters Scrutinize</h2>
+    <p>Mortgage underwriters are trained to spot income documentation anomalies. The things that trigger extra scrutiny or conditions:</p>
+
+    <p><strong>Large unexplained deposits:</strong> Bank statements showing large deposits that do not correspond to payroll or documented business income get questioned. Underwriters call these "large deposits" and require explanation and sourcing documentation. Gift money for down payment must be documented with a gift letter. Loan proceeds must be documented. Cash from selling an asset must be documented.</p>
+
+    <p><strong>Income declining year-over-year:</strong> Two years of tax returns where income decreased significantly year-over-year is a concern. An underwriter may need to verify that the trend has reversed before approving the loan. Increasing income is no problem; declining income requires explanation.</p>
+
+    <p><strong>Gaps in employment:</strong> W-2 employees with employment gaps need to explain them. A gap for school, a layoff followed by a new job, medical leave -- each may require documentation (degree completion, severance documentation, etc.).</p>
+
+    <p><strong>Income from multiple jobs:</strong> Qualifying income from a second job typically requires a two-year history at that job. A new second job does not count toward qualifying income in most cases.</p>
+
+    <p><strong>Commission-heavy income:</strong> Salespeople whose pay is primarily commission need two years of commission income history to have it count in full. Variable commission income is averaged over 24 months.</p>
+
+    <h2>Front-End and Back-End DTI Ratios for Mortgages</h2>
+    <p>Mortgage lenders calculate two DTI ratios, not one:</p>
+
+    <p><strong>Front-end DTI (housing ratio):</strong> Monthly housing costs (PITI -- principal, interest, taxes, insurance, plus HOA if applicable) divided by gross monthly income. Conventional loan guideline: typically 28% or below. FHA: up to 31%.</p>
+
+    <p><strong>Back-end DTI (total debt ratio):</strong> All monthly debt obligations (PITI plus all other minimum payments) divided by gross monthly income. Conventional: typically 43% or below, though Fannie Mae's automated system (DU) may approve to 50% for strong borrowers. FHA: up to 43% (with exceptions to 50% with compensating factors).</p>
+
+    <p>The back-end DTI is the binding constraint for most borrowers. If you have significant student loans, car payments, or credit card minimums, your back-end DTI may disqualify you at an income level that the front-end ratio says should work.</p>
+
+    <h2>Generate Supporting Pay Stubs</h2>
+    <p>If you need recent pay stub documentation as part of a broader mortgage income package, generate them here. Note that for self-employed borrowers, pay stubs alone are not sufficient -- the tax return documentation described above is the primary requirement.</p>
+
+    <PayStubForm client:load />
+
+    <h2>Common Self-Employed Mortgage Strategies</h2>
+    <p>Self-employed borrowers who cannot qualify on standard documentation have a few alternative paths:</p>
+
+    <p><strong>Bank statement mortgages:</strong> Non-QM (non-qualified mortgage) products that underwrite based on 12-24 months of bank statements rather than tax returns. These carry higher rates than conforming mortgages but are designed for self-employed borrowers whose tax return income understates cash flow due to legitimate deductions.</p>
+
+    <p><strong>Stated income / asset depletion loans:</strong> High-asset borrowers who have substantial financial reserves can qualify based on asset depletion calculations rather than income. Not widely available; carries premium rates.</p>
+
+    <p><strong>Portfolio loans:</strong> Loans held on the lender's own balance sheet rather than sold to Fannie/Freddie. These follow lender-set guidelines, which can be more flexible. Community banks and credit unions are the primary source.</p>
+
+    <p><strong>Improve the qualifying income:</strong> Work with a CPA to structure deductions differently in the two years before applying. Claiming fewer deductions temporarily increases Schedule C net income, which increases mortgage qualifying income. This is a trade-off -- you pay more tax to qualify for a larger mortgage -- but it is a legitimate strategy some self-employed borrowers use deliberately.</p>
+
+    <h2>Related Guides</h2>
+    <p>For rental applications (simpler requirements), see <a href="/pay-stub-for-apartment">pay stub for apartment applications</a>. For personal loan documentation, see <a href="/pay-stub-for-loan">pay stub for personal loans</a>. For proof of income in additional formats, see the <a href="/proof-of-income-generator">proof of income generator</a>.</p>
+
+  </main>
+</Base>

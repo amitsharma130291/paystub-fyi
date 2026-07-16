@@ -1,0 +1,173 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="FAQ -- PayStub.fyi Pay Stub Generator"
+  description="Answers to 25+ questions about PayStub.fyi: are generated stubs legal, how taxes are calculated, what landlords accept, data privacy, and more."
+  canonical="https://paystub.fyi/faq"
+>
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions -- PayStub.fyi</h1>
+    <p class="text-gray-600 mb-12 text-lg">Honest answers to the questions we get asked most often.</p>
+
+    <div class="space-y-8">
+
+      <section>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-3">Legality and Legitimacy</h2>
+
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Are generated pay stubs legal?</h3>
+            <p class="text-gray-700">Yes, generating a pay stub that accurately documents your real income is completely legal. Self-employed people, contractors, and gig workers have always been allowed to create income documentation. The legal line is accuracy: a stub documenting income you actually earned is legitimate income documentation. A stub that inflates or fabricates income to deceive a lender or landlord is fraud — that's illegal regardless of the tool used to create it. PayStub.fyi is built for legitimate use: documenting real income in the format lenders and landlords expect.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Do landlords accept generated pay stubs?</h3>
+            <p class="text-gray-700">Many do, especially private landlords. A professional pay stub that accurately reflects your income, supported by bank statements showing consistent deposits, satisfies most private landlords' income verification needs. Large property management companies with automated screening systems may specifically require W-2 employment — in those cases, tax returns and bank statements (or a co-signer) are the better documentation path. Always call ahead and ask what documentation formats the landlord accepts for non-traditional employment before applying.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Is this IRS-compliant?</h3>
+            <p class="text-gray-700">The tax calculations use current IRS withholding tables from IRS Publication 15-T. Federal income tax is calculated using the percentage method with the standard deduction applied first, then marginal bracket rates applied to the taxable portion. Social Security uses the correct 6.2% rate and 2024 wage base of $168,600. Medicare uses 1.45% with no cap plus the additional 0.9% surtax for wages over $200,000. The output is a document — not a tax filing — and it reflects the same math that any payroll system uses. What you do with the information for tax purposes is separate from the document itself.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">What's the difference between a pay stub and a paycheck?</h3>
+            <p class="text-gray-700">A paycheck is the payment — the money transferred from your employer to you. A pay stub is the itemized record showing how that amount was calculated: gross pay, every deduction, and net pay. Before direct deposit, a paper check had a detachable stub showing the breakdown. Today, the check is usually a direct deposit and the stub is a separate document available in your payroll portal. A bank deposit confirmation is not a pay stub — it shows you received money but not what was deducted or why.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">What's the difference between a W-2 and a pay stub?</h3>
+            <p class="text-gray-700">A W-2 is the annual tax form your employer issues showing your total earnings and withholding for the entire calendar year. A pay stub is the per-period document showing one pay period's earnings and deductions. Your December pay stub's YTD (year-to-date) column should match your W-2 boxes closely — in fact, verifying they match is one of the best ways to check for payroll errors before you file your taxes. W-2s are only issued by employers; self-employed people receive 1099-NEC forms instead and file Schedule C.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-3">Using the Generator</h2>
+
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Do I need to sign up to use the free tool?</h3>
+            <p class="text-gray-700">No. The free generator works without any account. Go to <a href="/" class="text-blue-600 hover:text-blue-700">paystub.fyi</a>, enter your information, generate, download. No email address required, no password, no sign-up flow. Accounts will be available when the Pro tier launches for users who want stub history and saved employer profiles, but they'll always be optional for the basic generator.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">How long does it take to generate a pay stub?</h3>
+            <p class="text-gray-700">About 2 minutes for a first-time user, less than 1 minute once you know the fields. The generator has about 15 fields: employer name and address, employee name and address, pay period dates, gross pay, filing status, state, and any voluntary deductions. Fill those in, hit generate, and the PDF downloads immediately. There's no processing wait, no email delivery delay — it's instant.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Can I generate a pay stub for a period in the past?</h3>
+            <p class="text-gray-700">Yes. Enter any pay period dates you need — past, present, or future. The generator doesn't restrict you to current dates. If you need to create documentation for income earned three months ago, enter the pay period start and end dates from that period along with the applicable gross pay.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">What states are supported?</h3>
+            <p class="text-gray-700">All 50 states plus Washington D.C. State income tax calculations use each state's current withholding rates. States with no income tax (Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, Wyoming) show $0 for state tax. States with additional taxes like California SDI, Oregon Statewide Transit Tax, and Washington PFML include those line items automatically when you select the relevant state.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Can I customize the PDF?</h3>
+            <p class="text-gray-700">The free generator uses a standard, professional template that includes all required fields. Customization options (company logo, color scheme, alternative layouts) are planned for the Pro tier. The current template is designed to look like a legitimate, standard pay stub — which is exactly what landlords and lenders expect to see. Excessive customization on a pay stub can actually raise suspicion; the standard template looks credible because it looks like what a payroll system produces.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">What format is the PDF?</h3>
+            <p class="text-gray-700">Standard PDF, compatible with all PDF viewers (Adobe Acrobat, Preview on Mac, any browser's built-in PDF viewer). The file is suitable for emailing, printing, or uploading to a document portal. It's not password-protected or encrypted — just a straightforward PDF document. File size is typically around 50–100KB.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Are there any limits on how many pay stubs I can generate?</h3>
+            <p class="text-gray-700">No limits. Generate as many stubs as you need. There's no daily cap, no monthly limit, no "you've used your free quota" system. The free tier is genuinely unlimited for stub generation.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Can I use this for my employees?</h3>
+            <p class="text-gray-700">Yes. Many small business owners use PayStub.fyi to generate stubs for their employees. The process is the same: enter the employer (your business), employee name, pay period dates, gross pay, and filing status. The generator calculates the correct withholding. The Business tier (coming soon) will add bulk generation and employee roster management for businesses with multiple employees. For now, generate each employee's stub individually.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-3">Taxes and Calculations</h2>
+
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">How are the taxes calculated?</h3>
+            <p class="text-gray-700">Federal income tax uses the IRS percentage method from Publication 15-T: your gross pay is annualized, the standard deduction for your filing status is subtracted, and marginal bracket rates are applied to calculate annual tax liability. That annual figure is divided by your pay periods to get the per-period withholding. Social Security is 6.2% of gross up to the $168,600 (2024) wage base. Medicare is 1.45% of all wages. State calculations use each state's current withholding tables. Pre-tax deductions (401(k), health insurance) reduce the federal income tax base before withholding is calculated.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">What's the difference between gross and net pay?</h3>
+            <p class="text-gray-700">Gross pay is everything you earned before any deduction. Net pay is what arrives in your bank account after all taxes and other deductions are withheld. For a typical single filer, the difference is 20–35% of gross pay depending on income level, state, and voluntary deductions. A $60,000/year employee (bi-weekly gross $2,308) might take home $1,700–$1,800 per period after taxes — roughly $45,000 annually. The remaining $15,000 goes to federal tax, FICA, and state tax.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">What if I'm self-employed?</h3>
+            <p class="text-gray-700">Self-employed users typically generate stubs showing their gross income from business activity and noting that they're responsible for their own tax payments (no withholding at the payment source). Unlike W-2 employees, self-employed individuals pay self-employment tax (15.3%, covering both employee and employer portions of FICA) rather than the 7.65% employee FICA. Some self-employed users show gross revenue with no deduction lines (since nothing is actually withheld from their client payments), while others include estimated tax payment amounts as deductions. The generator handles both approaches.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-3">Privacy and Data</h2>
+
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Do you store my information?</h3>
+            <p class="text-gray-700">No, for free tier users. The pay stub calculation and PDF generation happen in your browser. We never see your name, your employer's name, your income, or any other data you enter. Nothing is transmitted to our servers. When the Pro tier launches with stub history, that data will be stored on our servers with clear privacy disclosures about what's kept and how it's protected.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">What analytics do you collect?</h3>
+            <p class="text-gray-700">Basic, anonymous page view analytics through Vercel Analytics — page views, geographic region (country-level only), browser type. No personal information, no income data, no names. We don't use advertising trackers, remarketing pixels, or any third-party analytics that profile individual users. The privacy policy has the complete list.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Do you share data with third parties?</h3>
+            <p class="text-gray-700">No. We don't sell data, share data with advertisers, or share income information with anyone. When the Pro tier launches, payment processing will be handled by LemonSqueezy — they process the payment, we receive a confirmation. Your payment card details never touch our servers.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b border-gray-200 pb-3">Specific Use Cases</h2>
+
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Can I use this for a mortgage application?</h3>
+            <p class="text-gray-700">For W-2 employees, a generated stub is most useful for replacing a lost stub from a legitimate employer. Mortgage underwriters typically require the last 30 days of employer-issued stubs plus 2 years of W-2s from the same employer — the stub from your actual employer is what they want. For self-employed borrowers, the primary documentation for mortgage qualification is two years of tax returns (Schedule C), not pay stubs. Self-generated stubs can be supplementary documentation but are rarely the primary qualifying document for institutional mortgage lenders.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Can I use this for a rental application?</h3>
+            <p class="text-gray-700">Yes — this is the most common use case. Private landlords and many smaller property management companies accept a professional pay stub as primary income documentation. Combine it with 2–3 months of bank statements showing consistent income deposits. For institutional property management companies that specifically require W-2 employment, you may need a co-signer or to provide tax returns instead. Always call ahead to ask what income documentation formats are accepted for your specific employment situation.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">I drive for DoorDash/Uber. Can I generate a pay stub?</h3>
+            <p class="text-gray-700">Yes. Calculate your average monthly income from your platform's earnings dashboard (or from your 1099-NEC ÷ 12 for annual average). Generate a monthly stub showing that income. Combine with 3 months of bank statements showing the weekly platform deposits. That package addresses the two main concerns landlords have about gig worker income: "do you actually earn this?" (the bank statements) and "can I verify it in a standard format?" (the stub). For a complete guide, see our <a href="/blog/doordash-proof-of-income" class="text-blue-600 hover:text-blue-700">DoorDash proof of income guide</a>.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">I'm a freelancer with several clients. How should I set up my stub?</h3>
+            <p class="text-gray-700">Two options. If you have one primary client, use their company as the "employer" and document your monthly payments from them. If you have multiple clients, use your own business name as the employer and yourself as the employee — treating yourself as the owner who pays yourself from the business. Monthly stubs work better than weekly or bi-weekly for freelancers with variable invoicing, since monthly income is easier to average and present than widely variable weekly amounts.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">What if I have income from multiple sources?</h3>
+            <p class="text-gray-700">Generate separate stubs for each employer or income source, or generate one stub for your primary income source and document secondary income through bank statements. Lenders and landlords are generally comfortable with multiple income streams as long as each is documented and the combined total meets their income requirement. Be consistent across documents — all sources of income shown on stubs should be reflected in bank deposits.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="mt-16 bg-blue-50 rounded-xl p-8 text-center">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Ready to Generate Your Pay Stub?</h2>
+      <p class="text-gray-700 mb-6">Free, no account required, accurate calculations. Takes about 2 minutes.</p>
+      <a href="/" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">Generate Free Pay Stub</a>
+    </div>
+  </main>
+</Base>

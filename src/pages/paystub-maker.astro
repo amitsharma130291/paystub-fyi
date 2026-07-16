@@ -1,0 +1,86 @@
+---
+import ToolPage from '../layouts/ToolPage.astro';
+---
+<ToolPage
+  title="Free Paystub Maker | Create Paystubs Instantly"
+  description="Create a paystub online in minutes. Free, no signup, no watermark. Accurate tax calculations for employees, contractors, and self-employed workers."
+  canonical="https://paystub.fyi/paystub-maker"
+  h1="Free Paystub Maker"
+>
+
+<h2>Paystub or Pay Stub -- Both Are Correct</h2>
+<p>If you typed "paystub maker" and landed here, you already know that both spellings exist. "Paystub" (one word) and "pay stub" (two words) refer to the same document: the itemized record that accompanies a paycheck and shows gross earnings, deductions, and net pay. The IRS uses "pay stub" in its official publications. Most HR software platforms -- Workday, ADP, Gusto, Paychex -- display the link as "Paystubs" or "View Paystub" in their employee portals. Both forms are accepted in any professional or legal context.</p>
+
+<p>People who type "paystub" as one word tend to be searching on mobile, often in a hurry, or have seen it written that way in an HR portal. People who type "pay stub" as two words have often just read a lease agreement, loan application, or benefits enrollment form that used the official two-word version. Either way, you end up at the same place and need the same document.</p>
+
+<h2>Who Types "Paystub Maker" Into a Search Bar</h2>
+<p>The search is almost always time-sensitive. Someone got a last-minute apartment application request. A loan officer just asked for documentation. A new client wants to see income verification before signing a contract. The person who searches "paystub maker" is not leisurely exploring options -- they need something that works now without an account, a subscription, or a 20-step onboarding process.</p>
+
+<p>The core use cases break down into a few categories:</p>
+
+<p><strong>Gig and platform workers:</strong> DoorDash, Uber Eats, Instacart, Lyft, Amazon Flex, and similar platforms do not issue pay stubs. They issue annual 1099 forms and in-app earnings summaries. When a property manager asks for "your last three pay stubs," a 1099 does not satisfy that request. A paystub maker fills the gap by letting the worker create a formatted document based on their actual earnings.</p>
+
+<p><strong>Freelancers with multiple clients:</strong> Someone billing three or four clients across different platforms may receive payments via PayPal, Venmo, ACH transfer, and Stripe -- none of which issues a pay stub. A paystub maker lets them consolidate income into a single formatted document per pay period.</p>
+
+<p><strong>Self-employed sole proprietors:</strong> Business owners who file Schedule C have no employer generating pay documentation. Creating a paystub on a regular schedule -- weekly, biweekly, or monthly -- creates the income documentation trail that landlords and lenders expect to see.</p>
+
+<p><strong>Small business owners:</strong> A company with two or three employees may not use payroll software. A paystub maker handles the documentation without the overhead of a full payroll system.</p>
+
+<p><strong>Cash workers:</strong> People paid in cash for construction, cleaning, childcare, or other services often need to demonstrate income to financial institutions. A paystub based on actual cash income provides that documentation.</p>
+
+<h2>What a Paystub Maker Actually Does</h2>
+<p>The core function is taking raw income numbers and turning them into a standardized, formatted document. The calculation engine handles federal income tax withholding based on your filing status and annual income projection, FICA taxes (Social Security at 6.2% and Medicare at 1.45%), state income tax for whichever state you select, and any additional deductions you add like health insurance or retirement contributions.</p>
+
+<p>The output is a PDF formatted exactly like what a payroll department produces: header with employer and employee information, pay period dates, an earnings section showing hourly or salary calculations, a deductions section itemizing each withholding, and year-to-date totals for everything. That format is what landlords, lenders, and financial institutions are trained to read.</p>
+
+<h2>When a Paystub Alone Is Not Enough</h2>
+<p>For many purposes -- apartment applications, personal loans, car loans, opening bank accounts -- a paystub is exactly what is needed. For mortgage applications, the bar is higher. Fannie Mae and Freddie Mac guidelines require W-2 employees to provide the most recent 30 days of pay stubs plus two years of W-2 forms. Self-employed borrowers need two years of tax returns, Schedule C documentation, and a year-to-date profit and loss statement. A standalone paystub does not satisfy a mortgage underwriter for self-employed income without the supporting tax documentation.</p>
+
+<p>For rental applications, most landlords accept paystubs from any source as long as they show gross income at least twice the monthly rent (the common 2x rule, though some markets use 2.5x or 3x). Bank statements showing consistent deposits can supplement or replace paystubs when a landlord is flexible.</p>
+
+<h2>How Paystub Format Has Evolved</h2>
+<p>Twenty years ago, a pay stub was a physical paper document torn off the bottom of a paper check or included in an envelope with a check. The format was set by the employer's payroll provider and could look quite different from company to company -- different column arrangements, different terminology, different levels of detail.</p>
+
+<p>Electronic payroll standardized things significantly. When ADP, Paychex, and Gusto became dominant, their default paystub templates became what people think a paystub "should" look like. A header block with company and employee info, a pay period and check date, columns for earnings and hours, a deductions table, and a net pay line. That format is now so standard that most landlords and lenders recognize it instantly and know exactly where to find the numbers they need.</p>
+
+<p>This tool generates stubs in that same standard format, which is why the output works for documentation purposes. A landlord who has reviewed thousands of paystubs recognizes the layout immediately and can find gross pay and pay period at a glance.</p>
+
+<h2>The Tax Math on Each Stub</h2>
+<p>Federal income tax withholding uses the IRS percentage method tables. For a single filer paid biweekly, the calculator annualizes the gross pay, subtracts the standard withholding allowance, looks up the resulting amount in the bracket table, computes the base tax for that bracket plus the marginal rate on the amount above the bracket floor, and divides back by 26 pay periods. The result is the per-paycheck federal withholding.</p>
+
+<p>Social Security tax is straightforward: 6.2% of gross wages. This applies to all wages up to the Social Security wage base, which adjusts each year ($168,600 in 2024). Once you hit that ceiling for the year, Social Security withholding stops for the rest of the year.</p>
+
+<p>Medicare tax is 1.45% with no wage ceiling. There is an additional 0.9% Medicare surtax on wages above $200,000 for single filers or $250,000 for married filing jointly, but this is collected at year-end via taxes rather than through payroll withholding on the stub itself.</p>
+
+<p>State income tax varies by state. Nine states collect no state income tax. The rest have rates from under 3% up to California's 13.3% at the highest bracket. The calculator applies the appropriate rate for the state you select.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is "paystub" and "pay stub" the same thing?</h3>
+<p>Yes. One word, two words -- same document. The IRS and most legal documents use "pay stub" (two words). HR software commonly displays "paystub" (one word). Both are correct.</p>
+
+<h3>How long does it take to create a paystub?</h3>
+<p>About two minutes if you have your income information ready. Fill in your name, employer name, pay period dates, gross pay, state, and filing status. The calculator handles everything else. Click generate, download the PDF.</p>
+
+<h3>Do I need to create an account?</h3>
+<p>No. No account, no email, no credit card. The tool works directly in your browser without any signup.</p>
+
+<h3>Can I make paystubs for multiple employees?</h3>
+<p>Yes. Each stub is generated separately. For a small business with two to five employees, create each one individually with the appropriate income information for each person. For larger organizations with frequent payroll needs, dedicated payroll software like Gusto or Paychex becomes more practical.</p>
+
+<h3>Will my information be saved?</h3>
+<p>No data is stored server-side. The calculation runs in your browser and the PDF is generated client-side. Nothing you enter is transmitted to or stored on any server.</p>
+
+<h3>Can I edit the paystub after downloading it?</h3>
+<p>The PDF is generated as a clean, complete document. If you need to make changes, return to the form, adjust the inputs, and generate a new PDF. This is faster than trying to edit a PDF and ensures all the calculations remain accurate.</p>
+
+<h3>What if I have deductions beyond standard taxes?</h3>
+<p>The form includes fields for additional deductions including health insurance premiums, dental/vision insurance, 401(k) or 403(b) contributions, HSA contributions, and other pre-tax or post-tax deductions. These are added to the deductions section of the stub and affect the net pay calculation accordingly.</p>
+
+<h3>Does this work for hourly and salary workers?</h3>
+<p>Both. For hourly workers, enter your hourly rate and hours worked during the pay period. For salaried workers, enter your annual salary and select your pay frequency -- the calculator derives the per-period gross automatically.</p>
+
+<h2>Next Steps</h2>
+<p>If you need the full-featured generator, it is available on the <a href="/">pay stub generator home page</a>. If you need a starting point you can customize in a spreadsheet, the <a href="/pay-stub-template">pay stub template</a> page has a downloadable version. For self-employed income documentation, the <a href="/self-employed-pay-stub-generator">self-employed pay stub generator</a> covers Schedule C considerations in detail.</p>
+
+</ToolPage>

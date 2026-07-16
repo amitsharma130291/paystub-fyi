@@ -1,0 +1,137 @@
+---
+import ToolPage from '../layouts/ToolPage.astro';
+---
+<ToolPage
+  title="Salary Pay Stub Template -- Free Generator | PayStub.fyi"
+  description="Free salary pay stub template and generator. Salary-specific: gross = annual ÷ pay periods, pre-tax 401k limits, federal annualized method. No signup, download PDF."
+  canonical="https://paystub.fyi/salary-pay-stub-template"
+  h1="Salary Pay Stub Template -- Free Generator"
+  defaultState="CA"
+>
+
+<p>A salary pay stub has specific characteristics that distinguish it from an hourly pay stub. Salaried employees receive a fixed gross pay amount each pay period regardless of hours worked. There are no regular hours to track, no overtime calculations, and no variation in gross pay between periods (outside of bonuses or commission payments). The consistency of salary income makes pay stub documentation simpler in some ways and more complex in others -- pre-tax deduction limits, annualized federal tax calculation, and the specific gross pay calculation all require understanding the salaried structure.</p>
+
+<p>This page covers exactly how salary pay stubs work, how to calculate every line correctly, the most common pre-tax deductions salaried employees make and how they affect withholding, and how to use the generator above to produce a professional salary pay stub PDF in minutes.</p>
+
+<h2>How Salary Gross Pay Is Calculated</h2>
+
+<p>The fundamental calculation for salary gross pay per period is straightforward:</p>
+
+<p><strong>Gross pay per period = Annual salary / Number of pay periods per year</strong></p>
+
+<p>The number of pay periods per year depends on your pay frequency:</p>
+<ul>
+  <li><strong>Weekly:</strong> 52 pay periods per year. Annual salary $65,000 / 52 = $1,250 gross per period.</li>
+  <li><strong>Bi-weekly (every two weeks):</strong> 26 pay periods per year. Annual salary $65,000 / 26 = $2,500 gross per period. This is the most common pay frequency for salaried workers in the US.</li>
+  <li><strong>Semi-monthly (twice per month):</strong> 24 pay periods per year. Annual salary $65,000 / 24 = $2,708.33 gross per period. Note the slight decimal -- this can cause small rounding issues in some payroll systems.</li>
+  <li><strong>Monthly:</strong> 12 pay periods per year. Annual salary $65,000 / 12 = $5,416.67 gross per period. Less common for most employees but used in some professional and nonprofit environments.</li>
+</ul>
+
+<p>An important distinction: bi-weekly and semi-monthly are often confused. Bi-weekly means every two weeks -- there will be two calendar months each year where you receive three paychecks instead of two (because 26 pay periods divided into 12 months means some months have three pay dates). Semi-monthly means twice per month on fixed dates (typically the 1st and 15th, or the 15th and last day of the month) -- this always produces exactly 24 paychecks per year with no "extra paycheck" months.</p>
+
+<p>Salaried employees do not receive overtime under most circumstances. The federal Fair Labor Standards Act (FLSA) exempts from overtime requirements employees who are paid on a salary basis of at least $684 per week ($35,568 annually) and whose primary duties fall within executive, administrative, or professional categories. Some states have higher salary thresholds for the exemption. Most professional, managerial, and office-based salaried workers are exempt from overtime, meaning their stub will never show an overtime line.</p>
+
+<h2>The Federal Annualized Method for Salary Withholding</h2>
+
+<p>Federal income tax withholding for salaried employees uses the annualized method: the per-period gross pay is multiplied by pay periods per year to get annualized income, the federal tax on that annualized income is calculated using the IRS bracket table, and then the annual tax is divided by pay periods to get the per-period withholding.</p>
+
+<p>Here is the step-by-step calculation for a bi-weekly ($65,000 annual salary) single filer with a standard W-4 (no adjustments):</p>
+
+<ol>
+  <li>Per-period gross pay: $65,000 / 26 = $2,500</li>
+  <li>Annualized gross: $2,500 × 26 = $65,000</li>
+  <li>Standard deduction adjustment (from W-4 tables): $65,000 - $14,600 = $50,400 adjusted annual wage (approximately, for single, standard W-4)</li>
+  <li>Tax on $50,400 using 2024 brackets: $1,160 (10% on first $11,600) + $4,266 (12% on $11,601-$47,150) + $726.28 (22% on $47,151-$50,400) = $6,152.28 annual tax</li>
+  <li>Per-period withholding: $6,152.28 / 26 = $236.62</li>
+</ol>
+
+<p>The generator handles this calculation automatically. The key point is that all federal tax withholding for salary workers goes through this annualization process -- applying the brackets directly to the $2,500 per-period gross without annualizing produces the wrong answer because the brackets are annual thresholds.</p>
+
+<h2>Pre-Tax Deductions and How They Reduce Your Taxable Income</h2>
+
+<p>Pre-tax deductions reduce the income on which federal and state income taxes are calculated. They are subtracted from gross pay before the tax calculations above. The most common pre-tax deductions for salaried employees are:</p>
+
+<p><strong>Traditional 401(k) contributions:</strong> The 2024 annual 401(k) contribution limit is $23,000 (plus an additional $7,500 catch-up contribution for employees age 50 and over). Contributions are made as a percentage of gross pay (e.g., 6% of gross) and appear on your stub as a pre-tax deduction labeled "401(k)" or "Elective Deferral." Every dollar you contribute reduces your federal and most state taxable income by one dollar.</p>
+
+<p>Example: On a $2,500 bi-weekly stub, a 6% 401(k) contribution = $150. Instead of calculating tax on $2,500, the calculation uses $2,350 as the starting point ($2,500 - $150). For a worker in the 22% federal bracket, this saves approximately $33 in federal income tax per paycheck, or $858 per year. Over a career, these tax savings are substantial.</p>
+
+<p><strong>Health insurance premiums:</strong> Employer-sponsored health insurance premiums paid through a Section 125 cafeteria plan are pre-tax. If your employer offers health insurance and you pay a portion of the premium, that employee contribution is typically deducted pre-tax. A single employee contributing $200 per month ($100 per bi-weekly paycheck) to health insurance reduces their taxable income by $100 per period.</p>
+
+<p><strong>Health Savings Account (HSA) contributions:</strong> HSAs are paired with high-deductible health plans (HDHPs). 2024 HSA contribution limits are $4,150 for individual coverage and $8,300 for family coverage, with an additional $1,000 catch-up for those 55 and over. HSA contributions through payroll deduction are pre-tax for federal, state, and FICA purposes. This makes HSA contributions tax-advantaged on three fronts simultaneously.</p>
+
+<p><strong>Flexible Spending Accounts (FSA):</strong> Healthcare FSAs allow up to $3,200 in pre-tax contributions for 2024. Unlike HSAs, FSAs must be used within the plan year (though plans can offer a $640 rollover). Dependent care FSAs allow up to $5,000 in pre-tax contributions per household for childcare expenses.</p>
+
+<p><strong>Dental and vision insurance:</strong> Like health insurance, employer-sponsored dental and vision premium contributions through a Section 125 plan are typically pre-tax deductions.</p>
+
+<h2>What Salary Stubs Show vs. Hourly Stubs</h2>
+
+<p>The fundamental difference between a salary stub and an hourly stub is the absence of an hours section in the salary format:</p>
+
+<p><strong>Salary pay stub typically shows:</strong></p>
+<ul>
+  <li>Pay type: Salary</li>
+  <li>Pay frequency and pay period dates</li>
+  <li>Gross pay (fixed amount per period)</li>
+  <li>All deductions (federal tax, FICA, state tax, voluntary pre-tax, voluntary post-tax)</li>
+  <li>Net pay</li>
+  <li>YTD totals</li>
+</ul>
+
+<p><strong>Hourly pay stub additionally shows:</strong></p>
+<ul>
+  <li>Regular hours worked this period</li>
+  <li>Regular hourly rate</li>
+  <li>Regular pay (hours × rate)</li>
+  <li>Overtime hours worked</li>
+  <li>Overtime rate (1.5× regular rate)</li>
+  <li>Overtime pay (OT hours × OT rate)</li>
+  <li>Gross pay (regular pay + overtime pay)</li>
+</ul>
+
+<p>The absence of hours tracking on a salary stub is not an omission -- exempt salaried employees are not required to have their hours tracked under FLSA. Some companies do track hours for project management purposes even for exempt employees, but the hours do not appear on pay stubs and do not affect pay calculation.</p>
+
+<h2>Salaried Employees and Additional Pay Types</h2>
+
+<p>While base salary is consistent each period, salaried employees can receive additional pay that appears on their stubs:</p>
+
+<p><strong>Bonuses:</strong> Annual bonuses, quarterly bonuses, or spot bonuses appear as separate line items in the earnings section in the period they are paid. Federal tax withholding on bonuses uses the supplemental rate method (22% federal flat withholding for bonuses below $1 million as a default) or the aggregate method (adding the bonus to the regular period's pay and calculating tax on the total). Your stub will show the bonus as a separate earnings line with its own tax withholding.</p>
+
+<p><strong>Commissions:</strong> Some salaried roles include a variable commission component (common in sales, finance, and real estate). Commissions appear as a separate earnings line in the period they are paid, and are taxed at the supplemental rate or aggregate method.</p>
+
+<p><strong>Restricted Stock Units (RSUs):</strong> When employer RSUs vest, the fair market value of the vested shares is added to your gross income for that pay period. The tax withholding on RSU vesting is typically handled by the payroll system and appears as additional gross pay plus corresponding additional withholding in the stub for the vesting pay period.</p>
+
+<h2>Using the Generator for Salary Pay Stubs</h2>
+
+<p>To generate a salary pay stub with this tool:</p>
+
+<ol>
+  <li>Select "Salary" under Pay Type</li>
+  <li>Enter your annual salary divided by pay periods: for $65,000 annual bi-weekly, enter $2,500 in the Gross Pay field</li>
+  <li>Select your state from the dropdown</li>
+  <li>Select your pay frequency (bi-weekly, semi-monthly, etc.)</li>
+  <li>Enter the pay period start and end dates, plus the pay date</li>
+  <li>Enter employer name and employee name</li>
+  <li>Click Calculate to see your deductions breakdown</li>
+  <li>Click Download PDF to get your pay stub</li>
+</ol>
+
+<p>The generator automatically calculates federal income tax using the annualized bracket method, Social Security (6.2% up to the wage base), Medicare (1.45%), and your state's applicable income tax rate. The output is a professional PDF pay stub ready for submission.</p>
+
+<h2>Frequently Asked Questions for Salaried Workers</h2>
+
+<h3>My annual salary is $75,000. What is my bi-weekly gross pay?</h3>
+<p>$75,000 divided by 26 pay periods = $2,884.62 per bi-weekly paycheck. In practice, some payroll systems round to $2,884.62 while others carry more decimal places to avoid annual rounding discrepancy. Over 26 paychecks, 26 × $2,884.62 = $74,999.12, which is 88 cents short of $75,000 -- many payroll systems make a small adjustment in the last paycheck of the year to reconcile this. Your W-2 at year-end will show exactly $75,000 regardless of the per-period rounding approach.</p>
+
+<h3>I got a mid-year raise. How does that change my pay stubs?</h3>
+<p>Mid-year salary changes mean your stubs before the raise date show the old salary divided by pay periods, and stubs after the raise date show the new salary divided by pay periods. Your W-2 at year-end combines both -- it shows total wages paid throughout the year, which will be a weighted average depending on how many pay periods were at each rate. When generating stubs that span a salary change, generate separate stubs for the periods before and after the effective date of the new rate.</p>
+
+<h3>Can I deduct my home office expenses on a salary if I work remotely?</h3>
+<p>Unfortunately, no -- not for 2018 and later tax years. The Tax Cuts and Jobs Act (2017) eliminated the employee business expense deduction for W-2 employees, including home office deductions for remote workers. This applies regardless of whether your employer requires you to work remotely. If you are a 1099 contractor (not a W-2 employee), home office deductions are still available. This does not affect your pay stub -- it is a year-end tax return issue -- but it is a common misconception for remote salaried workers.</p>
+
+<h3>How does the 401(k) contribution limit affect my pay stubs during the year?</h3>
+<p>Once your year-to-date 401(k) contributions reach the annual limit ($23,000 in 2024), the deduction stops automatically. Your employer's payroll system tracks YTD contributions and stops the deduction when the limit is hit. The effect on your stub: in the pay periods after you reach the limit, your gross-to-net calculation changes because the pre-tax 401(k) deduction disappears -- your federal taxable income goes up, meaning your federal withholding increases, and your net pay also increases (because the 401(k) contribution is no longer being deducted). This is expected behavior, not a payroll error.</p>
+
+<h3>Why does my net pay vary slightly between pay periods if my salary is the same?</h3>
+<p>Several factors can cause small variations in net pay despite a fixed gross: (1) Social Security withholding stops once you hit the annual wage base ($168,600 in 2024) -- the pay periods after you reach this threshold have higher net pay because Social Security is no longer deducted. (2) If your health insurance premiums change during the year (annual open enrollment), the deduction amount changes. (3) Some states have variable state withholding amounts based on the withholding allowance system rather than a pure percentage, which can fluctuate slightly. (4) If there is an extra pay period in a month due to bi-weekly cadence, you may have slightly different YTD totals that affect withholding calculations. All of these are normal -- they do not indicate payroll errors.</p>
+
+</ToolPage>

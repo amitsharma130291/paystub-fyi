@@ -1,0 +1,108 @@
+---
+import ToolPage from '../layouts/ToolPage.astro';
+---
+<ToolPage
+  title="Pay Stub Template for Google Docs (Free) | PayStub.fyi"
+  description="Free pay stub template for Google Docs and Google Sheets. Learn why Docs is for formatting, Sheets for calculations, and how both compare to a pay stub generator."
+  canonical="https://paystub.fyi/pay-stub-template-google-docs"
+  h1="Pay Stub Template for Google Docs (Free)"
+  defaultState="CA"
+>
+
+<p>Google Workspace -- specifically Google Docs and Google Sheets -- is the cloud-based alternative to Microsoft Office's Word and Excel. If you work primarily in a browser, use Chromebooks, or do not have a Microsoft Office subscription, Google's tools are a natural choice for creating pay stub documentation. The good news is that pay stub templates in Google Docs or Sheets work perfectly well. The bad news is that the limitations are exactly the same as their Microsoft counterparts -- with one additional wrinkle: the cloud-based environment creates specific issues around formatting, sharing, and exporting that you need to understand.</p>
+
+<p>This page covers Google Docs vs. Google Sheets for pay stubs, how to use each one effectively, why the calculations break in predictable ways, the sharing advantages and risks of cloud-based templates, and when to use the generator above instead of building your own.</p>
+
+<h2>Google Docs vs. Google Sheets for Pay Stubs</h2>
+
+<p>Google Docs and Google Sheets serve fundamentally different purposes, and that distinction matters for pay stubs:</p>
+
+<p><strong>Google Docs</strong> is a word processor. It is good at formatting -- creating tables, setting fonts, laying out information in a professional-looking document. If you want to create a pay stub that looks exactly right, with controlled column widths, clean borders, and consistent typography, Google Docs can do that well. What it absolutely cannot do is calculate anything. Every number you put into a Google Docs pay stub is a static value you typed in. There are no formulas, no automatic tax calculations, no running totals. Docs produces a nicely formatted document that looks like a pay stub but contains only the numbers you manually computed elsewhere.</p>
+
+<p><strong>Google Sheets</strong> is a spreadsheet, analogous to Excel. It can contain formulas that calculate taxes based on your input. The same nested IF formulas for federal income tax brackets that work in Excel work identically in Google Sheets. Social Security, Medicare, state tax -- all can be formula-driven in Sheets. The result is a spreadsheet that automatically computes deductions when you enter gross pay. However, pay stubs built in Sheets tend to look less polished than those built in Docs -- spreadsheet grids are a less natural format for the visual layout of a pay stub than a word processor's tables.</p>
+
+<p>The practical answer: use Google Sheets if you want calculation power, use Google Docs if you want formatting control, and use the generator above if you want both without the setup work.</p>
+
+<h2>How to Use a Google Docs Pay Stub Template</h2>
+
+<p>A Google Docs pay stub template is typically structured as a table with labeled rows for each pay stub field. Here is how to work with one effectively:</p>
+
+<p><strong>Copy, do not edit the original.</strong> When you find or create a Google Docs pay stub template, make a copy (File > Make a copy) before editing it. Keep the original clean as a reusable blank. Each pay period, create a new copy, rename it with the date, and edit that copy. This way you always have the blank template available for the next period.</p>
+
+<p><strong>Calculate before you type.</strong> Since Docs has no formulas, calculate all your deductions before opening the document. Use a calculator, spreadsheet, or the online generator on this site to work out your federal tax, Social Security, Medicare, and state tax. Then open your Docs template and type the pre-computed values. This two-step process is the only way to maintain accuracy in a pure Docs template.</p>
+
+<p><strong>Export to PDF before sharing.</strong> After completing the stub, go to File > Download > PDF Document (.pdf). This creates a formatted PDF that preserves your layout and prevents modification. Never share the Google Docs link directly for income documentation -- the recipient could accidentally or intentionally edit it, and sharing a "Google Docs link" to a landlord or lender is not the professional format they expect. A PDF is the right format.</p>
+
+<p><strong>Verify the PDF rendering.</strong> Google Docs' PDF export can sometimes shift table widths, truncate long text, or misalign borders compared to the on-screen view. Open the downloaded PDF and verify that it looks correct before submitting it. If formatting issues appear, adjust the table column widths and margins in Docs before re-exporting.</p>
+
+<h2>How to Use a Google Sheets Pay Stub Template</h2>
+
+<p>A Google Sheets pay stub template can contain formulas that handle most of the calculation automatically. The setup process requires more initial investment but produces a more reliable result for ongoing use:</p>
+
+<p><strong>Set up the input cells.</strong> Designate specific cells as inputs: gross pay, state selection, pay frequency, and filing status. Color these cells differently (light blue or yellow) to make clear which cells you fill in and which contain formulas. Protect the formula cells (Format > Protected sheets and ranges) so they cannot be accidentally overwritten.</p>
+
+<p><strong>Build the federal tax formula.</strong> The same nested IF structure that works in Excel works identically in Google Sheets. The 2024 single-filer federal formula for annualized income in cell A2:</p>
+<pre>=IF(A2<=11600, A2*0.10,
+IF(A2<=47150, 1160+(A2-11600)*0.12,
+IF(A2<=100525, 5426+(A2-47150)*0.22,
+IF(A2<=191950, 17168.50+(A2-100525)*0.24,
+IF(A2<=243725, 39110.50+(A2-191950)*0.32,
+IF(A2<=609350, 55678.50+(A2-243725)*0.35,
+183647.25+(A2-609350)*0.37))))))</pre>
+
+<p>Apply this to annualized gross pay (period gross × pay periods per year), then divide the result by pay periods per year to get the per-period withholding amount.</p>
+
+<p><strong>Handle state taxes.</strong> For flat-rate states, a simple multiplication formula works: =[gross_pay_cell] * [state_rate]. For multi-bracket states, build a separate nested IF formula for the state, or use a VLOOKUP against a bracket table you create on a separate "Reference" sheet. See the specific state pay stub generator for your state to understand its bracket structure.</p>
+
+<p><strong>Print or export carefully.</strong> Google Sheets' PDF export and print quality can vary. Set a print area (View > Set print area) covering only the pay stub cells, not the entire sheet. Use File > Print > Page setup to set margins and scaling. The "Fit to page" scaling option often produces the cleanest result. Export to PDF, open the PDF, verify formatting, and then use it for documentation.</p>
+
+<h2>Why Pay Stub Calculations Break in Predictable Ways</h2>
+
+<p>Whether in Docs or Sheets, the same underlying calculation errors occur. Understanding them helps you catch mistakes:</p>
+
+<p><strong>The annualization problem.</strong> Federal and most state income tax brackets are annual thresholds. To calculate per-period withholding, you must annualize the period's gross pay (multiply by periods per year), apply the brackets to that annualized figure, then divide the resulting tax by periods per year. Skipping the annualization step -- applying the brackets directly to the period's gross pay -- is systematically wrong for anyone in the middle brackets. On a bi-weekly $3,000 paycheck, the annualized equivalent is $78,000, which falls in the 22% bracket range. But the $3,000 per-period figure falls in the 10% bracket. Applying the brackets without annualizing would dramatically understate the withholding.</p>
+
+<p><strong>Using the wrong year's brackets.</strong> Federal tax brackets are adjusted for inflation annually. A template built with 2022 brackets uses different threshold amounts than the 2024 brackets. The rate percentages (10%, 12%, 22%, etc.) stay the same, but the income levels where each rate kicks in change. Using 2022 thresholds for 2024 income produces slightly wrong results -- typically understating withholding for higher earners because higher brackets kicked in at lower income levels in earlier years (brackets shift upward with inflation adjustments).</p>
+
+<p><strong>Ignoring the Social Security wage base.</strong> The Social Security wage base cap ($168,600 in 2024) means Social Security withholding stops once YTD wages exceed this amount. In a per-period formula that simply multiplies gross pay by 6.2%, this cap is never applied -- the calculation continues deducting Social Security even after the annual maximum has been reached. For higher earners who hit this cap during the year (anyone earning over $168,600 annually), this produces significant over-withholding in later pay periods.</p>
+
+<p><strong>Omitting year-to-date figures.</strong> A Docs template without YTD sections is technically incomplete as a pay stub. While many recipients accept stubs without YTD, the best practice (and what complete payroll systems generate) includes YTD gross, YTD taxes withheld by category, and YTD net pay. In Sheets, a cumulative YTD sheet tracking each period's data and feeding into a running total resolves this automatically.</p>
+
+<h2>The Shareable Link Advantage and Its Risk</h2>
+
+<p>One genuine advantage of Google Docs and Sheets over desktop software is the shareable link feature. You can share a link to your pay stub document with "View only" permission and the recipient can see it in their browser without needing to download anything. This is convenient for email submissions to landlords.</p>
+
+<p>The risk is two-fold. First, shared Google Docs links for income documentation are not the professional format that property managers and lenders expect -- they expect a PDF attachment, not a link to a document. Second, if you accidentally share with "Edit" permission instead of "View only," the recipient can modify the document, which you clearly do not want.</p>
+
+<p>The safest approach: complete your stub in Google Docs or Sheets, download as PDF, and share the PDF. Do not share the Google Docs link for income documentation purposes. The generator on this page automatically produces a downloadable PDF that you can share as an attachment.</p>
+
+<h2>When the Generator Is the Right Choice</h2>
+
+<p>For creating income documentation that you will submit to a landlord, lender, or employer, the generator on this page is the better choice compared to a manual Google Docs or Sheets template because:</p>
+
+<ul>
+  <li>It applies current-year IRS brackets with proper annualization automatically</li>
+  <li>It applies the correct state income tax rate based on state selection</li>
+  <li>It calculates Social Security with the wage base cap accounted for</li>
+  <li>It produces a professionally formatted PDF without export quality concerns</li>
+  <li>It works on any device -- phone, tablet, computer</li>
+  <li>It requires no formula setup or annual updates</li>
+</ul>
+
+<p>Use Google Docs for drafting pay stub templates for reference or for situations where you need an editable format. Use Google Sheets when you want to maintain a running payroll ledger with formulas. Use the generator when you need a verified, accurate, professional PDF quickly. For the underlying template fields and what each one means, see our <a href="/blank-pay-stub-template">blank pay stub template</a> guide. For a comparison of all template formats, see the <a href="/pay-stub-template">pay stub template hub</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Can I use a Google Doc pay stub template on my phone?</h3>
+<p>Yes. Google Docs and Sheets both have mobile apps that allow editing on Android and iPhone. However, table-based templates are difficult to edit on small screens -- the table cells are small and the keyboard frequently covers the content. For phone-based pay stub generation, the online generator above is significantly easier to use on mobile than any template in Docs or Sheets.</p>
+
+<h3>Will a Google Docs pay stub be accepted for an apartment application?</h3>
+<p>A PDF exported from Google Docs looks identical to a PDF from any other source -- landlords cannot tell what software created it. The format is what matters, not the software used to create it. Export your completed Docs stub to PDF, verify it looks correct, and submit the PDF. This works for apartment applications, loan applications, and any other income documentation purpose.</p>
+
+<h3>Is there a pre-made Google Sheets pay stub template available?</h3>
+<p>Yes, several are available by searching Google Workspace Marketplace or general web searches for "pay stub template Google Sheets." Quality varies significantly. Before using any template you find, verify that it contains the correct current-year federal bracket formula, a Social Security wage base cap check, and a mechanism for tracking year-to-date totals. Templates without these features are not materially better than a Word template for calculation purposes.</p>
+
+<h3>How do I prevent someone from editing my shared Google Doc pay stub?</h3>
+<p>When sharing through Google Drive, under "Get link," change the permission from "Editor" to "Viewer." With Viewer access, recipients can see but not edit the document. Even better: download as PDF and share the PDF file, which is not editable without specialized tools. For income documentation, always share PDF, not the Google Docs link.</p>
+
+</ToolPage>

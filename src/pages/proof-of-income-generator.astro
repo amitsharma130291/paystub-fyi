@@ -1,0 +1,92 @@
+---
+import Base from '../layouts/Base.astro';
+import PayStubForm from '../components/PayStubForm.tsx';
+---
+<Base
+  title="Free Proof of Income Generator | PayStub.fyi"
+  description="8 ways to prove income ranked by acceptance rate. Pay stubs, W-2s, bank statements, employer letters, 1099s, and more. For apartments, loans, and banks."
+  canonical="https://paystub.fyi/proof-of-income-generator"
+>
+  <main class="max-w-4xl mx-auto px-4 py-8 prose prose-lg max-w-none text-gray-700">
+    <h1>Free Proof of Income Generator</h1>
+
+    <p>Proof of income is any documentation that demonstrates you have money coming in on a regular basis. The term covers many different document types -- pay stubs are the most common, but eight distinct methods are accepted by landlords, lenders, and financial institutions in various circumstances. Here is every method ranked by how broadly they are accepted, what they are best for, and their limitations.</p>
+
+    <h2>Method 1: Pay Stubs (Most Widely Accepted)</h2>
+    <p><strong>Acceptance rate:</strong> Near-universal. Every income verification workflow recognizes pay stubs.</p>
+    <p><strong>What it is:</strong> A per-period document from your employer (or self-generated for contractors and self-employed workers) showing gross pay, deductions, and net pay.</p>
+    <p><strong>Best for:</strong> Apartment applications, personal loans, auto loans, credit card applications, bank account openings.</p>
+    <p><strong>How to get it:</strong> W-2 employees: access through your employer's HR portal or payroll system (ADP, Workday, Gusto). Self-employed/gig workers: generate them using this tool based on actual earnings.</p>
+    <p><strong>Limitations:</strong> Self-generated stubs may face scrutiny at large institutional lenders and property managers. Mortgage underwriters require W-2 forms and tax returns in addition to recent stubs for most borrowers.</p>
+
+    <h2>Method 2: W-2 and Tax Returns (Most Credible for Annual Income)</h2>
+    <p><strong>Acceptance rate:</strong> Universal for annual income history. Less useful for showing current income.</p>
+    <p><strong>What it is:</strong> W-2 is the annual wage and tax statement your employer files with the IRS and provides to you by January 31. Tax returns (Form 1040) show total income from all sources for the year.</p>
+    <p><strong>Best for:</strong> Mortgage applications, formal loan underwriting, situations requiring two-year income history.</p>
+    <p><strong>How to get it:</strong> W-2s come from your employer annually. Tax returns you file yourself (or your accountant files). Both can be accessed through IRS.gov using the Get Transcript tool.</p>
+    <p><strong>Limitations:</strong> Backward-looking -- a 2023 return filed in April 2024 may be 18 months old by the time you need it. Does not show current income trajectory. Self-employed Schedule C income may be significantly lower than gross revenue due to deductions.</p>
+
+    <h2>Method 3: Bank Statements (Increasingly Accepted)</h2>
+    <p><strong>Acceptance rate:</strong> High with flexible landlords and online lenders; lower with traditional banks and large property managers.</p>
+    <p><strong>What it is:</strong> Your monthly bank statement showing all deposits and withdrawals. Three to six months typically requested.</p>
+    <p><strong>Best for:</strong> Situations where pay stubs are unavailable, supplementing pay stub documentation, online lender applications that specifically accept bank statements.</p>
+    <p><strong>How to get it:</strong> Download monthly statements from your bank's online portal. Most banks provide PDFs going back 12-24 months.</p>
+    <p><strong>Limitations:</strong> Show net deposits after taxes, not gross income. Do not break down income sources. Some landlords and lenders do not accept them as primary documentation.</p>
+
+    <h2>Method 4: Employer Letter (Useful for Proof of Ongoing Employment)</h2>
+    <p><strong>Acceptance rate:</strong> Moderate -- often accepted alongside pay stubs, less often as a standalone.</p>
+    <p><strong>What it is:</strong> A letter from your employer confirming your employment status, job title, start date, salary, and expected continuation. Must be on company letterhead and signed by HR or a manager.</p>
+    <p><strong>Best for:</strong> New employees without many pay stubs, situations where a landlord or lender wants employment confirmation beyond what stubs show, rental applications where you are just starting a new job.</p>
+    <p><strong>How to get it:</strong> Request from your HR department. Specify what information you need the letter to contain (employment confirmation, salary, start date, full-time status).</p>
+    <p><strong>Limitations:</strong> Does not substitute for pay stubs in most contexts. Does not show actual income received.</p>
+
+    <h2>Method 5: Social Security Award Letter</h2>
+    <p><strong>Acceptance rate:</strong> High for Social Security recipients.</p>
+    <p><strong>What it is:</strong> An official Social Security Administration letter showing your monthly benefit amount. Sometimes called a "benefits verification letter" or "proof of benefits" letter.</p>
+    <p><strong>Best for:</strong> Retirees, disability recipients, and others whose primary income is SSA benefits.</p>
+    <p><strong>How to get it:</strong> From SSA.gov by signing into your Social Security account and downloading the benefit verification letter. Can also be requested by calling 1-800-772-1213.</p>
+    <p><strong>Limitations:</strong> Only applicable if you receive Social Security benefits. Does not work for employment income.</p>
+
+    <h2>Method 6: Profit-and-Loss Statement</h2>
+    <p><strong>Acceptance rate:</strong> High with mortgage lenders and commercial lenders; low with landlords and retail lenders.</p>
+    <p><strong>What it is:</strong> A business financial statement showing total revenue, cost of goods sold, operating expenses, and net profit over a defined period. Usually prepared monthly, quarterly, or annually.</p>
+    <p><strong>Best for:</strong> Mortgage applications for self-employed borrowers, SBA loans, business credit applications. Fannie Mae guidelines require a year-to-date P&amp;L for self-employed mortgage applicants.</p>
+    <p><strong>How to get it:</strong> Prepared by your accountant or bookkeeper, or self-generated using accounting software like QuickBooks, Wave, or FreshBooks. Self-prepared P&amp;Ls are accepted for mortgage purposes but may carry less weight than CPA-prepared statements.</p>
+    <p><strong>Limitations:</strong> Not recognized by most landlords or retail loan officers. Requires ongoing bookkeeping to maintain.</p>
+
+    <h2>Method 7: 1099 Forms</h2>
+    <p><strong>Acceptance rate:</strong> Low as standalone proof of income; useful as supplementary documentation.</p>
+    <p><strong>What it is:</strong> Annual tax forms documenting payments to independent contractors. 1099-NEC covers non-employee compensation; 1099-K covers payment card/third-party network transactions.</p>
+    <p><strong>Best for:</strong> Supplementing other documentation to show consistent annual income. Supporting a mortgage application alongside tax returns.</p>
+    <p><strong>How to get it:</strong> Issued by clients or platforms (DoorDash, Upwork, Fiverr, etc.) by January 31 for the prior year.</p>
+    <p><strong>Limitations:</strong> Shows annual totals, not current ongoing income. Does not have the per-period format that landlords and most lenders expect from income documentation. Often 6-18 months old by the time it is needed.</p>
+
+    <h2>Method 8: Self-Generated Pay Stubs</h2>
+    <p><strong>Acceptance rate:</strong> High when documentation is accurate and supplemented by bank statements.</p>
+    <p><strong>What it is:</strong> A formatted pay stub created by the worker themselves based on actual income. Functions as the contractor/self-employed equivalent of an employer-issued pay stub.</p>
+    <p><strong>Best for:</strong> Gig workers, freelancers, sole proprietors, and 1099 contractors who have no employer to generate documentation but have genuine, consistent income.</p>
+    <p><strong>How to get it:</strong> Generate using this tool below. Takes under two minutes. Download as a clean PDF with no watermark.</p>
+    <p><strong>Limitations:</strong> Accuracy depends on the information entered. Large institutional landlords and some lenders may request additional corroborating documentation (bank statements). Cannot be used for mortgage income verification in place of tax returns.</p>
+
+    <h2>Generate Your Income Documentation</h2>
+
+    <PayStubForm client:load />
+
+    <h2>Choosing the Right Documentation for Your Situation</h2>
+    <p>The right combination depends on who is asking and why:</p>
+
+    <p><strong>Apartment application:</strong> Pay stubs (2-3 months) + bank statements. Self-employed: self-generated stubs + bank statements.</p>
+
+    <p><strong>Personal loan:</strong> Pay stubs. Online lenders may accept bank statements as alternative.</p>
+
+    <p><strong>Auto loan:</strong> Most recent 1-2 pay stubs + bank statements + driver's license.</p>
+
+    <p><strong>Mortgage:</strong> 30 days of pay stubs + 2 years W-2 + 2 years tax returns. Self-employed: 2 years tax returns + Schedule C + year-to-date P&amp;L.</p>
+
+    <p><strong>Bank account opening:</strong> ID plus evidence of income (1-2 pay stubs or bank statements from another account).</p>
+
+    <h2>Related Resources</h2>
+    <p>For apartment income documentation specifically, see <a href="/pay-stub-for-apartment">pay stub for apartment applications</a>. For renters with no employer, see <a href="/pay-stub-for-apartment-no-employer">how to prove income with no employer</a>. For self-employed income documentation, see <a href="/self-employed-pay-stub-generator">self-employed pay stub generator</a>. For mortgage-specific requirements, see <a href="/pay-stub-for-mortgage">mortgage income verification guide</a>.</p>
+
+  </main>
+</Base>

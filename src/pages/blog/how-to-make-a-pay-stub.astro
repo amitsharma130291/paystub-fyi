@@ -1,0 +1,231 @@
+---
+import BlogPost from '../../layouts/BlogPost.astro';
+---
+<BlogPost
+  title="How to Make a Pay Stub -- Manual vs Generator"
+  description="Step-by-step guide to making a pay stub manually in Excel or using a generator. Includes exact tax calculations and 3 common mistakes with dollar impact."
+  canonical="https://paystub.fyi/blog/how-to-make-a-pay-stub"
+  h1="How to Make a Pay Stub -- Manual Method vs Generator"
+  date="2024-01-22"
+>
+
+<p>If you're self-employed, run a small business with a few employees, or need documentation of income you actually earned, you may need to create a pay stub. This guide walks through the complete manual calculation method, the three most expensive calculation mistakes people make, and how a generator saves time while eliminating those errors.</p>
+
+<p>One important point upfront: generating a pay stub that documents <em>real income you actually earned</em> is completely legitimate. Gig workers, freelancers, and small business owners do it routinely for apartment applications, car loans, and mortgage pre-qualification. What's not legitimate is fabricating income you didn't earn — that's fraud. This guide assumes you're documenting actual earnings.</p>
+
+<h2>What Information You Need Before You Start</h2>
+
+<p>Before calculating anything, gather:</p>
+
+<ul>
+  <li><strong>Gross pay:</strong> What the employee (or you, if self-employed) earned this period — hours × rate, or salary ÷ pay periods</li>
+  <li><strong>Pay period dates:</strong> Start date, end date, and pay date</li>
+  <li><strong>Filing status:</strong> Single, Married Filing Jointly, Head of Household (from W-4)</li>
+  <li><strong>State of employment:</strong> Determines which state taxes apply</li>
+  <li><strong>Voluntary deductions:</strong> 401(k) contributions, health insurance premium, HSA</li>
+  <li><strong>YTD figures:</strong> How much has been earned and withheld this year before this period</li>
+</ul>
+
+<p>If you're creating stubs for employees, you also need their W-4 elections (allowances or the 2020+ W-4 format) to calculate federal withholding correctly.</p>
+
+<h2>The Manual Method: Step-by-Step</h2>
+
+<h3>Step 1: Calculate Gross Pay</h3>
+
+<p>For salaried employees: annual salary ÷ number of pay periods per year.</p>
+<ul>
+  <li>Weekly: ÷ 52</li>
+  <li>Bi-weekly: ÷ 26</li>
+  <li>Semi-monthly: ÷ 24</li>
+  <li>Monthly: ÷ 12</li>
+</ul>
+
+<p>Example: $52,000/year, bi-weekly = $52,000 ÷ 26 = <strong>$2,000.00 gross</strong>.</p>
+
+<p>For hourly employees:</p>
+<ul>
+  <li>Regular pay: hours × rate</li>
+  <li>Overtime pay: overtime hours × (rate × 1.5)</li>
+  <li>Total gross: regular + overtime</li>
+</ul>
+
+<p>Example: 80 hours × $18/hr = $1,440 regular + 5 hours × $27/hr = $135 OT = <strong>$1,575 gross</strong>.</p>
+
+<h3>Step 2: Calculate Social Security and Medicare (FICA)</h3>
+
+<p>These are the easy ones — straightforward percentages with no bracket math required.</p>
+
+<ul>
+  <li>Social Security: gross pay × 0.062 (if YTD earnings are under $168,600 for 2024)</li>
+  <li>Medicare: gross pay × 0.0145 (no cap)</li>
+</ul>
+
+<p>For our $2,000 bi-weekly employee:</p>
+<ul>
+  <li>Social Security: $2,000 × 0.062 = <strong>$124.00</strong></li>
+  <li>Medicare: $2,000 × 0.0145 = <strong>$29.00</strong></li>
+</ul>
+
+<p>Important: If YTD earnings have already crossed $168,600, Social Security withholding stops at $0 for the rest of the year. Medicare continues at 1.45% regardless.</p>
+
+<h3>Step 3: Calculate Federal Income Tax Withholding</h3>
+
+<p>This is the most complex calculation. You need IRS Publication 15-T (available free at irs.gov) or the Wage Bracket Method Tables.</p>
+
+<p>Using the 2024 Percentage Method for a single filer paid bi-weekly with no W-4 adjustments:</p>
+
+<ol>
+  <li><strong>Adjusted Annual Wage:</strong> ($2,000 × 26) − standard deduction ($14,600) = $37,400 taxable</li>
+  <li><strong>Apply 2024 brackets:</strong>
+    <ul>
+      <li>10% on first $11,600 = $1,160</li>
+      <li>12% on $11,600–$37,400: ($37,400 − $11,600) × 12% = $3,096</li>
+      <li>Total annual tax: $4,256</li>
+    </ul>
+  </li>
+  <li><strong>Per-period withholding:</strong> $4,256 ÷ 26 = <strong>$163.69</strong></li>
+</ol>
+
+<p>Add any additional withholding the employee requested on Form W-4, Step 4(c).</p>
+
+<h3>Step 4: Calculate State Income Tax</h3>
+
+<p>Every state uses different rates, brackets, and rules. For simplicity, many manual stub creators use the effective rate approach: look up your state's average effective tax rate for the income level, then multiply.</p>
+
+<ul>
+  <li>California (~6% effective at $52k): $2,000 × 0.06 = $120.00</li>
+  <li>New York (~4.5% effective at $52k): $2,000 × 0.045 = $90.00</li>
+  <li>Texas, Florida, etc.: $0.00</li>
+</ul>
+
+<p>For precise state calculations, use your state's withholding tables (every state tax agency publishes them).</p>
+
+<h3>Step 5: Subtract Pre-Tax Voluntary Deductions</h3>
+
+<p>Pre-tax deductions come out before taxes are calculated (for federal purposes), though for FICA taxes, only certain deductions are exempt:</p>
+
+<ul>
+  <li>401(k) contributions: exempt from federal income tax, but NOT from Social Security or Medicare</li>
+  <li>Health insurance: exempt from federal income tax and FICA</li>
+  <li>HSA contributions: exempt from federal income tax and FICA</li>
+</ul>
+
+<p>This distinction matters. A $200/period 401(k) contribution reduces your federal income tax withholding (because it reduces taxable wages for income tax purposes) but does NOT reduce your FICA deductions.</p>
+
+<h3>Step 6: Calculate Net Pay</h3>
+
+<p>Net pay = Gross pay − All deductions</p>
+
+<p>For our $2,000 bi-weekly example (single, no voluntary deductions, mild-tax state at 4%):</p>
+
+<table>
+  <thead>
+    <tr><th>Item</th><th>Amount</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Gross pay</td><td>$2,000.00</td></tr>
+    <tr><td>Federal income tax</td><td>−$163.69</td></tr>
+    <tr><td>Social Security</td><td>−$124.00</td></tr>
+    <tr><td>Medicare</td><td>−$29.00</td></tr>
+    <tr><td>State income tax (4%)</td><td>−$80.00</td></tr>
+    <tr><td><strong>Net pay</strong></td><td><strong>$1,603.31</strong></td></tr>
+  </tbody>
+</table>
+
+<h3>Step 7: Update YTD Totals</h3>
+
+<p>Every line item gets updated with a running year-to-date total. If this is the 10th bi-weekly pay period of the year:</p>
+
+<ul>
+  <li>YTD gross: $2,000 × 10 = $20,000</li>
+  <li>YTD federal: $163.69 × 10 = $1,636.90</li>
+  <li>YTD Social Security: $124.00 × 10 = $1,240.00</li>
+  <li>And so on for each line</li>
+</ul>
+
+<h3>Step 8: Format the Stub</h3>
+
+<p>A professional pay stub in Excel or on paper should include:</p>
+
+<ul>
+  <li>Company letterhead or name/address block</li>
+  <li>Employee name, ID, and address</li>
+  <li>Pay period dates and pay date</li>
+  <li>Earnings section with current and YTD columns</li>
+  <li>Deductions section with current and YTD columns</li>
+  <li>Net pay prominently displayed</li>
+</ul>
+
+<p>Save it as a PDF for professional presentation. A Word or Excel file that could be edited looks less credible to a lender or landlord than a locked PDF.</p>
+
+<h2>The 3 Most Common (and Expensive) Calculation Mistakes</h2>
+
+<h3>Mistake 1: Using a Flat Federal Tax Percentage</h3>
+
+<p>The most common error: using a round number like 22% for federal income tax because "I'm in the 22% bracket."</p>
+
+<p><strong>The problem:</strong> Tax brackets are marginal, not flat. You pay 10% on the first $11,600, 12% on the next chunk, then 22% only on income above $47,150. Applying 22% to all gross pay significantly overstates your actual tax burden.</p>
+
+<p><strong>Dollar impact:</strong> For a $50,000/year employee (bi-weekly $1,923 gross), applying a flat 22% gives $423/period in federal tax. The correct calculation (using IRS percentage method, standard deduction) is approximately $130/period. That's a $293/period difference — $7,618/year. A stub showing $423 federal withholding when the correct amount is $130 will raise immediate red flags with any lender who reviews it.</p>
+
+<h3>Mistake 2: Not Applying the Social Security Wage Base</h3>
+
+<p>Social Security has a 2024 wage base of $168,600. Once cumulative earnings reach that amount, Social Security withholding stops — it should show $0 for the remainder of the year.</p>
+
+<p><strong>The problem:</strong> People creating manual stubs for high earners often continue calculating 6.2% all year, which overstates deductions and understates net pay for later-year stubs.</p>
+
+<p><strong>Dollar impact:</strong> An employee earning $200,000/year would overpay by $1,953.20 on the stub if you keep calculating SS after the wage base is crossed (6.2% × $31,400 excess = $1,946.80 in phantom deductions).</p>
+
+<h3>Mistake 3: Ignoring Pre-Tax Deduction Order</h3>
+
+<p>Pre-tax deductions reduce your taxable wages for federal income tax, but the rules differ for FICA. Applying pre-tax deductions incorrectly results in wrong numbers for all downstream calculations.</p>
+
+<p><strong>The problem:</strong> Subtracting all pre-tax deductions from gross before calculating Social Security and Medicare. Health insurance and HSA are FICA-exempt (reduce SS and Medicare base), but 401(k) contributions are NOT FICA-exempt (SS and Medicare still apply to 401(k) dollars).</p>
+
+<p><strong>Dollar impact:</strong> For an employee contributing $500/period to a 401(k), incorrectly treating this as FICA-exempt would understate Social Security by $31.00 and Medicare by $7.25 per period — $991/year in cumulative errors on the SS line alone.</p>
+
+<h2>The Generator Method: Why Most People Should Use It</h2>
+
+<p>The manual calculation process is accurate when done correctly but requires:</p>
+<ul>
+  <li>Current year's IRS Publication 15-T withholding tables</li>
+  <li>Your state's current withholding tables</li>
+  <li>Careful attention to FICA wage base and pre-tax deduction ordering</li>
+  <li>A clean spreadsheet template that formats the output professionally</li>
+</ul>
+
+<p>A pay stub generator handles all of this automatically. <a href="/">PayStub.fyi's free generator</a> uses current 2024 federal and state withholding tables, applies the correct pre-tax deduction order for every deduction type, tracks the Social Security wage base, and produces a clean PDF with all required fields.</p>
+
+<p>The process takes about 2 minutes:</p>
+<ol>
+  <li>Enter employer name and address</li>
+  <li>Enter employee name, address, and filing status</li>
+  <li>Enter gross pay and pay period dates</li>
+  <li>Add any voluntary deductions</li>
+  <li>Download the PDF</li>
+</ol>
+
+<p>The output is a professional, calculation-accurate PDF that shows exactly what a manually-calculated stub would show — without the risk of the three common mistakes above.</p>
+
+<h2>Legal Considerations</h2>
+
+<p>Generating a pay stub that accurately documents your real income is entirely legal. Self-employed individuals, gig workers, and small business owners have always had the right to document their earnings.</p>
+
+<p>What creates legal liability is using a fabricated stub — one that shows income you didn't earn — to obtain a loan, rental, or any financial product. That constitutes loan fraud or wire fraud, which are federal felonies. <a href="/blog/what-is-a-pay-stub">Every field on a legitimate stub</a> corresponds to real, verifiable income.</p>
+
+<p>When you generate a stub through <a href="/self-employed-pay-stub-generator">PayStub.fyi's self-employed generator</a>, the calculations are based on the income figures you enter. Enter your real income. The calculation is honest, the PDF is professional, and the documentation serves its purpose.</p>
+
+<h2>How Lenders and Landlords Verify Pay Stubs</h2>
+
+<p>Understanding verification helps you prepare the right supporting documents:</p>
+
+<ul>
+  <li><strong>Employer call/verification:</strong> Standard for W-2 employees — doesn't apply to self-employed</li>
+  <li><strong>Bank statement cross-reference:</strong> Lenders often ask for 2–3 months of bank statements alongside stubs; deposits should reflect the net pay shown</li>
+  <li><strong>Tax return cross-reference:</strong> If your stub shows $8,000/month income but your Schedule C shows $40,000/year net profit, that's a conflict they'll ask about</li>
+  <li><strong>The Work Number (Equifax):</strong> A database of employment and income data — only applies to W-2 employment at companies enrolled in the service</li>
+</ul>
+
+<p>The safest documentation package for a self-employed person: generate an accurate stub showing real income, plus provide 2–3 months of bank statements showing deposits consistent with that income, plus your most recent tax return (Schedule C). All three should tell the same income story.</p>
+
+</BlogPost>

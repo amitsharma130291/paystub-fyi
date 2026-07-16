@@ -1,0 +1,129 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Privacy Policy -- PayStub.fyi"
+  description="PayStub.fyi privacy policy: free tier calculations run in your browser, nothing stored server-side. Complete disclosure of what we collect and how it's used."
+  canonical="https://paystub.fyi/privacy"
+>
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Privacy Policy -- PayStub.fyi</h1>
+    <p class="text-gray-500 mb-12">Last updated: January 2024</p>
+
+    <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+
+      <p>This privacy policy describes what information PayStub.fyi collects, how it's used, and what choices you have. We've written it to be straightforward rather than comprehensive-but-unreadable. If you have questions, the answer is almost certainly "no, we don't collect that" or "no, we don't share that."</p>
+
+      <h2>The Short Version</h2>
+
+      <p>For free tier users: your pay stub data never leaves your device. Calculations happen in your browser. We never see your name, your employer's name, your income, or any other information you type into the generator.</p>
+
+      <p>For Pro/Business tier users (coming soon): we store your email address, your account settings, and your saved stub history. Payments are handled by LemonSqueezy — their servers process your payment card, not ours.</p>
+
+      <h2>Free Tier: Client-Side Only</h2>
+
+      <p>The pay stub generator for free (no-account) users runs entirely in your web browser using JavaScript. When you enter your employer's name, your income, your state, and your deductions, that information is processed locally on your device to generate the PDF. None of it is transmitted to our servers.</p>
+
+      <p>To be precise: when you click "Generate Pay Stub," no network request containing your data is made to paystub.fyi's servers or any third-party server. The PDF is constructed in your browser from the data you entered and downloaded directly to your device. We have no copy of it. We have no record that you generated it. We don't know what your employer is called or what you earn.</p>
+
+      <p>This is not a promise or a legal commitment about future behavior — it's a description of the current technical architecture. You can verify it by opening your browser's developer tools (Network tab) and watching what requests are made when you generate a stub. The only outbound requests are for static assets (CSS, JavaScript files) that are not personalized to you.</p>
+
+      <h2>What We Do Collect (Analytics)</h2>
+
+      <p>We use Vercel Analytics to understand basic usage patterns. Vercel Analytics is cookieless and collects only anonymous, aggregate data:</p>
+
+      <ul>
+        <li>Page views and which pages are visited</li>
+        <li>Country/region of visitors (derived from IP address — the IP address itself is not stored)</li>
+        <li>Browser type and operating system (at the category level — e.g., "Chrome on Windows," not version numbers)</li>
+        <li>Referrer URL (how visitors arrived at our site — e.g., from a Google search)</li>
+      </ul>
+
+      <p>Vercel Analytics does not place cookies on your device. It does not track you across websites. It does not build a profile of individual users. We receive aggregate metrics — "1,400 users visited /blog/how-to-read-a-pay-stub today from the United States" — not individual session data.</p>
+
+      <p>Because Vercel Analytics is cookieless, we do not display a cookie consent banner. There are no advertising pixels, remarketing tags, or third-party tracking scripts on this site.</p>
+
+      <h2>Pro and Business Tier (Coming Soon)</h2>
+
+      <p>When we launch paid tiers, the following data will be stored:</p>
+
+      <h3>Account Data</h3>
+      <ul>
+        <li>Email address (for account identification and communications)</li>
+        <li>Password (stored as a one-way hash — we cannot recover your password)</li>
+        <li>Account creation date and last login date</li>
+      </ul>
+
+      <h3>Pay Stub History</h3>
+      <p>The core feature of paid tiers is saving your stub history so you can re-access previous stubs. This means the data you enter — employer name, employee name, income figures, deductions — will be stored on our servers when you generate a stub while logged in.</p>
+
+      <p>We store only what's necessary to reconstruct your stub: the input fields, not the generated PDF (the PDF is regenerated from inputs on demand). Stub data is encrypted at rest.</p>
+
+      <h3>Payment Data</h3>
+      <p>Payment card details are handled entirely by LemonSqueezy, our payment processor. When you subscribe to a paid tier, you enter your card information directly in a LemonSqueezy-hosted checkout form. Your card number, CVV, and billing address go directly to LemonSqueezy's servers — they never pass through ours.</p>
+
+      <p>LemonSqueezy is PCI-DSS compliant. We receive from them: your subscription status, subscription ID, and a payment method description (e.g., "Visa ending in 4242"). We use this to manage your subscription access. We never have access to your full card number.</p>
+
+      <h2>Data Retention</h2>
+
+      <p>Free tier: We retain nothing about your stub generation activity.</p>
+
+      <p>Pro/Business tier (when available): Stub history is retained for the duration of your active subscription plus 90 days after cancellation. Account data (email, subscription status) is retained until you delete your account plus 30 days for accounting purposes. You can request immediate account deletion by contacting us.</p>
+
+      <h2>Data Sharing</h2>
+
+      <p>We do not sell your data. We do not share your data with advertising networks. We do not share your income information with third parties.</p>
+
+      <p>The only external services that receive any data from our platform:</p>
+
+      <ul>
+        <li><strong>Vercel:</strong> Hosts our website. Sees your IP address (as a necessary part of HTTP communication) and the pages you visit. Vercel's privacy policy governs their handling of server-side data.</li>
+        <li><strong>Vercel Analytics:</strong> Receives anonymized, aggregated usage data as described above.</li>
+        <li><strong>LemonSqueezy (Pro tier):</strong> Payment processor. Receives your payment card details for subscription processing. Governed by their privacy policy.</li>
+      </ul>
+
+      <p>No other third-party services receive your data.</p>
+
+      <h2>Cookies</h2>
+
+      <p>The free tier of PayStub.fyi does not set cookies. Vercel Analytics is cookieless. We do not use advertising cookies, tracking cookies, or any persistent identifiers in the free tier.</p>
+
+      <p>The Pro tier will use session cookies for authentication (to keep you logged in) and preference cookies (to remember your settings). These will be disclosed in an updated privacy policy when the Pro tier launches.</p>
+
+      <h2>Children's Privacy</h2>
+
+      <p>PayStub.fyi is not directed to children under 13 and does not knowingly collect information from children under 13. If you believe we have inadvertently collected information from a child under 13, contact us and we will delete it.</p>
+
+      <h2>Security</h2>
+
+      <p>The free tier's security model is simple: because we don't store your data, there's nothing to breach. No database of income information exists to be hacked.</p>
+
+      <p>For Pro tier accounts (when launched): we use industry-standard practices including HTTPS for all connections, bcrypt hashing for passwords, and encryption at rest for stored stub data. We will disclose any data breaches affecting personal information as required by applicable law.</p>
+
+      <h2>Your Rights</h2>
+
+      <p>For free tier users: there is no data to request, correct, or delete because we hold none.</p>
+
+      <p>For Pro tier users (when available):</p>
+      <ul>
+        <li><strong>Access:</strong> You can download your stub history from your account dashboard at any time</li>
+        <li><strong>Correction:</strong> You can update your account information through account settings</li>
+        <li><strong>Deletion:</strong> You can delete your account and all associated data at any time</li>
+        <li><strong>Portability:</strong> Stub history export in standard formats will be available</li>
+      </ul>
+
+      <p>California residents: rights under the CCPA apply to any personal information we hold about you (Pro tier). We do not sell personal information.</p>
+
+      <p>EU/UK residents: rights under GDPR/UK GDPR apply. For free tier users, we process no personal data and GDPR's substantive rights apply to nothing we hold. For Pro tier users, the lawful basis for processing account data is contractual necessity (to provide the service you subscribed to).</p>
+
+      <h2>Changes to This Policy</h2>
+
+      <p>We will update this policy as the product evolves. Material changes (such as launching the Pro tier and beginning to store user data) will be announced prominently. The "last updated" date at the top of this page reflects the most recent change.</p>
+
+      <h2>Contact</h2>
+
+      <p>Questions about this privacy policy can be submitted through the feedback form on the generator page. We don't publish a contact email address publicly to reduce spam, but we respond to genuine privacy inquiries.</p>
+
+    </div>
+  </main>
+</Base>

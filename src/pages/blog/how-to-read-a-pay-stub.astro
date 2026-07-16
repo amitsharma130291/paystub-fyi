@@ -1,0 +1,254 @@
+---
+import BlogPost from '../../layouts/BlogPost.astro';
+---
+<BlogPost
+  title="How to Read a Pay Stub -- Line by Line"
+  description="Learn to read every section of your pay stub. We explain gross-to-net math, how to spot errors, and what YTD figures mean for loans and taxes."
+  canonical="https://paystub.fyi/blog/how-to-read-a-pay-stub"
+  h1="How to Read a Pay Stub -- Line by Line"
+  date="2024-01-20"
+>
+
+<p>Your pay stub is a 30-second read for most people: check the net, put it away. That habit costs money. Payroll errors are common — wrong hours, stale pay rates after a raise, incorrect benefit deductions — and each one compounds silently until you catch it. This guide makes you a competent reader in one sitting.</p>
+
+<p>We'll move top-to-bottom through a real stub, explain what each line means, show you the gross-to-net math ($60,000/year salary → approximately $44,000 take-home), teach you to spot errors, and give you the exact email template to use when you find one.</p>
+
+<h2>Before You Start: Get the Right Document</h2>
+
+<p>Pay stubs come in several formats depending on your employer's payroll system (ADP, Paychex, Gusto, QuickBooks Payroll). The layout differs but the fields are the same. If you receive direct deposit, your stub is usually available in an employee self-service portal — not in your email or bank statement.</p>
+
+<p>If you've lost your stubs, you have three options: (1) log into your payroll portal, (2) ask HR to resend, or (3) use <a href="/">PayStub.fyi</a> to generate replacement documentation of your real income. What you cannot do is reconstruct them from your bank statements — deposits show net pay only, with no deduction detail.</p>
+
+<h2>Section 1: The Header — Employee and Employer Information</h2>
+
+<p>The top block identifies both parties. Scan for:</p>
+
+<ul>
+  <li><strong>Your name and address:</strong> Should match your W-4 on file. If you moved, update payroll or your W-2 will go to the wrong address.</li>
+  <li><strong>Your employee ID:</strong> A payroll reference number. This is NOT your Social Security number.</li>
+  <li><strong>Last four of SSN:</strong> "XXX-XX-5678" format is correct. If you see all nine digits, that's a privacy violation — tell HR.</li>
+  <li><strong>Employer name and EIN:</strong> The company's nine-digit federal employer ID. You'll need this for your taxes.</li>
+  <li><strong>Filing status and allowances:</strong> Some stubs show how you completed your W-4 (Single, Married, Head of Household). If this is wrong, your withholding will be wrong. Update your W-4 with HR.</li>
+</ul>
+
+<p><strong>Common header error:</strong> Your name is misspelled or your address is outdated. Neither affects your paycheck directly, but a misspelled name creates problems when your W-2 arrives at tax time.</p>
+
+<h2>Section 2: Pay Period and Pay Date</h2>
+
+<p>Three dates on every stub:</p>
+
+<ul>
+  <li><strong>Pay period start:</strong> First day of the work period covered</li>
+  <li><strong>Pay period end:</strong> Last day of the work period</li>
+  <li><strong>Pay date:</strong> When money hits your account (usually 3–5 days after period end)</li>
+</ul>
+
+<p>Check that the pay period covers the correct number of days for your pay frequency. Bi-weekly = 14 days. Semi-monthly = 15 or 16 days. If the dates look off, that's worth a second look.</p>
+
+<h2>Section 3: Hours and Pay Rate (Hourly Employees)</h2>
+
+<p>For hourly workers, this section is where most errors live. Verify:</p>
+
+<ul>
+  <li><strong>Regular hours:</strong> Should match your timesheets or time clock records exactly</li>
+  <li><strong>Overtime hours:</strong> Hours over 40 in a workweek (federal FLSA standard). Some states (California) require daily overtime (over 8 hrs/day)</li>
+  <li><strong>Overtime rate:</strong> Must be 1.5× your regular rate. If you earn $20/hour, overtime is $30/hour</li>
+  <li><strong>Pay rate:</strong> Your current hourly rate. If you received a raise, confirm the new rate appears here</li>
+</ul>
+
+<p>Example calculation that should match your stub:</p>
+<ul>
+  <li>Regular: 80 hours × $20.00 = $1,600.00</li>
+  <li>Overtime: 4 hours × $30.00 = $120.00</li>
+  <li>Gross pay: $1,720.00</li>
+</ul>
+
+<p>If these numbers don't match and you track your hours, you have a solid case to bring to HR with specific dates and times.</p>
+
+<h2>Section 4: Gross Pay — The Starting Number</h2>
+
+<p>Gross pay is everything you earned this period before any deduction. It should appear prominently, usually in a box or bold line.</p>
+
+<p>For a salaried employee earning $60,000/year paid bi-weekly: $60,000 ÷ 26 = <strong>$2,307.69 gross per period</strong>.</p>
+
+<p>Gross pay may include multiple components:</p>
+<ul>
+  <li>Base salary or regular wages</li>
+  <li>Bonus (shows as a separate line in the period paid)</li>
+  <li>Commission</li>
+  <li>Shift differentials (night/weekend premiums)</li>
+  <li>Imputed income (value of employer-paid benefits over $50,000 life insurance)</li>
+</ul>
+
+<p>Each component should appear as its own line under "Earnings," with a total at the bottom equaling gross pay. If you received a bonus and it's not here, it may be on a separate supplemental stub.</p>
+
+<h2>Section 5: Federal Income Tax Withholding</h2>
+
+<p>Federal income tax is calculated based on your W-4 instructions, your gross pay, and IRS withholding tables. It is NOT a flat percentage — it's a withholding estimate of your full-year tax liability.</p>
+
+<p>For our $60,000/year employee filing single:</p>
+<ul>
+  <li>Annualized gross: $60,000</li>
+  <li>Standard deduction: −$14,600 (2024)</li>
+  <li>Taxable income: $45,400</li>
+  <li>Tax: 10% × $11,600 = $1,160 plus 12% × ($45,400 − $11,600) = $4,056 = $5,216 annually</li>
+  <li>Per bi-weekly period: $5,216 ÷ 26 ≈ <strong>$200.62</strong></li>
+</ul>
+
+<p>The label might appear as "FWT," "FIT," "Federal Tax," or "Federal Withholding." They all mean the same thing.</p>
+
+<p><strong>Reading the W-4 impact:</strong> If you marked "Exempt" on your W-4, this line will show $0. If you added extra withholding on Step 4(c), you'll see a higher-than-expected number. Both are intentional if you set it up that way.</p>
+
+<h2>Section 6: Social Security (OASDI)</h2>
+
+<p>Label: "OASDI," "Soc Sec," "SS Tax," or "Social Security."</p>
+
+<p>Rate: 6.2% of gross, up to the 2024 wage base of $168,600.</p>
+
+<p>For our $60,000 employee: $2,307.69 × 0.062 = <strong>$143.08 per period</strong>.</p>
+
+<p>This line disappears from your stub once your YTD earnings cross $168,600. If you earn less than that, it's present on every stub all year. OASDI stands for Old Age, Survivors, and Disability Insurance — the formal name for Social Security.</p>
+
+<h2>Section 7: Medicare</h2>
+
+<p>Label: "Medicare," "Med Tax," or "Medicare Tax."</p>
+
+<p>Rate: 1.45% of ALL wages, no cap.</p>
+
+<p>For our $60,000 employee: $2,307.69 × 0.0145 = <strong>$33.46 per period</strong>.</p>
+
+<p>For high earners (over $200,000 single), you'll eventually see an additional line: "Additional Medicare Tax" at 0.9%, bringing your total Medicare withholding on those earnings to 2.35%.</p>
+
+<h2>Section 8: State Income Tax</h2>
+
+<p>Varies by state. Nine states have no income tax: AK, FL, NV, NH, SD, TN, TX, WA, WY. Everyone else pays some amount.</p>
+
+<p>For a $60,000 earner in a medium-tax state at an effective 4%: $2,307.69 × 0.04 ≈ $92.31 per period.</p>
+
+<p>State tax labels: "SWT," "SIT," "State Tax," or the state abbreviation (CA, NY, IL, etc.). Some stubs show the state separately from local/city taxes.</p>
+
+<h2>Section 9: Other Deductions</h2>
+
+<p>After mandatory taxes, you'll see voluntary and benefit deductions. These typically split into two groups:</p>
+
+<p><strong>Pre-tax deductions</strong> (reduce your taxable income before federal/state tax is calculated):</p>
+<ul>
+  <li>401(k) or 403(b) contributions</li>
+  <li>Health, dental, vision insurance premiums</li>
+  <li>HSA (Health Savings Account) contributions</li>
+  <li>FSA (Flexible Spending Account) contributions</li>
+  <li>Dependent care FSA</li>
+  <li>Commuter benefits</li>
+</ul>
+
+<p><strong>Post-tax deductions</strong> (taken after tax is calculated):</p>
+<ul>
+  <li>Roth 401(k) contributions</li>
+  <li>Life insurance above $50,000 coverage</li>
+  <li>Charitable contributions through payroll</li>
+  <li>Wage garnishments (court-ordered)</li>
+  <li>Union dues</li>
+</ul>
+
+<p>Pre-tax deductions save you money two ways: they reduce your taxable income AND reduce your net pay by less than their face value. A $200 pre-tax 401(k) contribution reduces your net pay by roughly $140 (depending on your tax bracket) because you avoid tax on the $200.</p>
+
+<h2>The Gross-to-Net Journey: Why $60k Becomes ~$44k</h2>
+
+<p>Here's the complete picture for a $60,000/year single filer in a mid-tax state with no voluntary deductions:</p>
+
+<table>
+  <thead>
+    <tr><th>Item</th><th>Annual</th><th>Per Bi-Weekly Period</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Gross pay</td><td>$60,000</td><td>$2,307.69</td></tr>
+    <tr><td>Federal income tax</td><td>−$5,216</td><td>−$200.62</td></tr>
+    <tr><td>Social Security (6.2%)</td><td>−$3,720</td><td>−$143.08</td></tr>
+    <tr><td>Medicare (1.45%)</td><td>−$870</td><td>−$33.46</td></tr>
+    <tr><td>State income tax (~4%)</td><td>−$2,400</td><td>−$92.31</td></tr>
+    <tr><td><strong>Net pay</strong></td><td><strong>$47,794</strong></td><td><strong>$1,838.22</strong></td></tr>
+  </tbody>
+</table>
+
+<p>That's an effective take-home of about 80% of gross, losing roughly 20% to mandatory taxes. Add health insurance ($200/period is typical for single coverage) and 401(k) contributions ($100/period at 5% of gross) and take-home drops to around $1,538/period — about $40,000/year, or 67 cents on the dollar.</p>
+
+<p>This is why your gross salary and your actual purchasing power are very different numbers. When negotiating compensation, always ask for the gross and do the math yourself. <a href="/blog/pay-stub-deductions-explained">Understanding every deduction type</a> lets you calculate this accurately for your situation.</p>
+
+<h2>YTD: Why the Running Totals Matter</h2>
+
+<p>Every line item on a stub shows a current-period amount and a YTD total. <a href="/blog/ytd-meaning-pay-stub">YTD (year-to-date)</a> tracks everything from January 1 through the current pay date.</p>
+
+<p>YTD serves three practical purposes:</p>
+
+<ol>
+  <li><strong>Social Security cap tracking:</strong> When YTD gross hits $168,600, SS withholding stops. Your December stub will likely have $0 in SS if you earn over that.</li>
+  <li><strong>Retirement limit tracking:</strong> If you contribute to a 401(k), your YTD contribution must stay under $23,000 (2024 limit). Your payroll system usually enforces this automatically, but it's worth verifying.</li>
+  <li><strong>Income verification for loans:</strong> Lenders use YTD gross to project annual income. If you apply for a mortgage on October 1 and your YTD gross is $60,000, the lender multiplies by 12/9 to estimate $80,000 annual income. The higher your YTD, the stronger your application.</li>
+</ol>
+
+<h2>Gross vs. Net vs. Taxable Income: Clearing Up the Confusion</h2>
+
+<p>These three terms mean different things:</p>
+
+<ul>
+  <li><strong>Gross income:</strong> Everything you earned, before anything is taken out ($60,000/year)</li>
+  <li><strong>Taxable income:</strong> Gross minus pre-tax deductions and the standard deduction. If you contribute $5,000/year to a 401(k) and take the standard deduction ($14,600), your taxable income is $60,000 − $5,000 − $14,600 = $40,400. This is what your federal tax bracket applies to.</li>
+  <li><strong>Net income (take-home):</strong> What hits your bank after all taxes and deductions are withheld ($1,538/period in our example)</li>
+</ul>
+
+<p>When your accountant asks for your income, they want gross. When you're budgeting, you care about net. When you're filling out a tax form, you need taxable.</p>
+
+<h2>How to Spot Errors: A Four-Point Check</h2>
+
+<p>Run through these four checks each pay period. It takes two minutes.</p>
+
+<p><strong>1. Verify hours (hourly workers):</strong> Compare your timesheets to the hours on the stub. One missed hour at $22/hour costs you $572/year if it recurs bi-weekly.</p>
+
+<p><strong>2. Check your pay rate:</strong> If you received a raise effective on a specific date, confirm the new rate appears on the first stub covering that effective date. Payroll system updates often lag by one pay period.</p>
+
+<p><strong>3. Audit benefit deductions:</strong> Did you change health insurance plans? Update your 401(k) contribution? These changes should appear on the first stub of the new plan period. If they're not there, contact HR — over-deduction is the employer's error to correct.</p>
+
+<p><strong>4. Reconcile YTD:</strong> Multiply your gross pay by the number of pay periods completed this year. That should match your YTD gross. If it doesn't, a prior period had an error (or a one-time payment like a bonus). Either way, investigate.</p>
+
+<h2>HR Contact Template When You Find an Error</h2>
+
+<p>Copy and use this email when your stub doesn't add up:</p>
+
+<blockquote>
+<p>Subject: Pay Stub Discrepancy — [Your Name], Period Ending [Date]</p>
+
+<p>Hi [HR/Payroll Contact],</p>
+
+<p>I noticed a discrepancy on my pay stub for the period ending [date].</p>
+
+<p>Issue: [Describe specifically — e.g., "My pay rate shows $19.50/hour but my raise to $21.00/hour was effective January 1. This results in a $60 underpayment for this period."]</p>
+
+<p>Supporting documentation: [Attached — e.g., raise approval email, timesheet records]</p>
+
+<p>Please confirm when this will be corrected and whether I'll receive a correction for the affected period(s).</p>
+
+<p>Thank you,<br/>[Your Name]</p>
+</blockquote>
+
+<p>Employers are legally required to correct payroll errors. Federal law (FLSA) requires you be paid at least minimum wage for all hours worked, and overtime at 1.5×. State laws often provide stronger protections. Keep your stubs and document the correction request.</p>
+
+<h2>What Your Pay Stub Doesn't Show</h2>
+
+<p>Some things that affect your pay are NOT on your stub:</p>
+
+<ul>
+  <li>Your full SSN (intentionally hidden for privacy)</li>
+  <li>Your bank account or routing number</li>
+  <li>Your employer's matching 401(k) contribution (they contribute separately)</li>
+  <li>Your employer's share of FICA taxes (they pay 7.65% on your behalf)</li>
+  <li>Workers' compensation insurance premiums (employer-paid in most states)</li>
+  <li>Your health insurance total premium (you only see your share)</li>
+</ul>
+
+<h2>Next Steps</h2>
+
+<p>You now know how to read every line of a pay stub. The next level is understanding what each deduction type really costs you in after-tax terms. <a href="/blog/pay-stub-deductions-explained">The complete deductions breakdown</a> shows you which deductions save you money, which are required, and how to optimize your elections during open enrollment.</p>
+
+<p>If you're a gig worker or contractor who doesn't receive a W-2 stub from an employer, your situation is covered at <a href="/">PayStub.fyi</a> — generate accurate documentation of your real earnings for apartment applications, car loans, and mortgage pre-qualification.</p>
+
+</BlogPost>

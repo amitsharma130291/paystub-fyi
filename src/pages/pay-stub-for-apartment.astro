@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+import PayStubForm from '../components/PayStubForm.tsx';
+---
+<Base
+  title="Pay Stub for Apartment Application | What You Need"
+  description="What landlords actually need from your pay stubs. Income thresholds, the 40x rule, how many stubs, and what gig workers can do. Complete guide."
+  canonical="https://paystub.fyi/pay-stub-for-apartment"
+>
+  <main class="max-w-4xl mx-auto px-4 py-8 prose prose-lg max-w-none text-gray-700">
+    <h1>Pay Stub for Apartment Application -- What You Need</h1>
+
+    <p>Apartment applications have standardized what "proving income" means: pay stubs. Not bank statements (unless the landlord accepts them). Not an offer letter. Not a 1099. Pay stubs -- the per-period formatted document showing gross income, deductions, and net pay. Understanding exactly what landlords need, and how to meet those requirements when you are self-employed or work gig jobs, is what this guide covers.</p>
+
+    <h2>The Standard Landlord Income Requirements</h2>
+    <p>Most landlords apply some version of an income-to-rent ratio. The most common thresholds:</p>
+
+    <p><strong>2x monthly rent (minimum standard):</strong> The lowest threshold you will find. A landlord using 2x would require $3,000/month in gross income to rent a $1,500/month apartment. This standard is common in smaller cities, suburban markets, and individual landlords who own a few properties.</p>
+
+    <p><strong>2.5x monthly rent (middle standard):</strong> More common among medium-sized property management companies and in moderately competitive markets. The same $1,500/month apartment requires $3,750/month gross income.</p>
+
+    <p><strong>3x monthly rent (stricter standard):</strong> Common in competitive urban markets, larger property management companies, and newer buildings. The $1,500/month apartment requires $4,500/month gross income. Many landlords in major cities use 3x as their baseline.</p>
+
+    <p>These thresholds apply to gross income -- what you earn before taxes and deductions, not what lands in your bank account. If your gross pay is $5,000/month but you take home $3,800 after taxes, the landlord uses $5,000 for the income threshold calculation.</p>
+
+    <h2>The 40x Rule (NYC and Some Other Markets)</h2>
+    <p>New York City landlords, and some in other high-cost markets, use a different formula: your annual gross income must be at least 40x the monthly rent. For a $2,500/month apartment, you need $100,000 annual gross income ($2,500 x 40 = $100,000). For a $3,500/month apartment, that requires $140,000 annual gross income.</p>
+
+    <p>This is mathematically equivalent to requiring annual income of 480% of monthly rent, or about 3.3x monthly rent in gross monthly income terms. It is stricter than the standard 3x rule used elsewhere, reflecting the extremely competitive New York rental market.</p>
+
+    <p>In practice, the 40x rule is applied by institutional landlords in NYC. Individual landlords and smaller buildings may use the standard 3x ratio instead. If you are apartment hunting in New York, asking about the income requirement before applying saves time for both parties.</p>
+
+    <h2>How Many Pay Stubs Do Landlords Typically Ask For</h2>
+    <p>The standard request is the two or three most recent pay stubs. The specific request reflects how many pay periods the landlord wants to see to establish income as current and consistent:</p>
+
+    <p>Two stubs: The minimum for most applications. Shows current income is active. For biweekly pay, this covers one month. For monthly pay, it covers two months.</p>
+
+    <p>Three stubs: More common. For biweekly pay, this covers six weeks. For weekly pay, this covers three weeks. Long enough to show the income pattern, short enough not to require documentation from more than 2-3 months ago.</p>
+
+    <p>Some landlords ask for "the last 30 days of pay stubs" rather than a specific count. For weekly pay, that is four or five stubs. For biweekly, it is two to three stubs.</p>
+
+    <h2>What Gig Workers and Self-Employed Renters Can Do</h2>
+    <p>Gig workers -- DoorDash, Uber, Instacart, Lyft, Fiverr, Upwork, TaskRabbit, and others -- do not receive employer-issued pay stubs. Self-employed sole proprietors and 1099 contractors are in the same position. For these workers, the options are:</p>
+
+    <p><strong>Generate pay stubs based on actual earnings:</strong> The most direct solution. Use your actual platform earnings or invoice totals as the basis for generated pay stubs. The stubs accurately represent your income in the format landlords need. This tool generates them watermark-free in under two minutes per stub. See the <a href="/self-employed-pay-stub-generator">self-employed pay stub generator</a> or your specific platform page (<a href="/doordash-pay-stub-generator">DoorDash</a>, <a href="/uber-pay-stub-generator">Uber</a>, etc.).</p>
+
+    <p><strong>Bank statements:</strong> Three to six months of bank statements showing consistent deposits can substitute for pay stubs with flexible landlords. The challenge is that bank statements show net deposits (after any taxes you set aside) and do not have the clear gross income formatting landlords prefer. For individual landlords rather than property management companies, bank statements are often accepted.</p>
+
+    <p><strong>Tax returns:</strong> Prior year tax returns and the current year's Schedule C establish annual income history. They do not show recent income, but combined with bank statements, they build a credible income picture. Most useful for mortgage applications -- see the <a href="/pay-stub-for-mortgage">mortgage guide</a> -- and less useful for rental applications where landlords want recent documentation.</p>
+
+    <p><strong>Offer letters or client contracts:</strong> Proof of a future income source (a new job starting next month, a multi-month client contract) can supplement current documentation. Useful for someone transitioning to a new income source whose prior stubs do not reflect future income.</p>
+
+    <h2>When Generated Pay Stubs Work and When They Don't</h2>
+    <p>Generated pay stubs work for most rental applications when they accurately reflect your real income. The practical considerations:</p>
+
+    <p>They work best with: individual landlords, smaller property management companies, landlords in less competitive markets, and situations where the income level clearly exceeds the threshold.</p>
+
+    <p>They face more scrutiny from: large institutional property managers, high-end buildings, markets with long applicant queues (landlords can afford to be selective), and cases where the income is right at the threshold (borderline income leads to more documentation requests).</p>
+
+    <p>They do not work when: the income on the stub does not match your actual bank deposits, the stubs do not reflect consistent income over time, or the landlord uses an employment verification service that calls the "employer" listed on the stub.</p>
+
+    <p>The strongest application combines generated stubs with bank statements showing matching deposits. When the stub and the bank record agree, the documentation is self-corroborating.</p>
+
+    <h2>Generate Your Pay Stubs</h2>
+    <p>Use the form below to create your pay stubs. Fill in your information for each pay period you need to document, download each PDF, and submit the set with your application.</p>
+
+    <PayStubForm client:load />
+
+    <h2>Tips for a Strong Rental Application as a Self-Employed Renter</h2>
+    <p>Beyond income documentation, these factors improve your application when you are self-employed or work gig jobs:</p>
+
+    <p><strong>Higher deposit offer:</strong> Some landlords will accept a larger security deposit in lieu of meeting the income threshold precisely. This is a negotiation, not a right, and landlords are not required to accept it. Some states regulate maximum deposit amounts.</p>
+
+    <p><strong>Co-signer or guarantor:</strong> A financially qualified person who agrees to be liable for rent if you cannot pay. Often a parent or financially stable relative. This is common and accepted practice that removes the income requirement concern entirely -- the guarantor's income is what qualifies the application.</p>
+
+    <p><strong>Prepaid rent:</strong> Offering to pay several months of rent upfront shows financial stability and reduces the landlord's risk. Most states do not cap prepaid rent (unlike security deposits, which are regulated in many states).</p>
+
+    <p><strong>Excellent rental history:</strong> A letter from a previous landlord attesting to on-time payment and responsible tenancy is a positive signal that income documentation alone cannot provide. Long rental history with no issues is genuinely reassuring to landlords.</p>
+
+    <h2>Related Guides</h2>
+    <p>For self-employed renters specifically, see <a href="/pay-stub-for-apartment-no-employer">how to show proof of income with no employer</a>. For proof of income in formats beyond pay stubs, see the <a href="/proof-of-income-generator">proof of income generator</a> covering all eight accepted methods. For the specific challenges of 1099 contractor renters, see <a href="/pay-stub-1099-contractor">pay stubs for 1099 contractors</a>.</p>
+
+  </main>
+</Base>

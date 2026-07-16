@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import PayStubForm from '../components/PayStubForm.tsx';
+---
+<Base
+  title="Pay Stub for 1099 Contractors | Do You Need One?"
+  description="1099 contractors don't get employer pay stubs. Here's what you can create yourself, how SE tax works, and how to document your income for apartments and loans."
+  canonical="https://paystub.fyi/pay-stub-1099-contractor"
+>
+  <main class="max-w-4xl mx-auto px-4 py-8 prose prose-lg max-w-none text-gray-700">
+    <h1>Pay Stub for 1099 Contractors -- Do You Need One?</h1>
+
+    <p>If you receive a 1099-NEC from clients rather than a W-2 from an employer, you already know one thing: nobody is going to give you a pay stub. The 1099 classification means you are an independent contractor -- and the absence of employer-generated pay stubs is part of the definition. But the need for income documentation does not disappear just because you are a contractor. Here is how to handle it.</p>
+
+    <h2>What 1099-NEC vs. W-2 Means for Documentation</h2>
+    <p>The distinction between a 1099-NEC and a W-2 is about employment classification, not just paperwork:</p>
+
+    <p><strong>W-2 employees:</strong> Your employer controls how, when, and where you work. They withhold taxes from your paycheck. They pay their half of FICA. They are responsible for employment law compliance with respect to you. You receive a W-2 at year-end showing total wages and withheld taxes. Your employer is supposed to give you pay stubs with each paycheck (required in most states).</p>
+
+    <p><strong>1099 contractors:</strong> You control how, when, and where you do the work (at least in principle). No taxes are withheld from payments made to you. You owe both halves of FICA (as self-employment tax). Compliance with tax law is your responsibility. Clients send you 1099-NEC forms if they pay you $600 or more in the year. Nobody gives you pay stubs -- that would imply an employment relationship that does not legally exist.</p>
+
+    <p>This means 1099 contractors are in the same position as all other self-employed workers: genuinely unable to obtain employer-issued pay stubs. The solution is the same: generate your own, based on actual income.</p>
+
+    <h2>Self-Employment Tax: The Math 1099 Workers Often Miss</h2>
+    <p>One of the most significant financial differences between 1099 work and W-2 employment is self-employment tax. Most contractors who make the switch from employment are surprised by the magnitude of this difference:</p>
+
+    <p>As a W-2 employee, you see 7.65% of your gross wages deducted as FICA (6.2% Social Security + 1.45% Medicare). Your employer pays an equal 7.65% match that never appears in your paycheck.</p>
+
+    <p>As a 1099 contractor, you pay both halves: 15.3% total (12.4% Social Security + 2.9% Medicare) on your net self-employment income. SE tax is calculated on net income (gross earnings minus business expenses) multiplied by 92.35% (an adjustment that accounts for the "employer half" deduction). You then deduct half of the SE tax paid from your gross income on Form 1040.</p>
+
+    <p>Practical example: You earn $80,000 gross as a 1099 contractor. After $10,000 in business expenses, your net SE income is $70,000. SE tax base = $70,000 x 0.9235 = $64,645. SE tax = $64,645 x 15.3% = $9,891. You deduct half that ($4,946) from your Form 1040 income before calculating income tax.</p>
+
+    <p>The bottom line: a contractor earning $80,000 gross owes approximately $9,900 in SE tax before income tax. A W-2 employee earning the same $80,000 salary has only 7.65% ($6,120) deducted from their check, with their employer matching that amount separately.</p>
+
+    <h2>Creating Pay Stubs as a 1099 Contractor</h2>
+    <p>You can create pay stubs documenting your 1099 income. Use the income from your contracts or client payments as the basis. The key decisions:</p>
+
+    <p><strong>Employer field:</strong> If you work primarily for one client, use that client's business name as the employer and your name as the employee. If you work for multiple clients, use "Self-Employed" or your own business name (if you have one) as the employer.</p>
+
+    <p><strong>Gross pay:</strong> The total amount you received from client payments for the period. Do not subtract business expenses -- gross pay on a stub is revenue, not profit.</p>
+
+    <p><strong>Deductions:</strong> You have two options. Option 1: show zero deductions (since no taxes are withheld from 1099 payments, this accurately reflects what you receive). Option 2: show estimated SE tax and income tax as deductions, giving a more complete picture of your actual tax liability. For rental and loan applications, most reviewers use gross income (option 1 or 2 both work), but option 2 provides a cleaner picture of take-home income.</p>
+
+    <p><strong>Pay period:</strong> Monthly is often the most representative for contractor income, especially if you have project-based work with irregular payment timing. Weekly may work for contractors with regular, consistent client arrangements.</p>
+
+    <h2>How Quarterly Estimated Taxes Work</h2>
+    <p>The absence of withholding means 1099 contractors must manage their own tax payments. The IRS system for this is quarterly estimated taxes:</p>
+
+    <p>Four payments per year, due April 15 (Q1), June 15 (Q2), September 15 (Q3), and January 15 (Q4 of prior year). Each payment covers taxes owed on that quarter's earnings, though you can make equal quarterly payments based on your expected annual liability.</p>
+
+    <p>A practical method: divide your expected annual SE tax and income tax by four and pay that amount each quarter. If you are uncertain about your annual income, use 110% of last year's total tax as a safe harbor -- paying that amount over four quarters protects you from underpayment penalties even if your income comes in higher than expected.</p>
+
+    <p>Missing quarterly payments results in an underpayment penalty, not a catastrophic failure -- the IRS adds a penalty of approximately 7-8% annualized on the underpaid amount. Not a crisis, but an unnecessary cost. Setting aside 25-30% of each payment received in a dedicated tax savings account ensures you always have quarterly payment funds available without requiring precise annual forecasting.</p>
+
+    <h2>1099-NEC and Income Verification: What It Tells Reviewers</h2>
+    <p>The annual 1099-NEC from each client shows total payments received from that client during the year. This is useful for:</p>
+
+    <p>Mortgage applications that require two years of self-employment income history. The 1099 forms (through your tax returns) establish the annual income record. For mortgage purposes, lenders use Schedule C net income, not 1099 gross amounts.</p>
+
+    <p>Supporting documentation alongside recent pay stubs when a landlord or lender asks for a broader income picture. The 1099 from last year shows the income existed and was at the stated level.</p>
+
+    <p>The 1099-NEC does not work as standalone income documentation for rental applications or personal loans because it shows annual totals for prior year income, not current ongoing income. Recent pay stubs (self-generated, covering the past 60-90 days) are what most reviewers need for current income verification.</p>
+
+    <h2>Generate Your 1099 Contractor Pay Stubs</h2>
+    <PayStubForm client:load />
+
+    <h2>The W-2 vs. 1099 Classification Dispute</h2>
+    <p>Many workers receive 1099-NEC forms from clients who actually control their work in ways that suggest an employment relationship rather than a contractor relationship. The IRS and Department of Labor have guidelines for distinguishing employees from independent contractors, and misclassification creates significant liability for the business doing the classifying.</p>
+
+    <p>If you believe you are misclassified (receiving 1099s for work that is functionally employment), you can file Form SS-8 with the IRS to request a determination. Misclassified workers may be eligible for refunds of self-employment tax and access to benefits they were denied. This is a complex area; consulting a tax attorney or employment law attorney is advisable if you believe misclassification applies to your situation.</p>
+
+    <h2>Related Guides</h2>
+    <p>For apartment applications as a contractor, see <a href="/pay-stub-for-apartment">pay stub for apartment applications</a>. For the full range of self-employment income documentation, see <a href="/self-employed-pay-stub-generator">self-employed pay stub generator</a>. For all proof of income methods, see the <a href="/proof-of-income-generator">proof of income generator</a>.</p>
+
+  </main>
+</Base>

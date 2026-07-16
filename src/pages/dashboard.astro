@@ -1,0 +1,177 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Mock data for UI demonstration
+const mockStubs = [
+  { id: 1, employee: 'Jane Smith', employer: 'Acme Corp', period: 'Dec 16–31, 2023', payDate: 'Jan 5, 2024', gross: '$3,500.00', net: '$2,462.25' },
+  { id: 2, employee: 'Jane Smith', employer: 'Acme Corp', period: 'Dec 1–15, 2023', payDate: 'Dec 20, 2023', gross: '$3,500.00', net: '$2,462.25' },
+  { id: 3, employee: 'Jane Smith', employer: 'Acme Corp', period: 'Nov 16–30, 2023', payDate: 'Dec 5, 2023', gross: '$3,500.00', net: '$2,462.25' },
+  { id: 4, employee: 'Jane Smith', employer: 'Freelance Work', period: 'November 2023', payDate: 'Nov 30, 2023', gross: '$4,200.00', net: '$3,024.00' },
+  { id: 5, employee: 'Jane Smith', employer: 'Acme Corp', period: 'Nov 1–15, 2023', payDate: 'Nov 20, 2023', gross: '$3,500.00', net: '$2,462.25' },
+];
+---
+<Base
+  title="Your Pay Stub Dashboard -- PayStub.fyi"
+  description="Manage your saved pay stubs, employer profiles, and account settings on your PayStub.fyi dashboard. View, download, or generate new stubs."
+  canonical="https://paystub.fyi/dashboard"
+>
+  <main class="max-w-5xl mx-auto px-4 py-8">
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h1 class="text-3xl font-bold text-gray-900">Your Pay Stub Dashboard</h1>
+        <p class="text-gray-600 mt-1">Manage your saved stubs and settings</p>
+      </div>
+      <a
+        href="/"
+        class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+      >
+        + Generate New Stub
+      </a>
+    </div>
+
+    <div class="mb-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+      <p class="text-yellow-800 text-sm"><strong>Preview Mode:</strong> This dashboard is a preview of the upcoming Pro tier. Stub history and saved profiles will be available when accounts launch. <a href="/pricing" class="underline">See pricing</a></p>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="grid grid-cols-3 gap-6 mb-8">
+      <div class="bg-white border border-gray-200 rounded-xl p-5">
+        <div class="text-3xl font-bold text-gray-900 mb-1">5</div>
+        <div class="text-gray-600 text-sm">Stubs Generated</div>
+      </div>
+      <div class="bg-white border border-gray-200 rounded-xl p-5">
+        <div class="text-3xl font-bold text-gray-900 mb-1">2</div>
+        <div class="text-gray-600 text-sm">Employer Profiles</div>
+      </div>
+      <div class="bg-white border border-gray-200 rounded-xl p-5">
+        <div class="text-3xl font-bold text-gray-900 mb-1">$17,700</div>
+        <div class="text-gray-600 text-sm">YTD Gross (Documented)</div>
+      </div>
+    </div>
+
+    <!-- Recent Stubs -->
+    <section class="mb-10">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-bold text-gray-900">Recent Pay Stubs</h2>
+        <a href="#" class="text-blue-600 text-sm hover:text-blue-700">View all</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+        <table class="w-full">
+          <thead class="bg-gray-50 border-b border-gray-200">
+            <tr>
+              <th class="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-6 py-3">Employee</th>
+              <th class="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-6 py-3">Employer</th>
+              <th class="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-6 py-3">Pay Period</th>
+              <th class="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-6 py-3">Gross</th>
+              <th class="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-6 py-3">Net</th>
+              <th class="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-6 py-3">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            {mockStubs.map((stub) => (
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 text-sm text-gray-900 font-medium">{stub.employee}</td>
+                <td class="px-6 py-4 text-sm text-gray-700">{stub.employer}</td>
+                <td class="px-6 py-4 text-sm text-gray-700">{stub.period}</td>
+                <td class="px-6 py-4 text-sm text-gray-900 font-medium">{stub.gross}</td>
+                <td class="px-6 py-4 text-sm text-gray-900">{stub.net}</td>
+                <td class="px-6 py-4">
+                  <div class="flex gap-3">
+                    <button class="text-blue-600 text-sm hover:text-blue-700 font-medium" disabled>Download</button>
+                    <button class="text-gray-500 text-sm hover:text-gray-700" disabled>Duplicate</button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Employer Profiles -->
+    <section class="mb-10">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-bold text-gray-900">Saved Employer Profiles</h2>
+        <button class="text-blue-600 text-sm hover:text-blue-700 font-medium" disabled>+ Add Employer</button>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-white border border-gray-200 rounded-xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-semibold text-gray-900">Acme Corp</h3>
+            <div class="flex gap-2">
+              <button class="text-gray-400 text-sm" disabled>Edit</button>
+              <button class="text-red-400 text-sm" disabled>Delete</button>
+            </div>
+          </div>
+          <div class="text-sm text-gray-600 space-y-1">
+            <div>123 Business Ave, San Francisco, CA 94102</div>
+            <div>EIN: 12-3456789</div>
+            <div>Pay frequency: Semi-monthly</div>
+          </div>
+          <button class="mt-4 text-blue-600 text-sm font-medium hover:text-blue-700" disabled>Use for New Stub</button>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-semibold text-gray-900">Freelance Work</h3>
+            <div class="flex gap-2">
+              <button class="text-gray-400 text-sm" disabled>Edit</button>
+              <button class="text-red-400 text-sm" disabled>Delete</button>
+            </div>
+          </div>
+          <div class="text-sm text-gray-600 space-y-1">
+            <div>Self-Employed / Independent Contractor</div>
+            <div>EIN: (self-employed, SSN used)</div>
+            <div>Pay frequency: Monthly</div>
+          </div>
+          <button class="mt-4 text-blue-600 text-sm font-medium hover:text-blue-700" disabled>Use for New Stub</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Account Settings Link -->
+    <section class="bg-gray-50 rounded-xl p-6">
+      <h2 class="text-xl font-bold text-gray-900 mb-4">Account Settings</h2>
+      <div class="grid md:grid-cols-3 gap-4 text-sm">
+        <a href="#" class="flex items-center gap-2 text-blue-600 hover:text-blue-700">
+          <span>&#9881;</span> Profile &amp; Email
+        </a>
+        <a href="#" class="flex items-center gap-2 text-blue-600 hover:text-blue-700">
+          <span>&#128274;</span> Password &amp; Security
+        </a>
+        <a href="/pricing" class="flex items-center gap-2 text-blue-600 hover:text-blue-700">
+          <span>&#11088;</span> Upgrade to Pro
+        </a>
+      </div>
+    </section>
+
+    <section class="mt-12 border-t border-gray-200 pt-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">What the Dashboard Enables</h2>
+      <p class="text-gray-700 mb-6">When the Pro tier launches, your dashboard becomes a complete pay stub management center. Here's what will be available:</p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-semibold text-gray-900 mb-2">Complete Stub History</h3>
+          <p class="text-gray-700 text-sm">Every stub you generate is saved automatically. Search by date, employer, or employee name. Download any past stub as a PDF in one click without regenerating it. Share stubs via secure, time-limited links — useful when a lender or landlord needs to access your documentation directly.</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-gray-900 mb-2">Quick Regeneration</h3>
+          <p class="text-gray-700 text-sm">Use any saved stub as a template for the next period. If you generate stubs monthly, the next month's stub starts pre-filled with your employer, employee, and deduction information — just update the pay period and gross amount. Reduces a 5-minute process to under 30 seconds.</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-gray-900 mb-2">Income Summary View</h3>
+          <p class="text-gray-700 text-sm">The dashboard shows your documented income over time — monthly totals, YTD gross, and trends. Useful for self-employed people who want to track documented earnings across the year and ensure their documentation stays consistent with actual income.</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-gray-900 mb-2">Business Features (Business Tier)</h3>
+          <p class="text-gray-700 text-sm">Business tier users see a full employee roster with individual stub histories, bulk generation tools, and Excel export for payroll record-keeping. Generate the month's stubs for all employees in one batch and download a ZIP file. See the <a href="/pricing" class="text-blue-600 hover:text-blue-700">pricing page</a> for the full Business tier feature list.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>
