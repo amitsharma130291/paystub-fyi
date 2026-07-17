@@ -1,4 +1,4 @@
-# PayStub.fyi
+# IncomeRecord.com
 
 Free pay stub generator for employees, contractors, and gig workers.
 

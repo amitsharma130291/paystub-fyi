@@ -5,7 +5,7 @@ import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://paystub.fyi',
+  site: 'https://incomerecord.com',
   output: 'server',
   adapter: vercel(),
   integrations: [react(), sitemap()],

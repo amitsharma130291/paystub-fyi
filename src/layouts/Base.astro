@@ -9,7 +9,7 @@ export interface Props {
 }
 
 const { title, description, canonical, ogImage } = Astro.props;
-const defaultOgImage = 'https://paystub.fyi/og-default.png';
+const defaultOgImage = 'https://incomerecord.com/og-default.png';
 // Normalize canonical: ensure trailing slash so it matches @astrojs/sitemap output
 const canonicalUrl = canonical.endsWith('/') ? canonical : canonical + '/';
 ---
