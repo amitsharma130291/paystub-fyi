@@ -9,7 +9,41 @@ import BlogPost from '../../layouts/BlogPost.astro';
   date="2024-03-10"
 >
 
-<p>Look at your pay stub and you'll see two columns after most line items: a "current" amount and a "YTD" amount. The current column is what this paycheck involved. The YTD column is the running total of everything since January 1 of this year. Most people ignore the YTD column. That's a mistake — it's where several important numbers live that affect your taxes, your benefits, and your ability to get a loan.</p>
+<p>Look at your pay stub and you'll see two columns after most line items: a "current" amount and a "YTD" amount. The current column is what this paycheck involved. The YTD column is the running total of everything since January 1 of this year. Most people ignore the YTD column. That's a mistake -- it's where several important numbers live that affect your taxes, your benefits, and your ability to get a loan.</p>
+
+<h2>How YTD Builds Through the Year</h2>
+
+<p>Here's what the YTD columns look like across the year for a $65,000/year employee paid bi-weekly ($2,500 gross per check, filing single, no voluntary deductions). Watch how every number accumulates:</p>
+
+<table>
+  <thead>
+    <tr><th>Paycheck</th><th>Approx. Date</th><th>YTD Gross</th><th>YTD SS (6.2%)</th><th>YTD Medicare (1.45%)</th><th>YTD Federal Tax</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>#1</td><td>January</td><td>$2,500</td><td>$155.00</td><td>$36.25</td><td>~$280</td></tr>
+    <tr><td>#6</td><td>March</td><td>$15,000</td><td>$930.00</td><td>$217.50</td><td>~$1,680</td></tr>
+    <tr><td>#13</td><td>June</td><td>$32,500</td><td>$2,015.00</td><td>$471.25</td><td>~$3,640</td></tr>
+    <tr><td>#22</td><td>October</td><td>$55,000</td><td>$3,410.00</td><td>$797.50</td><td>~$6,160</td></tr>
+    <tr><td>#26</td><td>December</td><td>$65,000</td><td>$4,030.00</td><td>$942.50</td><td>~$7,280</td></tr>
+  </tbody>
+</table>
+
+<p>A few things to notice in this progression:</p>
+
+<ul>
+  <li><strong>Social Security and Medicare grow perfectly linearly.</strong> Every check adds exactly $155.00 to YTD SS and $36.25 to YTD Medicare -- flat percentages applied to a flat paycheck produce a flat slope. Verify this on your own stubs: if the increase isn't consistent, something changed (a raise, a bonus, a correction).</li>
+  <li><strong>At paycheck #13, YTD gross is exactly $32,500.</strong> Halfway through the year in pay periods, halfway through annual income. This midpoint is a useful sanity check on your own stubs.</li>
+  <li><strong>At paycheck #22 (October), YTD gross is $55,000.</strong> With 4 checks left, the employee is on track for $65,000. At this point lenders and landlords reviewing stubs can project that with confidence.</li>
+  <li><strong>Final YTD Social Security: $4,030.00.</strong> This is exactly $65,000 x 6.2%. If your December stub shows more than this, there's an overpayment to investigate.</li>
+</ul>
+
+<h3>What Happens When High Earners Hit the Social Security Wage Base</h3>
+
+<p>A $200,000/year employee paid bi-weekly gets $7,692.31 per check. At 6.2%, that's $477.02 in SS per period. The 2024 Social Security wage base is $168,600. That employee hits the cap at:</p>
+
+<p>$168,600 / $7,692.31 per period = 21.9 periods -- so partway through paycheck #22, around October.</p>
+
+<p>After that, their Social Security line drops to $0 for the remaining paychecks of the year. If you earn over $168,600, watch for this on paycheck #22 or #23 -- it's not an error, it's the cap working correctly. The savings are real: approximately $477/check x 4-5 remaining checks = $1,900-$2,400 of extra take-home in November and December.</p>
 
 <h2>What YTD Means</h2>
 

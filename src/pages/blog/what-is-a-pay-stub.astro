@@ -9,9 +9,24 @@ import BlogPost from '../../layouts/BlogPost.astro';
   date="2024-01-15"
 >
 
-<p>A pay stub is the itemized document that shows you exactly how your employer calculated the money deposited into your bank account. It breaks gross pay into every deduction — federal income tax, Social Security, Medicare, state income tax, and any voluntary benefits — and arrives at your net pay, the number that actually hits your account.</p>
+<p>A pay stub is the itemized document that shows you exactly how your employer calculated the money deposited into your bank account. It breaks gross pay into every deduction -- federal income tax, Social Security, Medicare, state income tax, and any voluntary benefits -- and arrives at your net pay, the number that actually hits your account.</p>
 
-<p>Most people glance at the net and move on. That's a mistake. The stub is where calculation errors hide, where proof-of-income paperwork comes from, and where you discover whether your employer is withholding correctly. This guide walks through every field using a single realistic example so nothing is abstract.</p>
+<p>Most people glance at the net and move on. That's a mistake. The stub is where calculation errors hide, where proof-of-income paperwork comes from, and where you discover whether your employer is withholding correctly. This guide walks through every field with exact definitions and real numbers.</p>
+
+<h2>Every Field Defined -- With Exact Numbers</h2>
+
+<p>Here are the definitions for each pay stub field, using a $60,000/year employee paid bi-weekly as the reference:</p>
+
+<ul>
+  <li><strong>Gross earnings:</strong> Total pay before any deductions. "$2,307.69 = $60,000 / 26 pay periods." This is the starting number everything else is calculated from.</li>
+  <li><strong>Federal income tax:</strong> "$213.00 based on your W-4 filing status and allowances." Not a flat percentage -- the IRS uses bracket math applied to your annualized pay, with your standard deduction subtracted first. The exact amount depends on your W-4 elections.</li>
+  <li><strong>Social Security (OASDI):</strong> "$143.08 = 6.2% x $2,307.69 -- stops when you hit $168,600 YTD." OASDI stands for Old Age, Survivors, and Disability Insurance. Your employer matches this 6.2%; you only see your half on the stub.</li>
+  <li><strong>Medicare (HI):</strong> "$33.46 = 1.45% x $2,307.69 -- never stops, adds 0.9% above $200k." HI stands for Hospital Insurance. No wage base cap means this is withheld on every dollar you earn, all year.</li>
+  <li><strong>State income tax:</strong> Varies by state. For a California resident at $60,000/year, expect approximately $100-$120 per bi-weekly paycheck at roughly 4-5% effective rate. Nine states (AK, FL, NV, NH, SD, TN, TX, WA, WY) show $0 here.</li>
+  <li><strong>Pre-tax deductions (401k, HSA, health insurance):</strong> "Reduce your taxable income before withholding is calculated." A $200 health insurance premium or $150 401(k) contribution each reduce the federal tax base -- so their true after-tax cost to you is less than the dollar amount deducted.</li>
+  <li><strong>Net pay:</strong> "What actually hits your bank account." Gross pay minus every deduction. For our $60,000 employee with no voluntary deductions: roughly $1,750-$1,850 per bi-weekly check depending on state.</li>
+  <li><strong>YTD columns:</strong> "Running totals since January 1." Every line item shows both the current period amount and the YTD cumulative. Your December stub's YTD figures should match your W-2 boxes almost exactly.</li>
+</ul>
 
 <h2>The Worked Example: A $3,500 Bi-Weekly Paycheck</h2>
 

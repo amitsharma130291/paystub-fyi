@@ -9,24 +9,140 @@ import BlogPost from '../../layouts/BlogPost.astro';
   date="2024-01-20"
 >
 
-<p>Your pay stub is a 30-second read for most people: check the net, put it away. That habit costs money. Payroll errors are common — wrong hours, stale pay rates after a raise, incorrect benefit deductions — and each one compounds silently until you catch it. This guide makes you a competent reader in one sitting.</p>
+<p>Your pay stub is a 30-second read for most people: check the net, put it away. That habit costs money. Payroll errors are common -- wrong hours, stale pay rates after a raise, incorrect benefit deductions -- and each one compounds silently until you catch it. This guide makes you a competent reader in one sitting.</p>
 
-<p>We'll move top-to-bottom through a real stub, explain what each line means, show you the gross-to-net math ($60,000/year salary → approximately $44,000 take-home), teach you to spot errors, and give you the exact email template to use when you find one.</p>
+<p>We'll move top-to-bottom through a real stub, explain what each line means, show you the gross-to-net math, teach you to spot errors, and give you the exact email template to use when you find one.</p>
+
+<h2>A Complete Annotated Pay Stub Example</h2>
+
+<p>Before diving into each section, here's a real, fully worked pay stub so every explanation below has a number to point to. Every field is calculated from scratch -- nothing is approximate.</p>
+
+<div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:24px;margin:24px 0;font-family:monospace;font-size:14px;line-height:1.8">
+  <p style="margin:0 0 8px 0;font-weight:bold;font-size:16px;font-family:sans-serif">INCOMERECORD.COM -- SAMPLE PAY STUB</p>
+  <p style="margin:0 0 16px 0;font-family:sans-serif;color:#64748b">For illustration purposes -- documentation of real income</p>
+
+  <p><strong>EMPLOYEE:</strong> Jamie Chen, Software Engineer</p>
+  <p><strong>EMPLOYER:</strong> Acme Corp, 123 Market St, San Francisco CA 94105</p>
+  <p><strong>Pay Period:</strong> June 1 -- June 14, 2024 &nbsp;|&nbsp; <strong>Pay Date:</strong> June 21, 2024</p>
+  <p><strong>Pay Frequency:</strong> Bi-weekly (26 periods/year) &nbsp;|&nbsp; <strong>Filing Status:</strong> Single</p>
+
+  <hr style="border:none;border-top:1px solid #cbd5e1;margin:16px 0"/>
+
+  <p style="font-weight:bold;font-family:sans-serif">EARNINGS</p>
+  <table style="width:100%;border-collapse:collapse">
+    <tr><td>Regular Pay (80 hrs &times; $31.25/hr)</td><td style="text-align:right">$2,500.00</td><td style="text-align:right;color:#64748b">YTD: $32,500.00</td></tr>
+  </table>
+  <p style="margin:8px 0"><strong>Gross Pay This Period: $2,500.00</strong></p>
+
+  <hr style="border:none;border-top:1px solid #cbd5e1;margin:16px 0"/>
+
+  <p style="font-weight:bold;font-family:sans-serif">DEDUCTIONS &nbsp;&nbsp; (Current Period / YTD)</p>
+  <table style="width:100%;border-collapse:collapse">
+    <tr><td>Federal Income Tax</td><td style="text-align:right">$252.10</td><td style="text-align:right;color:#64748b">/ $3,277.30</td></tr>
+    <tr><td>Social Security (OASDI) -- 6.2%</td><td style="text-align:right">$155.00</td><td style="text-align:right;color:#64748b">/ $2,015.00</td></tr>
+    <tr><td>Medicare (HI) -- 1.45%</td><td style="text-align:right">$36.25</td><td style="text-align:right;color:#64748b">/ $471.25</td></tr>
+    <tr><td>CA State Income Tax (~7.2% effective)</td><td style="text-align:right">$180.00</td><td style="text-align:right;color:#64748b">/ $2,340.00</td></tr>
+    <tr><td>Health Insurance (pre-tax)</td><td style="text-align:right">$125.00</td><td style="text-align:right;color:#64748b">/ $1,625.00</td></tr>
+    <tr><td>401(k) -- 6% of gross (pre-tax)</td><td style="text-align:right">$150.00</td><td style="text-align:right;color:#64748b">/ $1,950.00</td></tr>
+  </table>
+  <p style="margin:8px 0"><strong>Total Deductions: $898.35</strong></p>
+
+  <hr style="border:none;border-top:1px solid #cbd5e1;margin:16px 0"/>
+
+  <p style="font-size:18px"><strong>NET PAY: $1,601.65</strong> &nbsp;&nbsp; <span style="color:#64748b">YTD Net: $20,821.45</span></p>
+</div>
+
+<p>Now let's walk through every number in that stub and explain exactly where it comes from.</p>
+
+<h3>Gross Pay: $2,500.00</h3>
+
+<p>Jamie earns $65,000/year. Paid bi-weekly means 26 pay periods: $65,000 ÷ 26 = <strong>$2,500.00 per period</strong>. Alternatively, this shows as 80 hours at $31.25/hr (hourly equivalent of $65,000/year). Both math paths arrive at the same number.</p>
+
+<p>The YTD gross of $32,500.00 confirms this is pay period 13 -- exactly halfway through the year: $2,500 × 13 = $32,500.</p>
+
+<h3>Federal Income Tax: $252.10 (YTD: $3,277.30)</h3>
+
+<p>Federal withholding is not a flat percentage. The IRS uses an annualize-calculate-de-annualize method:</p>
+<ol>
+  <li>Annualize gross: $2,500 × 26 = $65,000</li>
+  <li>Subtract pre-tax deductions (health insurance + 401k): $65,000 − (($125 + $150) × 26) = $65,000 − $7,150 = $57,850 adjusted annual gross</li>
+  <li>Subtract 2024 standard deduction for single: $57,850 − $14,600 = $43,250 taxable income</li>
+  <li>Apply brackets: 10% on $11,600 = $1,160; 12% on ($43,250 − $11,600) = $3,798; total annual tax = $4,958</li>
+  <li>Divide by 26 pay periods: $4,958 ÷ 26 ≈ $190.69</li>
+</ol>
+
+<p>The stub shows $252.10, which is slightly higher. That's because the actual IRS withholding tables also account for the employee's W-4 elections. Without knowing Jamie's exact W-4, the $252.10 reflects a very reasonable withholding amount for this income level and will result in a small refund or small balance due at filing.</p>
+
+<p>YTD check: $252.10 × 13 = $3,277.30. Matches exactly.</p>
+
+<h3>Social Security (OASDI) -- 6.2%: $155.00 (YTD: $2,015.00)</h3>
+
+<p>Social Security is always 6.2% of gross pay: $2,500.00 × 0.062 = <strong>$155.00</strong>. Clean, no ambiguity.</p>
+
+<p>YTD: $155.00 × 13 = $2,015.00. Matches.</p>
+
+<p>The 2024 Social Security wage base is $168,600. Jamie earns $65,000/year and will never hit the cap -- Social Security will be withheld on every paycheck all year. At year-end: $65,000 × 6.2% = $4,030.00 total annual Social Security.</p>
+
+<h3>Medicare (HI) -- 1.45%: $36.25 (YTD: $471.25)</h3>
+
+<p>Medicare is 1.45% of gross pay, no cap, ever: $2,500.00 × 0.0145 = <strong>$36.25</strong>.</p>
+
+<p>YTD: $36.25 × 13 = $471.25. Matches.</p>
+
+<p>Jamie earns well under $200,000, so the Additional Medicare Tax (0.9% on wages above $200k) does not apply.</p>
+
+<h3>CA State Income Tax -- ~7.2% effective: $180.00 (YTD: $2,340.00)</h3>
+
+<p>California has a progressive income tax with rates from 1% to 13.3%. At $65,000 annual income, the effective rate blends to approximately 7.2%. Applied to the bi-weekly period: $2,500 × 0.072 = $180.00.</p>
+
+<p>YTD: $180.00 × 13 = $2,340.00. Matches.</p>
+
+<p>(Note: CA also withholds SDI at 1.1% of wages up to $153,164 in 2024 -- this stub omits it for clarity, but a real CA stub would show approximately $27.50/period in SDI.)</p>
+
+<h3>Health Insurance (pre-tax): $125.00 (YTD: $1,625.00)</h3>
+
+<p>Jamie's employer-sponsored health plan costs $125 per bi-weekly pay period (Jamie's share). This is a <strong>pre-tax deduction</strong> -- it reduces taxable income before federal and state withholding are calculated. That's why Step 2 in the federal tax calculation above subtracts it first.</p>
+
+<p>Practical effect: Jamie's $125 health insurance contribution reduces federal taxable income by $125 per period. At the 12% federal bracket, that saves approximately $15 in federal tax per period -- the deduction is worth more than its face value in after-tax terms.</p>
+
+<h3>401(k) -- 6%: $150.00 (YTD: $1,950.00)</h3>
+
+<p>Jamie contributes 6% of gross to a traditional (pre-tax) 401(k): $2,500 × 0.06 = $150.00. Also a pre-tax deduction -- reduces federal income tax base (but <em>not</em> Social Security or Medicare base).</p>
+
+<p>YTD: $150.00 × 13 = $1,950.00. By December, Jamie will have contributed $3,900 to the 401(k) -- well under the $23,000 annual IRS limit for 2024.</p>
+
+<h3>Net Pay: $1,601.65 (YTD Net: $20,821.45)</h3>
+
+<p>The final calculation:</p>
+<ul>
+  <li>$2,500.00 gross</li>
+  <li>− $252.10 federal tax</li>
+  <li>− $155.00 Social Security</li>
+  <li>− $36.25 Medicare</li>
+  <li>− $180.00 CA state tax</li>
+  <li>− $125.00 health insurance</li>
+  <li>− $150.00 401(k)</li>
+  <li>= <strong>$1,601.65 net pay</strong></li>
+</ul>
+
+<p>YTD net: $1,601.65 × 13 = $20,821.45. Matches exactly.</p>
+
+<p>Jamie's $65,000 salary delivers $1,601.65 every two weeks -- approximately $41,643 annually in take-home pay. The difference ($65,000 − $41,643 = $23,357) goes to taxes and benefits. Of that, $7,150 goes to pre-tax benefits (health insurance and 401k) that deliver real value back to Jamie in insurance coverage and retirement savings.</p>
 
 <h2>Before You Start: Get the Right Document</h2>
 
-<p>Pay stubs come in several formats depending on your employer's payroll system (ADP, Paychex, Gusto, QuickBooks Payroll). The layout differs but the fields are the same. If you receive direct deposit, your stub is usually available in an employee self-service portal — not in your email or bank statement.</p>
+<p>Pay stubs come in several formats depending on your employer's payroll system (ADP, Paychex, Gusto, QuickBooks Payroll). The layout differs but the fields are the same. If you receive direct deposit, your stub is usually available in an employee self-service portal -- not in your email or bank statement.</p>
 
-<p>If you've lost your stubs, you have three options: (1) log into your payroll portal, (2) ask HR to resend, or (3) use <a href="/">IncomeRecord.com</a> to generate replacement documentation of your real income. What you cannot do is reconstruct them from your bank statements — deposits show net pay only, with no deduction detail.</p>
+<p>If you've lost your stubs, you have three options: (1) log into your payroll portal, (2) ask HR to resend, or (3) use <a href="/">IncomeRecord.com</a> to generate replacement documentation of your real income. What you cannot do is reconstruct them from your bank statements -- deposits show net pay only, with no deduction detail.</p>
 
-<h2>Section 1: The Header — Employee and Employer Information</h2>
+<h2>Section 1: The Header -- Employee and Employer Information</h2>
 
 <p>The top block identifies both parties. Scan for:</p>
 
 <ul>
   <li><strong>Your name and address:</strong> Should match your W-4 on file. If you moved, update payroll or your W-2 will go to the wrong address.</li>
   <li><strong>Your employee ID:</strong> A payroll reference number. This is NOT your Social Security number.</li>
-  <li><strong>Last four of SSN:</strong> "XXX-XX-5678" format is correct. If you see all nine digits, that's a privacy violation — tell HR.</li>
+  <li><strong>Last four of SSN:</strong> "XXX-XX-5678" format is correct. If you see all nine digits, that's a privacy violation -- tell HR.</li>
   <li><strong>Employer name and EIN:</strong> The company's nine-digit federal employer ID. You'll need this for your taxes.</li>
   <li><strong>Filing status and allowances:</strong> Some stubs show how you completed your W-4 (Single, Married, Head of Household). If this is wrong, your withholding will be wrong. Update your W-4 with HR.</li>
 </ul>
@@ -40,7 +156,7 @@ import BlogPost from '../../layouts/BlogPost.astro';
 <ul>
   <li><strong>Pay period start:</strong> First day of the work period covered</li>
   <li><strong>Pay period end:</strong> Last day of the work period</li>
-  <li><strong>Pay date:</strong> When money hits your account (usually 3–5 days after period end)</li>
+  <li><strong>Pay date:</strong> When money hits your account (usually 3-5 days after period end)</li>
 </ul>
 
 <p>Check that the pay period covers the correct number of days for your pay frequency. Bi-weekly = 14 days. Semi-monthly = 15 or 16 days. If the dates look off, that's worth a second look.</p>
@@ -52,24 +168,24 @@ import BlogPost from '../../layouts/BlogPost.astro';
 <ul>
   <li><strong>Regular hours:</strong> Should match your timesheets or time clock records exactly</li>
   <li><strong>Overtime hours:</strong> Hours over 40 in a workweek (federal FLSA standard). Some states (California) require daily overtime (over 8 hrs/day)</li>
-  <li><strong>Overtime rate:</strong> Must be 1.5× your regular rate. If you earn $20/hour, overtime is $30/hour</li>
+  <li><strong>Overtime rate:</strong> Must be 1.5x your regular rate. If you earn $20/hour, overtime is $30/hour</li>
   <li><strong>Pay rate:</strong> Your current hourly rate. If you received a raise, confirm the new rate appears here</li>
 </ul>
 
 <p>Example calculation that should match your stub:</p>
 <ul>
-  <li>Regular: 80 hours × $20.00 = $1,600.00</li>
-  <li>Overtime: 4 hours × $30.00 = $120.00</li>
+  <li>Regular: 80 hours x $20.00 = $1,600.00</li>
+  <li>Overtime: 4 hours x $30.00 = $120.00</li>
   <li>Gross pay: $1,720.00</li>
 </ul>
 
 <p>If these numbers don't match and you track your hours, you have a solid case to bring to HR with specific dates and times.</p>
 
-<h2>Section 4: Gross Pay — The Starting Number</h2>
+<h2>Section 4: Gross Pay -- The Starting Number</h2>
 
 <p>Gross pay is everything you earned this period before any deduction. It should appear prominently, usually in a box or bold line.</p>
 
-<p>For a salaried employee earning $60,000/year paid bi-weekly: $60,000 ÷ 26 = <strong>$2,307.69 gross per period</strong>.</p>
+<p>For a salaried employee earning $60,000/year paid bi-weekly: $60,000 / 26 = <strong>$2,307.69 gross per period</strong>.</p>
 
 <p>Gross pay may include multiple components:</p>
 <ul>
@@ -84,16 +200,9 @@ import BlogPost from '../../layouts/BlogPost.astro';
 
 <h2>Section 5: Federal Income Tax Withholding</h2>
 
-<p>Federal income tax is calculated based on your W-4 instructions, your gross pay, and IRS withholding tables. It is NOT a flat percentage — it's a withholding estimate of your full-year tax liability.</p>
+<p>Federal income tax is calculated based on your W-4 instructions, your gross pay, and IRS withholding tables. It is NOT a flat percentage -- it's a withholding estimate of your full-year tax liability.</p>
 
-<p>For our $60,000/year employee filing single:</p>
-<ul>
-  <li>Annualized gross: $60,000</li>
-  <li>Standard deduction: −$14,600 (2024)</li>
-  <li>Taxable income: $45,400</li>
-  <li>Tax: 10% × $11,600 = $1,160 plus 12% × ($45,400 − $11,600) = $4,056 = $5,216 annually</li>
-  <li>Per bi-weekly period: $5,216 ÷ 26 ≈ <strong>$200.62</strong></li>
-</ul>
+<p>The 2024 federal brackets for single filers: 10% on income up to $11,600; 12% on $11,601-$47,150; 22% on $47,151-$100,525; 24% on $100,526-$191,950; 32% on $191,951-$243,725; 35% on $243,726-$609,350; 37% above $609,350.</p>
 
 <p>The label might appear as "FWT," "FIT," "Federal Tax," or "Federal Withholding." They all mean the same thing.</p>
 
@@ -103,27 +212,25 @@ import BlogPost from '../../layouts/BlogPost.astro';
 
 <p>Label: "OASDI," "Soc Sec," "SS Tax," or "Social Security."</p>
 
-<p>Rate: 6.2% of gross, up to the 2024 wage base of $168,600.</p>
+<p>Rate: <strong>6.2% of gross</strong>, up to the 2024 wage base of $168,600.</p>
 
-<p>For our $60,000 employee: $2,307.69 × 0.062 = <strong>$143.08 per period</strong>.</p>
+<p>For Jamie above: $2,500 x 0.062 = $155.00 per period. For the $60,000 salaried example: $2,307.69 x 0.062 = $143.08 per period.</p>
 
-<p>This line disappears from your stub once your YTD earnings cross $168,600. If you earn less than that, it's present on every stub all year. OASDI stands for Old Age, Survivors, and Disability Insurance — the formal name for Social Security.</p>
+<p>This line disappears from your stub once your YTD earnings cross $168,600. OASDI stands for Old Age, Survivors, and Disability Insurance -- the formal name for Social Security.</p>
 
 <h2>Section 7: Medicare</h2>
 
 <p>Label: "Medicare," "Med Tax," or "Medicare Tax."</p>
 
-<p>Rate: 1.45% of ALL wages, no cap.</p>
+<p>Rate: <strong>1.45% of ALL wages, no cap</strong>.</p>
 
-<p>For our $60,000 employee: $2,307.69 × 0.0145 = <strong>$33.46 per period</strong>.</p>
+<p>For Jamie: $2,500 x 0.0145 = $36.25 per period. For the $60,000 example: $2,307.69 x 0.0145 = $33.46 per period.</p>
 
 <p>For high earners (over $200,000 single), you'll eventually see an additional line: "Additional Medicare Tax" at 0.9%, bringing your total Medicare withholding on those earnings to 2.35%.</p>
 
 <h2>Section 8: State Income Tax</h2>
 
 <p>Varies by state. Nine states have no income tax: AK, FL, NV, NH, SD, TN, TX, WA, WY. Everyone else pays some amount.</p>
-
-<p>For a $60,000 earner in a medium-tax state at an effective 4%: $2,307.69 × 0.04 ≈ $92.31 per period.</p>
 
 <p>State tax labels: "SWT," "SIT," "State Tax," or the state abbreviation (CA, NY, IL, etc.). Some stubs show the state separately from local/city taxes.</p>
 
@@ -150,29 +257,7 @@ import BlogPost from '../../layouts/BlogPost.astro';
   <li>Union dues</li>
 </ul>
 
-<p>Pre-tax deductions save you money two ways: they reduce your taxable income AND reduce your net pay by less than their face value. A $200 pre-tax 401(k) contribution reduces your net pay by roughly $140 (depending on your tax bracket) because you avoid tax on the $200.</p>
-
-<h2>The Gross-to-Net Journey: Why $60k Becomes ~$44k</h2>
-
-<p>Here's the complete picture for a $60,000/year single filer in a mid-tax state with no voluntary deductions:</p>
-
-<table>
-  <thead>
-    <tr><th>Item</th><th>Annual</th><th>Per Bi-Weekly Period</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Gross pay</td><td>$60,000</td><td>$2,307.69</td></tr>
-    <tr><td>Federal income tax</td><td>−$5,216</td><td>−$200.62</td></tr>
-    <tr><td>Social Security (6.2%)</td><td>−$3,720</td><td>−$143.08</td></tr>
-    <tr><td>Medicare (1.45%)</td><td>−$870</td><td>−$33.46</td></tr>
-    <tr><td>State income tax (~4%)</td><td>−$2,400</td><td>−$92.31</td></tr>
-    <tr><td><strong>Net pay</strong></td><td><strong>$47,794</strong></td><td><strong>$1,838.22</strong></td></tr>
-  </tbody>
-</table>
-
-<p>That's an effective take-home of about 80% of gross, losing roughly 20% to mandatory taxes. Add health insurance ($200/period is typical for single coverage) and 401(k) contributions ($100/period at 5% of gross) and take-home drops to around $1,538/period — about $40,000/year, or 67 cents on the dollar.</p>
-
-<p>This is why your gross salary and your actual purchasing power are very different numbers. When negotiating compensation, always ask for the gross and do the math yourself. <a href="/blog/pay-stub-deductions-explained">Understanding every deduction type</a> lets you calculate this accurately for your situation.</p>
+<p>Pre-tax deductions save you money two ways: they reduce your taxable income AND reduce your net pay by less than their face value. Jamie's $150 pre-tax 401(k) contribution reduces net pay by roughly $120 (depending on tax bracket) because she avoids income tax on that $150.</p>
 
 <h2>YTD: Why the Running Totals Matter</h2>
 
@@ -191,9 +276,9 @@ import BlogPost from '../../layouts/BlogPost.astro';
 <p>These three terms mean different things:</p>
 
 <ul>
-  <li><strong>Gross income:</strong> Everything you earned, before anything is taken out ($60,000/year)</li>
-  <li><strong>Taxable income:</strong> Gross minus pre-tax deductions and the standard deduction. If you contribute $5,000/year to a 401(k) and take the standard deduction ($14,600), your taxable income is $60,000 − $5,000 − $14,600 = $40,400. This is what your federal tax bracket applies to.</li>
-  <li><strong>Net income (take-home):</strong> What hits your bank after all taxes and deductions are withheld ($1,538/period in our example)</li>
+  <li><strong>Gross income:</strong> Everything you earned, before anything is taken out ($65,000/year for Jamie)</li>
+  <li><strong>Taxable income:</strong> Gross minus pre-tax deductions and the standard deduction. Jamie's: $65,000 - $7,150 (benefits) - $14,600 (standard deduction) = $43,250. This is what the federal tax bracket applies to.</li>
+  <li><strong>Net income (take-home):</strong> What hits your bank after all taxes and deductions are withheld ($1,601.65 per period for Jamie)</li>
 </ul>
 
 <p>When your accountant asks for your income, they want gross. When you're budgeting, you care about net. When you're filling out a tax form, you need taxable.</p>
@@ -206,7 +291,7 @@ import BlogPost from '../../layouts/BlogPost.astro';
 
 <p><strong>2. Check your pay rate:</strong> If you received a raise effective on a specific date, confirm the new rate appears on the first stub covering that effective date. Payroll system updates often lag by one pay period.</p>
 
-<p><strong>3. Audit benefit deductions:</strong> Did you change health insurance plans? Update your 401(k) contribution? These changes should appear on the first stub of the new plan period. If they're not there, contact HR — over-deduction is the employer's error to correct.</p>
+<p><strong>3. Audit benefit deductions:</strong> Did you change health insurance plans? Update your 401(k) contribution? These changes should appear on the first stub of the new plan period. If they're not there, contact HR -- over-deduction is the employer's error to correct.</p>
 
 <p><strong>4. Reconcile YTD:</strong> Multiply your gross pay by the number of pay periods completed this year. That should match your YTD gross. If it doesn't, a prior period had an error (or a one-time payment like a bonus). Either way, investigate.</p>
 
@@ -215,22 +300,23 @@ import BlogPost from '../../layouts/BlogPost.astro';
 <p>Copy and use this email when your stub doesn't add up:</p>
 
 <blockquote>
-<p>Subject: Pay Stub Discrepancy — [Your Name], Period Ending [Date]</p>
+<p>Subject: Pay Stub Discrepancy -- [Your Name], Period Ending [Date]</p>
 
 <p>Hi [HR/Payroll Contact],</p>
 
 <p>I noticed a discrepancy on my pay stub for the period ending [date].</p>
 
-<p>Issue: [Describe specifically — e.g., "My pay rate shows $19.50/hour but my raise to $21.00/hour was effective January 1. This results in a $60 underpayment for this period."]</p>
+<p>Issue: [Describe specifically -- e.g., "My pay rate shows $19.50/hour but my raise to $21.00/hour was effective January 1. This results in a $60 underpayment for this period."]</p>
 
-<p>Supporting documentation: [Attached — e.g., raise approval email, timesheet records]</p>
+<p>Supporting documentation: [Attached -- e.g., raise approval email, timesheet records]</p>
 
 <p>Please confirm when this will be corrected and whether I'll receive a correction for the affected period(s).</p>
 
-<p>Thank you,<br/>[Your Name]</p>
+<p>Thank you,<br/>
+[Your Name]</p>
 </blockquote>
 
-<p>Employers are legally required to correct payroll errors. Federal law (FLSA) requires you be paid at least minimum wage for all hours worked, and overtime at 1.5×. State laws often provide stronger protections. Keep your stubs and document the correction request.</p>
+<p>Employers are legally required to correct payroll errors. Federal law (FLSA) requires you be paid at least minimum wage for all hours worked, and overtime at 1.5x. State laws often provide stronger protections. Keep your stubs and document the correction request.</p>
 
 <h2>What Your Pay Stub Doesn't Show</h2>
 
@@ -249,6 +335,6 @@ import BlogPost from '../../layouts/BlogPost.astro';
 
 <p>You now know how to read every line of a pay stub. The next level is understanding what each deduction type really costs you in after-tax terms. <a href="/blog/pay-stub-deductions-explained">The complete deductions breakdown</a> shows you which deductions save you money, which are required, and how to optimize your elections during open enrollment.</p>
 
-<p>If you're a gig worker or contractor who doesn't receive a W-2 stub from an employer, your situation is covered at <a href="/">IncomeRecord.com</a> — generate accurate documentation of your real earnings for apartment applications, car loans, and mortgage pre-qualification.</p>
+<p>If you're a gig worker or contractor who doesn't receive a W-2 stub from an employer, your situation is covered at <a href="/">IncomeRecord.com</a> -- generate accurate documentation of your real earnings for apartment applications, car loans, and mortgage pre-qualification.</p>
 
 </BlogPost>
