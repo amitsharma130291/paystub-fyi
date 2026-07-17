@@ -1,0 +1,43 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ],
+      "has": [
+        {
+          "type": "host",
+          "value": "(?!incomerecord\\.com).*\\.vercel\\.app"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://incomerecord.com/$1",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "paystub-fyi.vercel.app"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://incomerecord.com/$1",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "paystub-fyi-.*\\.vercel\\.app"
+        }
+      ]
+    }
+  ]
+}
