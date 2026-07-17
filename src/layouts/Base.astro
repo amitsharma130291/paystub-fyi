@@ -107,6 +107,8 @@ const canonicalUrl = canonical.endsWith('/') ? canonical : canonical + '/';
       .form-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr !important; }
       .hide-mobile { display: none !important; }
+      /* Trust bar wraps on mobile */
+      [style*="f0f9ff"] { flex-wrap: wrap; gap: 0.25rem; padding: 0.5rem 1rem; }
     }
     .prose { max-width: 65ch; line-height: 1.75; }
     .prose h2 { font-size: 1.5rem; margin: 2rem 0 0.75rem; }

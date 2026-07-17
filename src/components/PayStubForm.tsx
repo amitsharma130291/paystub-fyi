@@ -176,6 +176,32 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
   const inputClass = 'w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent';
   const labelClass = 'block text-sm font-medium text-gray-700 mb-1';
   const errorClass = 'text-red-500 text-xs mt-1';
+  const inputStyle: React.CSSProperties = {
+    border: '1.5px solid #d1d5db',
+    borderRadius: '8px',
+    padding: '10px 14px',
+    fontSize: '15px',
+    width: '100%',
+    boxSizing: 'border-box',
+    fontFamily: 'inherit',
+    color: '#111827',
+    background: 'white',
+    outline: 'none',
+    transition: 'border-color 0.15s, box-shadow 0.15s',
+  };
+  const labelStyle: React.CSSProperties = {
+    fontWeight: 600,
+    fontSize: '14px',
+    color: '#374151',
+    marginBottom: '4px',
+    display: 'block',
+  };
+  const [focusedField, setFocusedField] = React.useState<string | null>(null);
+  const getFocusStyle = (field: string): React.CSSProperties => focusedField === field ? {
+    ...inputStyle,
+    borderColor: '#1a56db',
+    boxShadow: '0 0 0 3px rgba(26,86,219,0.12)',
+  } : inputStyle;
 
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden" style={{ background: 'white', borderRadius: '0.75rem', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06)', border: '1px solid #e5e7eb', overflow: 'hidden' }}>
@@ -186,42 +212,54 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
           <h2 className="text-lg font-semibold text-gray-900 mb-4" style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', borderLeft: '3px solid #1a56db', paddingLeft: '0.75rem', marginBottom: '1.25rem', marginTop: '0.5rem' }}>Employer &amp; Employee Information</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className={labelClass}>Employer Name</label>
+              <label style={labelStyle}>Employer Name</label>
               <input
                 type="text"
                 className={inputClass}
                 placeholder="Acme Corp"
+                style={getFocusStyle('employerName')}
                 value={form.employerName}
                 onChange={e => update('employerName', e.target.value)}
+                onFocus={() => setFocusedField('employerName')}
+                onBlur={() => setFocusedField(null)}
               />
             </div>
             <div>
-              <label className={labelClass}>Employee Name</label>
+              <label style={labelStyle}>Employee Name</label>
               <input
                 type="text"
                 className={inputClass}
                 placeholder="Jane Smith"
+                style={getFocusStyle('employeeName')}
                 value={form.employeeName}
                 onChange={e => update('employeeName', e.target.value)}
+                onFocus={() => setFocusedField('employeeName')}
+                onBlur={() => setFocusedField(null)}
               />
             </div>
             <div>
-              <label className={labelClass}>Employee SSN (last 4 digits)</label>
+              <label style={labelStyle}>Employee SSN (last 4 digits)</label>
               <input
                 type="text"
                 className={inputClass}
                 placeholder="XXXX-XX-1234"
                 maxLength={11}
+                style={getFocusStyle('employeeSSN')}
                 value={form.employeeSSN}
                 onChange={e => update('employeeSSN', e.target.value)}
+                onFocus={() => setFocusedField('employeeSSN')}
+                onBlur={() => setFocusedField(null)}
               />
             </div>
             <div>
-              <label className={labelClass}>State</label>
+              <label style={labelStyle}>State</label>
               <select
                 className={inputClass}
+                style={getFocusStyle('state')}
                 value={form.state}
                 onChange={e => update('state', e.target.value)}
+                onFocus={() => setFocusedField('state')}
+                onBlur={() => setFocusedField(null)}
               >
                 {Object.entries(STATE_NAMES).map(([abbr, name]) => (
                   <option key={abbr} value={abbr}>{name}</option>
@@ -236,39 +274,54 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
           <h2 className="text-lg font-semibold text-gray-900 mb-4" style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', borderLeft: '3px solid #1a56db', paddingLeft: '0.75rem', marginBottom: '1.25rem', marginTop: '1.5rem' }}>Pay Period</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className={labelClass}>Period Start</label>
+              <label style={labelStyle}>Pay Period Start</label>
               <input
                 type="date"
                 className={inputClass}
+                placeholder="MM/DD/YYYY"
+                style={getFocusStyle('payPeriodStart')}
                 value={form.payPeriodStart}
                 onChange={e => update('payPeriodStart', e.target.value)}
+                onFocus={() => setFocusedField('payPeriodStart')}
+                onBlur={() => setFocusedField(null)}
               />
             </div>
             <div>
-              <label className={labelClass}>Period End</label>
+              <label style={labelStyle}>Pay Period End</label>
               <input
                 type="date"
                 className={inputClass}
+                placeholder="MM/DD/YYYY"
+                style={getFocusStyle('payPeriodEnd')}
                 value={form.payPeriodEnd}
                 onChange={e => update('payPeriodEnd', e.target.value)}
+                onFocus={() => setFocusedField('payPeriodEnd')}
+                onBlur={() => setFocusedField(null)}
               />
             </div>
             <div>
-              <label className={labelClass}>Pay Date</label>
+              <label style={labelStyle}>Pay Date</label>
               <input
                 type="date"
                 className={inputClass}
+                placeholder="MM/DD/YYYY"
+                style={getFocusStyle('payDate')}
                 value={form.payDate}
                 onChange={e => update('payDate', e.target.value)}
+                onFocus={() => setFocusedField('payDate')}
+                onBlur={() => setFocusedField(null)}
               />
             </div>
           </div>
           <div className="mt-4">
-            <label className={labelClass}>Pay Frequency</label>
+            <label style={labelStyle}>Pay Frequency</label>
             <select
               className={inputClass + ' md:w-1/2'}
+              style={getFocusStyle('payFrequency')}
               value={form.payFrequency}
               onChange={e => update('payFrequency', e.target.value as keyof typeof PAY_PERIODS)}
+              onFocus={() => setFocusedField('payFrequency')}
+              onBlur={() => setFocusedField(null)}
             >
               {Object.entries(PAY_PERIOD_LABELS).map(([key, label]) => (
                 <option key={key} value={key}>{label}</option>
@@ -281,7 +334,7 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
         <div>
           <h2 className="text-lg font-semibold text-gray-900 mb-4" style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', borderLeft: '3px solid #1a56db', paddingLeft: '0.75rem', marginBottom: '1.25rem', marginTop: '1.5rem' }}>Earnings</h2>
           <div className="mb-4">
-            <label className={labelClass}>Pay Type</label>
+            <label style={labelStyle}>Pay Type</label>
             <div className="flex gap-4">
               {(['salary', 'hourly'] as const).map(type => (
                 <label key={type} className="flex items-center gap-2 cursor-pointer">
@@ -301,35 +354,41 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
 
           {form.payType === 'salary' ? (
             <div className="md:w-1/2">
-              <label className={labelClass}>Gross Pay This Period ($)</label>
+              <label style={labelStyle}>Gross Pay This Period ($)</label>
               <input
                 type="number"
                 className={inputClass}
                 placeholder="3000.00"
                 min="0"
                 step="0.01"
+                style={getFocusStyle('grossPay')}
                 value={form.grossPay}
                 onChange={e => update('grossPay', e.target.value)}
+                onFocus={() => setFocusedField('grossPay')}
+                onBlur={() => setFocusedField(null)}
               />
               {errors.grossPay && <p className={errorClass}>{errors.grossPay}</p>}
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
-                <label className={labelClass}>Hourly Rate ($)</label>
+                <label style={labelStyle}>Hourly Rate ($)</label>
                 <input
                   type="number"
                   className={inputClass}
                   placeholder="25.00"
                   min="0"
                   step="0.01"
+                  style={getFocusStyle('hourlyRate')}
                   value={form.hourlyRate}
                   onChange={e => update('hourlyRate', e.target.value)}
+                  onFocus={() => setFocusedField('hourlyRate')}
+                  onBlur={() => setFocusedField(null)}
                 />
                 {errors.hourlyRate && <p className={errorClass}>{errors.hourlyRate}</p>}
               </div>
               <div>
-                <label className={labelClass}>Regular Hours</label>
+                <label style={labelStyle}>Regular Hours</label>
                 <input
                   type="number"
                   className={inputClass}
@@ -337,12 +396,15 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
                   min="0"
                   max="999"
                   step="0.5"
+                  style={getFocusStyle('regularHours')}
                   value={form.regularHours}
                   onChange={e => update('regularHours', e.target.value)}
+                  onFocus={() => setFocusedField('regularHours')}
+                  onBlur={() => setFocusedField(null)}
                 />
               </div>
               <div>
-                <label className={labelClass}>Overtime Hours</label>
+                <label style={labelStyle}>Overtime Hours</label>
                 <input
                   type="number"
                   className={inputClass}
@@ -350,8 +412,11 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
                   min="0"
                   max="999"
                   step="0.5"
+                  style={getFocusStyle('overtimeHours')}
                   value={form.overtimeHours}
                   onChange={e => update('overtimeHours', e.target.value)}
+                  onFocus={() => setFocusedField('overtimeHours')}
+                  onBlur={() => setFocusedField(null)}
                 />
               </div>
             </div>
@@ -361,7 +426,9 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
         <button
           onClick={calculate}
           className="w-full md:w-auto bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-          style={{ width: '100%', background: '#1a56db', color: 'white', padding: '1rem', borderRadius: '0.5rem', fontSize: '1.0625rem', fontWeight: '700', border: 'none', cursor: 'pointer', marginTop: '2rem', letterSpacing: '0.01em' }}
+          style={{ background: '#1a56db', color: 'white', fontSize: '17px', fontWeight: 700, padding: '14px 32px', borderRadius: '10px', border: 'none', cursor: 'pointer', width: '100%', marginTop: '16px', letterSpacing: '0.01em', transition: 'background 0.2s' }}
+          onMouseEnter={e => (e.currentTarget.style.background = '#1e40af')}
+          onMouseLeave={e => (e.currentTarget.style.background = '#1a56db')}
         >
           Calculate Pay Stub
         </button>
@@ -457,7 +524,9 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
           <button
             onClick={downloadPDF}
             className="flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#111827', color: 'white', fontWeight: '600', padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: 'none', cursor: 'pointer', fontSize: '0.9375rem' }}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#1a56db', color: 'white', fontWeight: 700, padding: '14px 32px', borderRadius: '10px', border: 'none', cursor: 'pointer', fontSize: '17px', width: '100%', justifyContent: 'center', marginTop: '8px', transition: 'background 0.2s' }}
+            onMouseEnter={e => (e.currentTarget.style.background = '#1e40af')}
+            onMouseLeave={e => (e.currentTarget.style.background = '#1a56db')}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
