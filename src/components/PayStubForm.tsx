@@ -15,7 +15,6 @@ const FEDERAL_BRACKETS = [
   { min: 609350, max: Infinity, rate: 0.37 },
 ];
 
-// State effective tax rates
 const STATE_RATES: Record<string, number> = {
   CA: 0.093, TX: 0, FL: 0, NY: 0.0685, IL: 0.0495, PA: 0.0307,
   OH: 0.035, GA: 0.0549, NC: 0.045, MI: 0.0425, AZ: 0.025, WA: 0,
@@ -34,10 +33,8 @@ const STATE_NAMES: Record<string, string> = {
   OTHER: 'Other',
 };
 
-// Social Security wage base 2024
 const SS_WAGE_BASE = 168600;
 
-// Pay periods per year
 const PAY_PERIODS: Record<string, number> = {
   weekly: 52,
   biweekly: 26,
@@ -76,6 +73,41 @@ interface Results {
   net: number;
 }
 
+// ── Shared style tokens ──────────────────────────────────────
+const INPUT_BASE: React.CSSProperties = {
+  width: '100%',
+  height: '48px',
+  padding: '0 0.875rem',
+  border: '1.5px solid #d1d5db',
+  borderRadius: '0.5rem',
+  fontSize: '1rem',
+  fontFamily: 'inherit',
+  color: '#111827',
+  background: 'white',
+  outline: 'none',
+  transition: 'border-color 0.15s, box-shadow 0.15s',
+  boxSizing: 'border-box',
+};
+const INPUT_FOCUS: React.CSSProperties = {
+  ...INPUT_BASE,
+  borderColor: '#1a56db',
+  boxShadow: '0 0 0 4px rgba(26,86,219,0.12)',
+};
+const LABEL_STYLE: React.CSSProperties = {
+  display: 'block',
+  fontSize: '0.8125rem',
+  fontWeight: 600,
+  color: '#374151',
+  marginBottom: '0.375rem',
+  textTransform: 'uppercase',
+  letterSpacing: '0.05em',
+};
+const SECTION_DIVIDER: React.CSSProperties = {
+  borderTop: '1px solid #e5e7eb',
+  paddingTop: '1.75rem',
+  marginTop: '0.25rem',
+};
+
 export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
   const [form, setForm] = useState({
     employerName: '',
@@ -95,11 +127,14 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
 
   const [results, setResults] = useState<Results | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [focused, setFocused] = React.useState<string | null>(null);
 
   const update = (field: string, value: string) => {
     setForm(prev => ({ ...prev, [field]: value }));
     setErrors(prev => ({ ...prev, [field]: '' }));
   };
+
+  const iStyle = (field: string) => focused === field ? INPUT_FOCUS : INPUT_BASE;
 
   const validate = (): boolean => {
     const newErrors: Record<string, string> = {};
@@ -120,34 +155,25 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
 
   const calculate = () => {
     if (!validate()) return;
-
     const periodsPerYear = PAY_PERIODS[form.payFrequency];
     let gross = 0;
-
     if (form.payType === 'salary') {
       gross = parseFloat(form.grossPay) || 0;
     } else {
       const rate = parseFloat(form.hourlyRate) || 0;
       const reg = parseFloat(form.regularHours) || 0;
       const ot = parseFloat(form.overtimeHours) || 0;
-      gross = (rate * reg) + (rate * 1.5 * ot);
+      gross = rate * reg + rate * 1.5 * ot;
     }
-
     const annualized = gross * periodsPerYear;
     const annualFed = calculateFederalTax(annualized);
     const federalTax = annualFed / periodsPerYear;
-
-    // Social Security: 6.2% up to wage base
     const annualSS = Math.min(annualized * 0.062, SS_WAGE_BASE * 0.062);
     const socialSecurity = annualSS / periodsPerYear;
-
-    // Medicare: 1.45% (additional 0.9% over $200k not modeled at pay period level)
     const medicare = gross * 0.0145;
-
     const stateTax = gross * (STATE_RATES[form.state] ?? 0);
     const totalDeductions = federalTax + socialSecurity + medicare + stateTax;
     const net = gross - totalDeductions;
-
     setResults({ gross, federalTax, socialSecurity, medicare, stateTax, totalDeductions, net });
   };
 
@@ -173,156 +199,84 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
     });
   };
 
-  const inputClass = 'w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent';
-  const labelClass = 'block text-sm font-medium text-gray-700 mb-1';
-  const errorClass = 'text-red-500 text-xs mt-1';
-  const inputStyle: React.CSSProperties = {
-    border: '1.5px solid #d1d5db',
-    borderRadius: '8px',
-    padding: '10px 14px',
-    fontSize: '15px',
-    width: '100%',
-    boxSizing: 'border-box',
-    fontFamily: 'inherit',
-    color: '#111827',
-    background: 'white',
-    outline: 'none',
-    transition: 'border-color 0.15s, box-shadow 0.15s',
-  };
-  const labelStyle: React.CSSProperties = {
-    fontWeight: 600,
-    fontSize: '14px',
-    color: '#374151',
-    marginBottom: '4px',
-    display: 'block',
-  };
-  const [focusedField, setFocusedField] = React.useState<string | null>(null);
-  const getFocusStyle = (field: string): React.CSSProperties => focusedField === field ? {
-    ...inputStyle,
-    borderColor: '#1a56db',
-    boxShadow: '0 0 0 3px rgba(26,86,219,0.12)',
-  } : inputStyle;
-
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden" style={{ background: 'white', borderRadius: '0.75rem', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06)', border: '1px solid #e5e7eb', overflow: 'hidden' }}>
-      {/* Form */}
-      <div className="p-6 space-y-6">
-        {/* Employer & Employee Info */}
-        <div>
-          <h2 className="text-lg font-semibold text-gray-900 mb-4" style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', borderLeft: '3px solid #1a56db', paddingLeft: '0.75rem', marginBottom: '1.25rem', marginTop: '0.5rem' }}>Employer &amp; Employee Information</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label style={labelStyle}>Employer Name</label>
-              <input
-                type="text"
-                className={inputClass}
-                placeholder="Acme Corp"
-                style={getFocusStyle('employerName')}
-                value={form.employerName}
-                onChange={e => update('employerName', e.target.value)}
-                onFocus={() => setFocusedField('employerName')}
-                onBlur={() => setFocusedField(null)}
-              />
-            </div>
-            <div>
-              <label style={labelStyle}>Employee Name</label>
-              <input
-                type="text"
-                className={inputClass}
-                placeholder="Jane Smith"
-                style={getFocusStyle('employeeName')}
-                value={form.employeeName}
-                onChange={e => update('employeeName', e.target.value)}
-                onFocus={() => setFocusedField('employeeName')}
-                onBlur={() => setFocusedField(null)}
-              />
-            </div>
-            <div>
-              <label style={labelStyle}>Employee SSN (last 4 digits)</label>
-              <input
-                type="text"
-                className={inputClass}
-                placeholder="XXXX-XX-1234"
-                maxLength={11}
-                style={getFocusStyle('employeeSSN')}
-                value={form.employeeSSN}
-                onChange={e => update('employeeSSN', e.target.value)}
-                onFocus={() => setFocusedField('employeeSSN')}
-                onBlur={() => setFocusedField(null)}
-              />
-            </div>
-            <div>
-              <label style={labelStyle}>State</label>
-              <select
-                className={inputClass}
-                style={getFocusStyle('state')}
-                value={form.state}
-                onChange={e => update('state', e.target.value)}
-                onFocus={() => setFocusedField('state')}
-                onBlur={() => setFocusedField(null)}
-              >
-                {Object.entries(STATE_NAMES).map(([abbr, name]) => (
-                  <option key={abbr} value={abbr}>{name}</option>
-                ))}
-              </select>
-            </div>
+    <div style={{
+      background: 'white',
+      borderRadius: '1.25rem',
+      boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
+      border: '1px solid #e5e7eb',
+      overflow: 'hidden',
+    }}>
+      {/* ── Form ── */}
+      <div style={{ padding: '2rem' }}>
+
+        {/* Section: Employer & Employee */}
+        <h2 style={{ fontSize: '0.875rem', fontWeight: 700, color: '#111827', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
+          <span style={{ display: 'inline-block', width: '3px', height: '1rem', background: '#1a56db', borderRadius: '2px' }} />
+          Employer &amp; Employee
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <div>
+            <label style={LABEL_STYLE}>Employer Name</label>
+            <input type="text" placeholder="Acme Corp" style={iStyle('employerName')} value={form.employerName}
+              onChange={e => update('employerName', e.target.value)}
+              onFocus={() => setFocused('employerName')} onBlur={() => setFocused(null)} />
+          </div>
+          <div>
+            <label style={LABEL_STYLE}>Employee Name</label>
+            <input type="text" placeholder="Jane Smith" style={iStyle('employeeName')} value={form.employeeName}
+              onChange={e => update('employeeName', e.target.value)}
+              onFocus={() => setFocused('employeeName')} onBlur={() => setFocused(null)} />
+          </div>
+          <div>
+            <label style={LABEL_STYLE}>SSN (last 4 digits)</label>
+            <input type="text" placeholder="XXXX-XX-1234" maxLength={11} style={iStyle('employeeSSN')} value={form.employeeSSN}
+              onChange={e => update('employeeSSN', e.target.value)}
+              onFocus={() => setFocused('employeeSSN')} onBlur={() => setFocused(null)} />
+          </div>
+          <div>
+            <label style={LABEL_STYLE}>State</label>
+            <select style={iStyle('state')} value={form.state}
+              onChange={e => update('state', e.target.value)}
+              onFocus={() => setFocused('state')} onBlur={() => setFocused(null)}>
+              {Object.entries(STATE_NAMES).map(([abbr, name]) => (
+                <option key={abbr} value={abbr}>{name}</option>
+              ))}
+            </select>
           </div>
         </div>
 
-        {/* Pay Period */}
-        <div>
-          <h2 className="text-lg font-semibold text-gray-900 mb-4" style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', borderLeft: '3px solid #1a56db', paddingLeft: '0.75rem', marginBottom: '1.25rem', marginTop: '1.5rem' }}>Pay Period</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* Section: Pay Period */}
+        <div style={SECTION_DIVIDER}>
+          <h2 style={{ fontSize: '0.875rem', fontWeight: 700, color: '#111827', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
+            <span style={{ display: 'inline-block', width: '3px', height: '1rem', background: '#1a56db', borderRadius: '2px' }} />
+            Pay Period
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
-              <label style={labelStyle}>Pay Period Start</label>
-              <input
-                type="date"
-                className={inputClass}
-                placeholder="MM/DD/YYYY"
-                style={getFocusStyle('payPeriodStart')}
-                value={form.payPeriodStart}
+              <label style={LABEL_STYLE}>Period Start</label>
+              <input type="date" style={iStyle('payPeriodStart')} value={form.payPeriodStart}
                 onChange={e => update('payPeriodStart', e.target.value)}
-                onFocus={() => setFocusedField('payPeriodStart')}
-                onBlur={() => setFocusedField(null)}
-              />
+                onFocus={() => setFocused('payPeriodStart')} onBlur={() => setFocused(null)} />
             </div>
             <div>
-              <label style={labelStyle}>Pay Period End</label>
-              <input
-                type="date"
-                className={inputClass}
-                placeholder="MM/DD/YYYY"
-                style={getFocusStyle('payPeriodEnd')}
-                value={form.payPeriodEnd}
+              <label style={LABEL_STYLE}>Period End</label>
+              <input type="date" style={iStyle('payPeriodEnd')} value={form.payPeriodEnd}
                 onChange={e => update('payPeriodEnd', e.target.value)}
-                onFocus={() => setFocusedField('payPeriodEnd')}
-                onBlur={() => setFocusedField(null)}
-              />
+                onFocus={() => setFocused('payPeriodEnd')} onBlur={() => setFocused(null)} />
             </div>
             <div>
-              <label style={labelStyle}>Pay Date</label>
-              <input
-                type="date"
-                className={inputClass}
-                placeholder="MM/DD/YYYY"
-                style={getFocusStyle('payDate')}
-                value={form.payDate}
+              <label style={LABEL_STYLE}>Pay Date</label>
+              <input type="date" style={iStyle('payDate')} value={form.payDate}
                 onChange={e => update('payDate', e.target.value)}
-                onFocus={() => setFocusedField('payDate')}
-                onBlur={() => setFocusedField(null)}
-              />
+                onFocus={() => setFocused('payDate')} onBlur={() => setFocused(null)} />
             </div>
           </div>
-          <div className="mt-4">
-            <label style={labelStyle}>Pay Frequency</label>
-            <select
-              className={inputClass + ' md:w-1/2'}
-              style={getFocusStyle('payFrequency')}
-              value={form.payFrequency}
+          <div style={{ maxWidth: '50%' }}>
+            <label style={LABEL_STYLE}>Pay Frequency</label>
+            <select style={iStyle('payFrequency')} value={form.payFrequency}
               onChange={e => update('payFrequency', e.target.value as keyof typeof PAY_PERIODS)}
-              onFocus={() => setFocusedField('payFrequency')}
-              onBlur={() => setFocusedField(null)}
-            >
+              onFocus={() => setFocused('payFrequency')} onBlur={() => setFocused(null)}>
               {Object.entries(PAY_PERIOD_LABELS).map(([key, label]) => (
                 <option key={key} value={key}>{label}</option>
               ))}
@@ -330,205 +284,186 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
           </div>
         </div>
 
-        {/* Earnings */}
-        <div>
-          <h2 className="text-lg font-semibold text-gray-900 mb-4" style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', borderLeft: '3px solid #1a56db', paddingLeft: '0.75rem', marginBottom: '1.25rem', marginTop: '1.5rem' }}>Earnings</h2>
-          <div className="mb-4">
-            <label style={labelStyle}>Pay Type</label>
-            <div className="flex gap-4">
+        {/* Section: Earnings */}
+        <div style={SECTION_DIVIDER}>
+          <h2 style={{ fontSize: '0.875rem', fontWeight: 700, color: '#111827', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
+            <span style={{ display: 'inline-block', width: '3px', height: '1rem', background: '#1a56db', borderRadius: '2px' }} />
+            Earnings
+          </h2>
+
+          <div style={{ marginBottom: '1rem' }}>
+            <label style={LABEL_STYLE}>Pay Type</label>
+            <div style={{ display: 'flex', gap: '1.5rem' }}>
               {(['salary', 'hourly'] as const).map(type => (
-                <label key={type} className="flex items-center gap-2 cursor-pointer">
-                  <input
-                    type="radio"
-                    name="payType"
-                    value={type}
-                    checked={form.payType === type}
+                <label key={type} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', fontSize: '0.9375rem', fontWeight: 500, color: '#374151', textTransform: 'none', letterSpacing: 0 }}>
+                  <input type="radio" name="payType" value={type} checked={form.payType === type}
                     onChange={() => update('payType', type)}
-                    className="text-primary-600"
-                  />
-                  <span className="text-sm capitalize">{type}</span>
+                    style={{ width: 'auto', height: 'auto', accentColor: '#1a56db' }} />
+                  {type.charAt(0).toUpperCase() + type.slice(1)}
                 </label>
               ))}
             </div>
           </div>
 
           {form.payType === 'salary' ? (
-            <div className="md:w-1/2">
-              <label style={labelStyle}>Gross Pay This Period ($)</label>
-              <input
-                type="number"
-                className={inputClass}
-                placeholder="3000.00"
-                min="0"
-                step="0.01"
-                style={getFocusStyle('grossPay')}
-                value={form.grossPay}
+            <div style={{ maxWidth: '50%' }}>
+              <label style={LABEL_STYLE}>Gross Pay This Period ($)</label>
+              <input type="number" placeholder="3000.00" min="0" step="0.01"
+                style={iStyle('grossPay')} value={form.grossPay}
                 onChange={e => update('grossPay', e.target.value)}
-                onFocus={() => setFocusedField('grossPay')}
-                onBlur={() => setFocusedField(null)}
-              />
-              {errors.grossPay && <p className={errorClass}>{errors.grossPay}</p>}
+                onFocus={() => setFocused('grossPay')} onBlur={() => setFocused(null)} />
+              {errors.grossPay && <p style={{ color: '#ef4444', fontSize: '0.8125rem', marginTop: '0.375rem', marginBottom: 0 }}>{errors.grossPay}</p>}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
               <div>
-                <label style={labelStyle}>Hourly Rate ($)</label>
-                <input
-                  type="number"
-                  className={inputClass}
-                  placeholder="25.00"
-                  min="0"
-                  step="0.01"
-                  style={getFocusStyle('hourlyRate')}
-                  value={form.hourlyRate}
+                <label style={LABEL_STYLE}>Hourly Rate ($)</label>
+                <input type="number" placeholder="25.00" min="0" step="0.01"
+                  style={iStyle('hourlyRate')} value={form.hourlyRate}
                   onChange={e => update('hourlyRate', e.target.value)}
-                  onFocus={() => setFocusedField('hourlyRate')}
-                  onBlur={() => setFocusedField(null)}
-                />
-                {errors.hourlyRate && <p className={errorClass}>{errors.hourlyRate}</p>}
+                  onFocus={() => setFocused('hourlyRate')} onBlur={() => setFocused(null)} />
+                {errors.hourlyRate && <p style={{ color: '#ef4444', fontSize: '0.8125rem', marginTop: '0.375rem', marginBottom: 0 }}>{errors.hourlyRate}</p>}
               </div>
               <div>
-                <label style={labelStyle}>Regular Hours</label>
-                <input
-                  type="number"
-                  className={inputClass}
-                  placeholder="80"
-                  min="0"
-                  max="999"
-                  step="0.5"
-                  style={getFocusStyle('regularHours')}
-                  value={form.regularHours}
+                <label style={LABEL_STYLE}>Regular Hours</label>
+                <input type="number" placeholder="80" min="0" max="999" step="0.5"
+                  style={iStyle('regularHours')} value={form.regularHours}
                   onChange={e => update('regularHours', e.target.value)}
-                  onFocus={() => setFocusedField('regularHours')}
-                  onBlur={() => setFocusedField(null)}
-                />
+                  onFocus={() => setFocused('regularHours')} onBlur={() => setFocused(null)} />
               </div>
               <div>
-                <label style={labelStyle}>Overtime Hours</label>
-                <input
-                  type="number"
-                  className={inputClass}
-                  placeholder="0"
-                  min="0"
-                  max="999"
-                  step="0.5"
-                  style={getFocusStyle('overtimeHours')}
-                  value={form.overtimeHours}
+                <label style={LABEL_STYLE}>Overtime Hours</label>
+                <input type="number" placeholder="0" min="0" max="999" step="0.5"
+                  style={iStyle('overtimeHours')} value={form.overtimeHours}
                   onChange={e => update('overtimeHours', e.target.value)}
-                  onFocus={() => setFocusedField('overtimeHours')}
-                  onBlur={() => setFocusedField(null)}
-                />
+                  onFocus={() => setFocused('overtimeHours')} onBlur={() => setFocused(null)} />
               </div>
             </div>
           )}
         </div>
 
+        {/* Generate button */}
         <button
           onClick={calculate}
-          className="w-full md:w-auto bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-          style={{ background: '#1a56db', color: 'white', fontSize: '17px', fontWeight: 700, padding: '14px 32px', borderRadius: '10px', border: 'none', cursor: 'pointer', width: '100%', marginTop: '16px', letterSpacing: '0.01em', transition: 'background 0.2s' }}
-          onMouseEnter={e => (e.currentTarget.style.background = '#1e40af')}
-          onMouseLeave={e => (e.currentTarget.style.background = '#1a56db')}
+          style={{
+            display: 'block',
+            width: '100%',
+            height: '56px',
+            background: '#1a56db',
+            color: 'white',
+            fontSize: '1.125rem',
+            fontWeight: 700,
+            borderRadius: '0.75rem',
+            border: 'none',
+            cursor: 'pointer',
+            marginTop: '1.75rem',
+            letterSpacing: '0.01em',
+            transition: 'background 0.2s, box-shadow 0.2s',
+            boxShadow: '0 4px 14px rgba(26,86,219,0.35)',
+          }}
+          onMouseEnter={e => {
+            (e.currentTarget as HTMLButtonElement).style.background = '#1e3a8a';
+            (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 6px 20px rgba(26,86,219,0.45)';
+          }}
+          onMouseLeave={e => {
+            (e.currentTarget as HTMLButtonElement).style.background = '#1a56db';
+            (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 4px 14px rgba(26,86,219,0.35)';
+          }}
         >
-          Calculate Pay Stub
+          Generate PDF Pay Stub &rarr;
         </button>
       </div>
 
-      {/* Results */}
+      {/* ── Results ── */}
       {results && (
-        <div className="border-t border-gray-200 bg-gray-50 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4" style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', borderLeft: '3px solid #1a56db', paddingLeft: '0.75rem', marginBottom: '1.25rem' }}>Pay Stub Summary</h2>
+        <div style={{ borderTop: '1px solid #e5e7eb', background: '#f9fafb', padding: '2rem' }}>
+          <h2 style={{ fontSize: '0.875rem', fontWeight: 700, color: '#111827', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
+            <span style={{ display: 'inline-block', width: '3px', height: '1rem', background: '#1a56db', borderRadius: '2px' }} />
+            Pay Stub Summary
+          </h2>
 
-          <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-            {/* Earnings section */}
-            <div className="px-4 py-3 bg-gray-50 border-b border-gray-200">
-              <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">Earnings</p>
+          <div style={{ background: 'white', borderRadius: '0.875rem', border: '1px solid #e5e7eb', overflow: 'hidden', marginBottom: '1.5rem' }}>
+            {/* Earnings */}
+            <div style={{ background: '#f9fafb', padding: '0.625rem 1rem', borderBottom: '1px solid #e5e7eb' }}>
+              <p style={{ fontSize: '0.6875rem', fontWeight: 700, color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.08em', margin: 0 }}>Earnings</p>
             </div>
-            <table className="w-full text-sm">
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9375rem' }}>
               <tbody>
-                <tr className="border-b border-gray-100">
-                  <td className="px-4 py-3 text-gray-700">
+                <tr style={{ borderBottom: '1px solid #f3f4f6' }}>
+                  <td style={{ padding: '0.75rem 1rem', color: '#6b7280' }}>
                     {form.payType === 'salary' ? 'Salary' : 'Regular Pay'}
-                    {form.payType === 'hourly' && (
-                      <span className="text-gray-400 ml-1 text-xs">
-                        ({form.regularHours} hrs @ {fmt(parseFloat(form.hourlyRate) || 0)}/hr)
-                      </span>
-                    )}
                   </td>
-                  <td className="px-4 py-3 text-right font-mono text-gray-900">{fmt(results.gross)}</td>
+                  <td style={{ padding: '0.75rem 1rem', textAlign: 'right', fontWeight: 600, color: '#111827', fontVariantNumeric: 'tabular-nums' }}>{fmt(results.gross)}</td>
                 </tr>
-                {form.payType === 'hourly' && parseFloat(form.overtimeHours) > 0 && (
-                  <tr className="border-b border-gray-100">
-                    <td className="px-4 py-3 text-gray-700">
-                      Overtime Pay
-                      <span className="text-gray-400 ml-1 text-xs">
-                        ({form.overtimeHours} hrs @ {fmt((parseFloat(form.hourlyRate) || 0) * 1.5)}/hr)
-                      </span>
-                    </td>
-                    <td className="px-4 py-3 text-right font-mono text-gray-900">
-                      {fmt((parseFloat(form.hourlyRate) || 0) * 1.5 * (parseFloat(form.overtimeHours) || 0))}
-                    </td>
-                  </tr>
-                )}
-                <tr className="bg-gray-50 font-semibold">
-                  <td className="px-4 py-3 text-gray-900">Gross Pay</td>
-                  <td className="px-4 py-3 text-right font-mono text-gray-900">{fmt(results.gross)}</td>
+                <tr style={{ background: '#f9fafb' }}>
+                  <td style={{ padding: '0.75rem 1rem', fontWeight: 700, color: '#111827' }}>Gross Pay</td>
+                  <td style={{ padding: '0.75rem 1rem', textAlign: 'right', fontWeight: 700, color: '#111827', fontVariantNumeric: 'tabular-nums' }}>{fmt(results.gross)}</td>
                 </tr>
               </tbody>
             </table>
 
-            {/* Deductions section */}
-            <div className="px-4 py-3 bg-gray-50 border-b border-gray-200 border-t">
-              <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">Deductions</p>
+            {/* Deductions */}
+            <div style={{ background: '#f9fafb', padding: '0.625rem 1rem', borderTop: '1px solid #e5e7eb', borderBottom: '1px solid #e5e7eb' }}>
+              <p style={{ fontSize: '0.6875rem', fontWeight: 700, color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.08em', margin: 0 }}>Deductions</p>
             </div>
-            <table className="w-full text-sm">
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9375rem' }}>
               <tbody>
-                <tr className="border-b border-gray-100">
-                  <td className="px-4 py-3 text-gray-700">Federal Income Tax</td>
-                  <td className="px-4 py-3 text-right font-mono text-red-600">- {fmt(results.federalTax)}</td>
-                </tr>
-                <tr className="border-b border-gray-100">
-                  <td className="px-4 py-3 text-gray-700">Social Security (6.2%)</td>
-                  <td className="px-4 py-3 text-right font-mono text-red-600">- {fmt(results.socialSecurity)}</td>
-                </tr>
-                <tr className="border-b border-gray-100">
-                  <td className="px-4 py-3 text-gray-700">Medicare (1.45%)</td>
-                  <td className="px-4 py-3 text-right font-mono text-red-600">- {fmt(results.medicare)}</td>
-                </tr>
-                <tr className="border-b border-gray-100">
-                  <td className="px-4 py-3 text-gray-700">
-                    State Income Tax ({STATE_NAMES[form.state] || form.state})
-                  </td>
-                  <td className="px-4 py-3 text-right font-mono text-red-600">- {fmt(results.stateTax)}</td>
-                </tr>
-                <tr className="bg-gray-50 font-semibold">
-                  <td className="px-4 py-3 text-gray-900">Total Deductions</td>
-                  <td className="px-4 py-3 text-right font-mono text-red-700">- {fmt(results.totalDeductions)}</td>
+                {[
+                  ['Federal Income Tax', results.federalTax],
+                  ['Social Security (6.2%)', results.socialSecurity],
+                  ['Medicare (1.45%)', results.medicare],
+                  [`State Tax (${STATE_NAMES[form.state] || form.state})`, results.stateTax],
+                ].map(([label, val]) => (
+                  <tr key={label as string} style={{ borderBottom: '1px solid #f3f4f6' }}>
+                    <td style={{ padding: '0.75rem 1rem', color: '#6b7280' }}>{label as string}</td>
+                    <td style={{ padding: '0.75rem 1rem', textAlign: 'right', color: '#dc2626', fontVariantNumeric: 'tabular-nums' }}>- {fmt(val as number)}</td>
+                  </tr>
+                ))}
+                <tr style={{ background: '#f9fafb' }}>
+                  <td style={{ padding: '0.75rem 1rem', fontWeight: 700, color: '#111827' }}>Total Deductions</td>
+                  <td style={{ padding: '0.75rem 1rem', textAlign: 'right', fontWeight: 700, color: '#dc2626', fontVariantNumeric: 'tabular-nums' }}>- {fmt(results.totalDeductions)}</td>
                 </tr>
               </tbody>
             </table>
 
             {/* Net Pay */}
-            <div className="px-4 py-4 bg-primary-600 text-white flex justify-between items-center" style={{ padding: '1rem', background: '#1a56db', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span className="font-bold text-lg">Net Pay</span>
-              <span className="font-bold text-2xl font-mono">{fmt(results.net)}</span>
+            <div style={{ background: '#111827', padding: '1rem 1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'white' }}>Net Pay</span>
+              <span style={{ fontSize: '1.375rem', fontWeight: 800, color: '#10b981', fontVariantNumeric: 'tabular-nums' }}>{fmt(results.net)}</span>
             </div>
           </div>
 
-          <p className="text-xs text-gray-500 mb-4">
-            * Estimates use 2024 federal tax brackets (single filer) and state effective rates. 
-            Actual withholding may differ based on W-4 elections, filing status, and other factors. 
-            Not tax advice.
+          <p style={{ fontSize: '0.75rem', color: '#9ca3af', marginBottom: '1.25rem', lineHeight: 1.6 }}>
+            Estimates use 2024 federal brackets (single filer) and state effective rates. Actual withholding may differ. Not tax advice.
           </p>
 
           <button
             onClick={downloadPDF}
-            className="flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#1a56db', color: 'white', fontWeight: 700, padding: '14px 32px', borderRadius: '10px', border: 'none', cursor: 'pointer', fontSize: '17px', width: '100%', justifyContent: 'center', marginTop: '8px', transition: 'background 0.2s' }}
-            onMouseEnter={e => (e.currentTarget.style.background = '#1e40af')}
-            onMouseLeave={e => (e.currentTarget.style.background = '#1a56db')}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem',
+              width: '100%',
+              height: '56px',
+              background: '#1a56db',
+              color: 'white',
+              fontSize: '1.125rem',
+              fontWeight: 700,
+              borderRadius: '0.75rem',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'background 0.2s, box-shadow 0.2s',
+              boxShadow: '0 4px 14px rgba(26,86,219,0.35)',
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLButtonElement).style.background = '#1e3a8a';
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLButtonElement).style.background = '#1a56db';
+            }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
             Download PDF Pay Stub

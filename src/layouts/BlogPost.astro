@@ -1,6 +1,5 @@
 ---
 import Base from './Base.astro';
-import TrustBar from '../components/TrustBar.astro';
 
 interface Props {
   title: string;
@@ -20,29 +19,59 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
 });
 ---
 <Base title={title} description={description} canonical={canonical} ogImage={ogImage}>
-  <TrustBar compact={true} />
-  <article style="max-width:700px; margin:0 auto; padding:2rem 1.5rem 4rem;">
+
+  <!-- Article -->
+  <article style="max-width:760px; margin:0 auto; padding:2.5rem 1.5rem 5rem;">
+
     <!-- Breadcrumb -->
-    <nav style="font-size:0.8125rem; color:#6b7280; margin-bottom:2rem; display:flex; align-items:center; gap:0.5rem;">
+    <nav style="font-size:0.8125rem; color:#6b7280; margin-bottom:2rem; display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
       <a href="/" style="color:#1a56db; text-decoration:none; font-weight:500;">Home</a>
       <span style="color:#d1d5db;">›</span>
       <a href="/blog" style="color:#1a56db; text-decoration:none; font-weight:500;">Blog</a>
       <span style="color:#d1d5db;">›</span>
       <span style="color:#6b7280;">{h1}</span>
     </nav>
-    <header style="margin-bottom:2rem;">
-      <h1 style="font-size:2rem; font-weight:800; color:#111827; margin-bottom:0.75rem; line-height:1.2; letter-spacing:-0.02em;">{h1}</h1>
-      <time datetime={date} style="font-size:0.875rem; color:#6b7280;">
+
+    <!-- Article header -->
+    <header style="margin-bottom:2.5rem; padding-bottom:2rem; border-bottom:1px solid #e5e7eb;">
+      <h1 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:800; color:#111827; margin-bottom:1rem; line-height:1.15; letter-spacing:-0.025em;">{h1}</h1>
+      <time datetime={date} style="font-size:0.875rem; color:#9ca3af; font-weight:500;">
         Published {formattedDate}
       </time>
     </header>
+
+    <!-- Article body -->
     <div class="prose" style="max-width:none; line-height:1.8; color:#374151;">
       <slot />
     </div>
-    <div style="margin-top:3rem; padding:1.5rem; background:#eff6ff; border-radius:0.75rem; border:1px solid #bfdbfe;">
-      <p style="font-size:0.9375rem; font-weight:600; color:#1e40af; margin-bottom:0.5rem;">Ready to generate your pay stub?</p>
-      <p style="font-size:0.875rem; color:#1e40af; margin-bottom:1rem;">Free, instant, no signup required.</p>
-      <a href="/" class="btn-primary" style="font-size:0.9rem; padding:0.625rem 1.25rem;">Generate Free Pay Stub &rarr;</a>
+
+    <!-- Bottom CTA -->
+    <div style="margin-top:3.5rem; padding:2rem; background:#eff6ff; border-radius:1rem; border:1px solid #bfdbfe; text-align:center;">
+      <h3 style="font-size:1.1875rem; font-weight:800; color:#1e3a8a; margin-bottom:0.5rem;">Ready to generate your pay stub?</h3>
+      <p style="font-size:0.9375rem; color:#1d4ed8; margin-bottom:1.5rem; line-height:1.6;">Free, instant PDF. No signup required.</p>
+      <a href="/" class="btn-primary" style="font-size:1rem; padding:0.875rem 1.75rem;">
+        Generate Free Pay Stub &rarr;
+      </a>
     </div>
+
+    <!-- Related blog posts nav -->
+    <div style="margin-top:3rem; display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href="/blog/how-to-read-a-pay-stub" style="flex:1; min-width:200px; display:block; background:white; border:1px solid #e5e7eb; border-radius:0.875rem; padding:1.25rem; text-decoration:none; color:inherit; transition:border-color 0.15s;"
+         onmouseover="this.style.borderColor='#1a56db'" onmouseout="this.style.borderColor='#e5e7eb'">
+        <div style="font-size:0.75rem; font-weight:700; color:#1a56db; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.375rem;">Guide</div>
+        <div style="font-size:0.9375rem; font-weight:600; color:#111827; line-height:1.4;">How to Read a Pay Stub</div>
+      </a>
+      <a href="/blog/doordash-proof-of-income" style="flex:1; min-width:200px; display:block; background:white; border:1px solid #e5e7eb; border-radius:0.875rem; padding:1.25rem; text-decoration:none; color:inherit; transition:border-color 0.15s;"
+         onmouseover="this.style.borderColor='#1a56db'" onmouseout="this.style.borderColor='#e5e7eb'">
+        <div style="font-size:0.75rem; font-weight:700; color:#1a56db; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.375rem;">Gig Work</div>
+        <div style="font-size:0.9375rem; font-weight:600; color:#111827; line-height:1.4;">DoorDash Proof of Income</div>
+      </a>
+      <a href="/blog/quarterly-taxes-freelancer" style="flex:1; min-width:200px; display:block; background:white; border:1px solid #e5e7eb; border-radius:0.875rem; padding:1.25rem; text-decoration:none; color:inherit; transition:border-color 0.15s;"
+         onmouseover="this.style.borderColor='#1a56db'" onmouseout="this.style.borderColor='#e5e7eb'">
+        <div style="font-size:0.75rem; font-weight:700; color:#1a56db; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.375rem;">Taxes</div>
+        <div style="font-size:0.9375rem; font-weight:600; color:#111827; line-height:1.4;">Quarterly Taxes for Freelancers</div>
+      </a>
+    </div>
+
   </article>
 </Base>

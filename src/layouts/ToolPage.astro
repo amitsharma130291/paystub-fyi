@@ -1,6 +1,5 @@
 ---
 import Base from './Base.astro';
-import TrustBar from '../components/TrustBar.astro';
 import PayStubForm from '../components/PayStubForm';
 
 interface Props {
@@ -18,42 +17,53 @@ interface Props {
 const { title, description, canonical, ogImage, h1, subtitle, stateName, stateRate, defaultState = 'CA' } = Astro.props;
 ---
 <Base title={title} description={description} canonical={canonical} ogImage={ogImage}>
-  <TrustBar />
 
   {stateName && stateRate && (
-    <div style="background:#f0fdf4; border-bottom:1px solid #bbf7d0; padding:0.625rem 0; text-align:center; font-size:0.8rem; color:#166534; font-weight:500;">
+    <div style="background:#f0fdf4; border-bottom:1px solid #bbf7d0; padding:0.625rem 0; text-align:center; font-size:0.8125rem; color:#166534; font-weight:600;">
       ✅ Calculating {stateName} state income tax at {stateRate}% (2024 rate)
     </div>
   )}
 
-  <div style="max-width:900px; margin:0 auto; padding:2rem 1.5rem 4rem;">
+  <div style="max-width:960px; margin:0 auto; padding:2.5rem 1.5rem 5rem;">
+
     <!-- Breadcrumb -->
-    <nav style="font-size:0.8125rem; color:#6b7280; margin-bottom:2rem; display:flex; align-items:center; gap:0.5rem;">
-      <a href="/" style="color:#1a56db; text-decoration:none; font-weight:500;">Home</a>
+    <nav style="font-size:0.8125rem; color:#6b7280; margin-bottom:2rem; display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+      <a href="/" style="color:#1a56db; text-decoration:none; font-weight:500; transition:color 0.15s;">Home</a>
       <span style="color:#d1d5db;">›</span>
       <span style="color:#6b7280;">{h1}</span>
     </nav>
 
-    <!-- Hero section -->
-    <div style="text-align:center; padding:1rem 0 2rem; max-width:760px; margin:0 auto;">
-      <div style="display:inline-block; background:#eff6ff; color:#1e40af; font-size:0.8rem; font-weight:600; padding:0.375rem 0.875rem; border-radius:9999px; margin-bottom:1.25rem; border:1px solid #bfdbfe;">
-        Free · No sign-up · Instant PDF
+    <!-- Hero -->
+    <div style="padding:1.5rem 0 2.5rem; max-width:720px;">
+      <div style="display:inline-block; background:#eff6ff; color:#1a56db; font-size:0.75rem; font-weight:700; padding:0.3125rem 0.875rem; border-radius:9999px; margin-bottom:1.25rem; border:1px solid #bfdbfe; letter-spacing:0.04em;">
+        FREE &middot; NO SIGN-UP &middot; INSTANT PDF
       </div>
-      <h1 style="font-size:2rem; font-weight:800; color:#111827; margin-bottom:0.625rem; line-height:1.2; letter-spacing:-0.02em;">{h1}</h1>
+      <h1 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:800; color:#111827; margin-bottom:0.75rem; line-height:1.15; letter-spacing:-0.025em;">{h1}</h1>
       {subtitle && (
-        <p style="font-size:1.0625rem; color:#6b7280; margin-bottom:0; line-height:1.6;">{subtitle}</p>
+        <p style="font-size:1.0625rem; color:#6b7280; line-height:1.65; margin:0;">{subtitle}</p>
       )}
     </div>
 
-    <!-- Form area -->
-    <div style="margin-bottom:3rem;">
-      <slot name="form" />
+    <!-- Optional slot before form -->
+    <slot name="form" />
+
+    <!-- Form -->
+    <div style="margin-bottom:3.5rem;">
       <PayStubForm client:load defaultState={defaultState} />
     </div>
 
-    <!-- Content -->
-    <div style="max-width:none; line-height:1.75; color:#374151;">
+    <!-- Page content -->
+    <div style="line-height:1.75; color:#374151;">
       <slot />
     </div>
   </div>
+
+  <!-- Bottom CTA -->
+  <div style="background:#1a56db; padding:3rem 1.5rem; text-align:center;">
+    <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:1.25rem;">Need a different type of pay stub?</p>
+    <a href="/" style="display:inline-block; background:white; color:#1a56db; font-weight:700; font-size:1rem; padding:0.875rem 1.75rem; border-radius:0.625rem; text-decoration:none; box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+      Back to Free Generator &rarr;
+    </a>
+  </div>
+
 </Base>

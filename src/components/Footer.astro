@@ -28,59 +28,113 @@ const company = [
   { href: '/terms', label: 'Terms of Service' },
 ];
 ---
-<footer style="background:#111827; color:#9ca3af; margin-top:4rem;">
-  <div class="container" style="padding-top:3rem; padding-bottom:3rem;">
-    <div class="footer-grid" style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1fr; gap:2rem;">
+<footer style="background:#111827; color:#9ca3af;">
+  <div class="container" style="padding-top:3.5rem; padding-bottom:3.5rem;">
+
+    <!-- Columns grid -->
+    <div class="footer-grid" style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1fr; gap:2.5rem; margin-bottom:3rem;">
+
+      <!-- Brand column -->
       <div>
-        <div style="font-size:1.125rem; font-weight:800; color:white; margin-bottom:0.75rem;">
-          IncomeRecord<span style="color:#6b7280;">.com</span>
+        <div style="font-size:1.125rem; font-weight:800; color:white; margin-bottom:1rem; letter-spacing:-0.01em;">
+          IncomeRecord<span style="color:#4b5563;">.com</span>
         </div>
-        <p style="font-size:0.875rem; line-height:1.6; margin-bottom:1.5rem; color:#9ca3af;">
+        <p style="font-size:0.875rem; line-height:1.7; color:#9ca3af; margin-bottom:1.5rem;">
           Free pay stub generator for gig workers, freelancers, and employees. No account required, no watermarks, instant PDF download.
         </p>
-        <div style="font-size:0.8rem; color:#6b7280; line-height:1.8;">
-          🔒 No data stored<br/>
-          📄 Instant PDF download<br/>
-          ✅ 2024 federal &amp; state tax rates<br/>
-          🆓 Always free
-        </div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem;">
+          {[
+            '🔒 No data stored on our servers',
+            '📄 Instant PDF download',
+            '✅ 2024 federal & state tax rates',
+            '🆓 Always free, no hidden fees',
+          ].map(item => (
+            <li style="font-size:0.8125rem; color:#6b7280; line-height:1.5;">{item}</li>
+          ))}
+        </ul>
       </div>
+
+      <!-- Tools -->
       <div>
-        <div style="font-size:0.75rem; font-weight:700; color:white; margin-bottom:1rem; text-transform:uppercase; letter-spacing:0.08em;">Tools</div>
-        {tools.map(l => (
-          <div style="margin-bottom:0.5rem;">
-            <a href={l.href} style="font-size:0.875rem; color:#9ca3af; text-decoration:none;">{l.label}</a>
-          </div>
-        ))}
+        <div style="font-size:0.6875rem; font-weight:700; color:white; margin-bottom:1.25rem; text-transform:uppercase; letter-spacing:0.1em;">Tools</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.625rem;">
+          {tools.map(l => (
+            <li>
+              <a href={l.href} style="font-size:0.875rem; color:#9ca3af; text-decoration:none; transition:color 0.15s;"
+                 onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">{l.label}</a>
+            </li>
+          ))}
+        </ul>
       </div>
+
+      <!-- Learn -->
       <div>
-        <div style="font-size:0.75rem; font-weight:700; color:white; margin-bottom:1rem; text-transform:uppercase; letter-spacing:0.08em;">Learn</div>
-        {resources.map(l => (
-          <div style="margin-bottom:0.5rem;">
-            <a href={l.href} style="font-size:0.875rem; color:#9ca3af; text-decoration:none;">{l.label}</a>
-          </div>
-        ))}
+        <div style="font-size:0.6875rem; font-weight:700; color:white; margin-bottom:1.25rem; text-transform:uppercase; letter-spacing:0.1em;">Learn</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.625rem;">
+          {resources.map(l => (
+            <li>
+              <a href={l.href} style="font-size:0.875rem; color:#9ca3af; text-decoration:none; transition:color 0.15s;"
+                 onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">{l.label}</a>
+            </li>
+          ))}
+        </ul>
       </div>
+
+      <!-- By State -->
       <div>
-        <div style="font-size:0.75rem; font-weight:700; color:white; margin-bottom:1rem; text-transform:uppercase; letter-spacing:0.08em;">By State</div>
-        {states.map(l => (
-          <div style="margin-bottom:0.5rem;">
-            <a href={l.href} style="font-size:0.875rem; color:#9ca3af; text-decoration:none;">{l.label}</a>
-          </div>
-        ))}
-        <a href="/pay-stub-requirements-by-state" style="font-size:0.75rem; color:#4b5563;">View all 50 states &rarr;</a>
+        <div style="font-size:0.6875rem; font-weight:700; color:white; margin-bottom:1.25rem; text-transform:uppercase; letter-spacing:0.1em;">By State</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.625rem;">
+          {states.map(l => (
+            <li>
+              <a href={l.href} style="font-size:0.875rem; color:#9ca3af; text-decoration:none; transition:color 0.15s;"
+                 onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">{l.label}</a>
+            </li>
+          ))}
+        </ul>
+        <a href="/pay-stub-requirements-by-state" style="font-size:0.75rem; color:#4b5563; display:block; margin-top:0.75rem; text-decoration:none;"
+           onmouseover="this.style.color='#9ca3af'" onmouseout="this.style.color='#4b5563'">View all 50 states &rarr;</a>
       </div>
+
+      <!-- Company -->
       <div>
-        <div style="font-size:0.75rem; font-weight:700; color:white; margin-bottom:1rem; text-transform:uppercase; letter-spacing:0.08em;">Company</div>
-        {company.map(l => (
-          <div style="margin-bottom:0.5rem;">
-            <a href={l.href} style="font-size:0.875rem; color:#9ca3af; text-decoration:none;">{l.label}</a>
-          </div>
-        ))}
+        <div style="font-size:0.6875rem; font-weight:700; color:white; margin-bottom:1.25rem; text-transform:uppercase; letter-spacing:0.1em;">Company</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.625rem;">
+          {company.map(l => (
+            <li>
+              <a href={l.href} style="font-size:0.875rem; color:#9ca3af; text-decoration:none; transition:color 0.15s;"
+                 onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">{l.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div style="border-top:1px solid #1f2937; padding-top:1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.75rem;">
+      <div style="font-size:0.8125rem; color:#6b7280;">
+        &copy; 2024 IncomeRecord.com &middot; All rights reserved
+      </div>
+      <div style="font-size:0.8125rem; color:#4b5563;">
+        Not a substitute for professional tax or legal advice
       </div>
     </div>
-    <div style="border-top:1px solid #1f2937; margin-top:2.5rem; padding-top:1.5rem; font-size:0.8rem; text-align:center; color:#6b7280;">
-      &copy; 2024 IncomeRecord.com &middot; All rights reserved &middot; Not a substitute for professional tax or legal advice
-    </div>
+
   </div>
 </footer>
+
+<style>
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr 1fr !important;
+    }
+    .footer-grid > div:first-child {
+      grid-column: 1 / -1;
+    }
+  }
+  @media (max-width: 600px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr !important;
+    }
+  }
+</style>

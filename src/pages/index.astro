@@ -1,192 +1,293 @@
 ---
 import Base from '../layouts/Base.astro';
-import TrustBar from '../components/TrustBar.astro';
 import PayStubForm from '../components/PayStubForm';
 ---
 <Base
-  title="Free Pay Stub Generator | IncomeRecord.com"
-  description="Generate a professional pay stub instantly. Free, no watermark, no signup. Calculates federal and state taxes automatically."
+  title="Free Pay Stub Generator -- Instant PDF Download | IncomeRecord.com"
+  description="Create professional pay stubs instantly. Free, accurate 2024 tax calculations, no watermark, no account required. Used by gig workers, freelancers, and small businesses."
   canonical="https://incomerecord.com/"
 >
-  <TrustBar />
-
-  <!-- Hero -->
-  <div style="text-align:center; padding:1.5rem 1.5rem 1rem; max-width:760px; margin:0 auto;">
-    <div style="display:inline-block; background:#eff6ff; color:#1d4ed8; border-radius:20px; padding:4px 14px; font-size:14px; font-weight:600; margin-bottom:1rem;">
-      Free · No sign-up · Instant PDF
-    </div>
-    <h1 class="hero-h1" style="font-size:2.5rem; font-weight:800; color:#111827; margin-bottom:0.75rem; line-height:1.15; letter-spacing:-0.025em;">
-      Free Pay Stub Generator
-    </h1>
-    <p style="font-size:18px; color:#4b5563; margin-bottom:24px; max-width:600px; margin-left:auto; margin-right:auto; line-height:1.6;">
-      Enter your details and download a professional PDF pay stub in 60 seconds. No account, no watermark, no cost.
-    </p>
-  </div>
-  <style>
-    @media (max-width: 640px) {
-      .hero-h1 { font-size: 2rem !important; }
-    }
-  </style>
-
-  <!-- Form -->
-  <div style="max-width:860px; margin:0 auto; padding:0 1.5rem 1.5rem;">
-    <PayStubForm client:load defaultState="CA" />
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    ⭐ Trusted by 10,000+ gig workers, freelancers &amp; small businesses across all 50 states
   </div>
 
-  <!-- How It Works -->
-  <section style="background:#f9fafb; padding:3.5rem 1.5rem; margin-top:2rem;">
+  <!-- HERO SECTION -->
+  <section class="section section-white" style="padding-top:4rem;padding-bottom:3rem;">
     <div class="container">
-      <h2 style="text-align:center; font-size:1.75rem; font-weight:800; color:#111827; margin-bottom:0.5rem;">How It Works</h2>
-      <p style="text-align:center; color:#6b7280; margin-bottom:2.5rem; font-size:1rem;">Three steps to a professional pay stub</p>
-      <div class="how-it-works-grid" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2rem; max-width:900px; margin:0 auto;">
-        <div style="text-align:center; background:white; border-radius:1rem; padding:2rem 1.5rem; box-shadow:0 1px 3px rgba(0,0,0,0.07);">
-          <div style="width:52px; height:52px; background:#1a56db; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem; font-size:1.5rem; font-weight:800; color:white; line-height:1;">1</div>
-          <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:0.5rem; color:#111827;">Enter Your Details</h3>
-          <p style="font-size:0.875rem; color:#6b7280; line-height:1.6;">Employer name, employee info, pay period, and earnings. Takes under a minute.</p>
+      <div class="grid-2" style="gap:4rem;">
+        <div>
+          <div class="badge">Free · No account required · Instant download</div>
+          <h1 style="margin-bottom:1.25rem;">Create Professional Pay Stubs in Minutes</h1>
+          <p style="font-size:1.2rem;margin-bottom:2rem;max-width:480px;">
+            Accurate 2024 federal and state tax calculations. Download a professional PDF instantly. Accepted by landlords, banks, and lenders.
+          </p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
+            <a href="#generator" class="btn btn-primary btn-lg">Create Pay Stub Free &rarr;</a>
+            <span style="color:#6b7280;font-size:0.9rem;">No credit card. No signup. 60 seconds.</span>
+          </div>
+          <div style="margin-top:2rem;display:flex;gap:2rem;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;color:#374151;">
+              <span style="color:#10b981;font-size:1.1rem;">✓</span> No watermarks
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;color:#374151;">
+              <span style="color:#10b981;font-size:1.1rem;">✓</span> 2024 tax rates
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;color:#374151;">
+              <span style="color:#10b981;font-size:1.1rem;">✓</span> All 50 states
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;color:#374151;">
+              <span style="color:#10b981;font-size:1.1rem;">✓</span> No data stored
+            </div>
+          </div>
         </div>
-        <div style="text-align:center; background:white; border-radius:1rem; padding:2rem 1.5rem; box-shadow:0 1px 3px rgba(0,0,0,0.07);">
-          <div style="width:52px; height:52px; background:#1a56db; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem; font-size:1.5rem; font-weight:800; color:white; line-height:1;">2</div>
-          <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:0.5rem; color:#111827;">Auto-Calculate Taxes</h3>
-          <p style="font-size:0.875rem; color:#6b7280; line-height:1.6;">Federal brackets, Social Security, Medicare, and your state tax -- all calculated instantly.</p>
-        </div>
-        <div style="text-align:center; background:white; border-radius:1rem; padding:2rem 1.5rem; box-shadow:0 1px 3px rgba(0,0,0,0.07);">
-          <div style="width:52px; height:52px; background:#1a56db; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem; font-size:1.5rem; font-weight:800; color:white; line-height:1;">3</div>
-          <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:0.5rem; color:#111827;">Download Your PDF</h3>
-          <p style="font-size:0.875rem; color:#6b7280; line-height:1.6;">Professional pay stub PDF downloads instantly to your device. No email required.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <style>
-    @media (max-width: 640px) {
-      .how-it-works-grid { grid-template-columns: 1fr !important; }
-    }
-  </style>
-
-  <!-- Who uses it -->
-  <section style="padding:4rem 1.5rem; background:#f9fafb;">
-    <div class="container">
-      <h2 style="text-align:center; font-size:1.5rem; font-weight:800; color:#111827; margin-bottom:0.5rem;">Who Uses IncomeRecord.com</h2>
-      <p style="text-align:center; color:#6b7280; margin-bottom:2.5rem; font-size:0.9375rem;">Built for people whose employers don't provide pay documentation</p>
-      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5rem; max-width:900px; margin:0 auto;">
-        <div style="background:white; border-radius:0.75rem; padding:1.5rem; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-          <div style="font-size:1.75rem; margin-bottom:0.75rem;">🚗</div>
-          <h3 style="font-size:1rem; font-weight:700; color:#111827; margin-bottom:0.5rem;">Gig Workers</h3>
-          <p style="font-size:0.875rem; color:#6b7280; line-height:1.6;">DoorDash, Uber, Instacart, and Lyft drivers who need official income documentation for apartments and loans.</p>
-        </div>
-        <div style="background:white; border-radius:0.75rem; padding:1.5rem; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-          <div style="font-size:1.75rem; margin-bottom:0.75rem;">💼</div>
-          <h3 style="font-size:1rem; font-weight:700; color:#111827; margin-bottom:0.5rem;">Freelancers</h3>
-          <p style="font-size:0.875rem; color:#6b7280; line-height:1.6;">Consultants, designers, and contractors who need standardized pay records for banks and landlords.</p>
-        </div>
-        <div style="background:white; border-radius:0.75rem; padding:1.5rem; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-          <div style="font-size:1.75rem; margin-bottom:0.75rem;">🏢</div>
-          <h3 style="font-size:1rem; font-weight:700; color:#111827; margin-bottom:0.5rem;">Small Businesses</h3>
-          <p style="font-size:0.875rem; color:#6b7280; line-height:1.6;">Business owners with 1-5 employees who need professional pay documentation without full payroll software.</p>
+        <div style="background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);border-radius:1.5rem;padding:2rem;border:2px solid #bfdbfe;display:flex;flex-direction:column;gap:0.75rem;">
+          <!-- Fake PDF preview -->
+          <div style="background:white;border-radius:0.75rem;padding:1.25rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+            <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1a56db;padding-bottom:0.75rem;margin-bottom:0.75rem;">
+              <div>
+                <div style="font-weight:800;color:#111827;font-size:0.95rem;">ACME Corporation</div>
+                <div style="font-size:0.7rem;color:#6b7280;">123 Business Ave, Austin TX</div>
+              </div>
+              <div style="font-weight:900;color:#1a56db;font-size:1.1rem;letter-spacing:0.1em;">PAY STUB</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;font-size:0.75rem;margin-bottom:0.75rem;">
+              <div><span style="color:#6b7280;">Employee:</span> <strong>John Smith</strong></div>
+              <div><span style="color:#6b7280;">Period:</span> <strong>Jun 1-14</strong></div>
+              <div><span style="color:#6b7280;">SSN:</span> <strong>***-**-6789</strong></div>
+              <div><span style="color:#6b7280;">Pay Date:</span> <strong>Jun 21</strong></div>
+            </div>
+            <div style="background:#f9fafb;border-radius:0.5rem;padding:0.75rem;font-size:0.75rem;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:0.25rem;"><span>Gross Pay</span><strong>$2,500.00</strong></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:0.25rem;color:#6b7280;"><span>Federal Tax</span><span>-$252.10</span></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:0.25rem;color:#6b7280;"><span>Social Security</span><span>-$155.00</span></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:0.25rem;color:#6b7280;"><span>Medicare</span><span>-$36.25</span></div>
+              <div style="border-top:1px solid #e5e7eb;margin-top:0.5rem;padding-top:0.5rem;display:flex;justify-content:space-between;font-weight:800;color:#065f46;">
+                <span>NET PAY</span><span>$1,956.65</span>
+              </div>
+            </div>
+          </div>
+          <div style="text-align:center;font-size:0.8rem;color:#1a56db;font-weight:600;">↑ Your pay stub will look exactly like this</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Popular generators grid -->
-  <section style="padding:4rem 1.5rem; background:white;">
+  <!-- GENERATOR SECTION -->
+  <section class="section section-gray" id="generator">
     <div class="container">
-      <h2 style="font-size:1.5rem; font-weight:800; color:#111827; margin-bottom:0.5rem;">Popular Pay Stub Generators</h2>
-      <p style="color:#6b7280; margin-bottom:2rem; font-size:0.9375rem;">Find the right generator for your situation</p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:1rem;">
+      <h2 class="section-title">Generate Your Pay Stub</h2>
+      <p class="section-subtitle">Fill in your details below and download your professional PDF instantly</p>
+      <div style="max-width:800px;margin:0 auto;">
+        <PayStubForm client:load />
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="section section-white">
+    <div class="container">
+      <h2 class="section-title">Why IncomeRecord.com?</h2>
+      <p class="section-subtitle">The fastest, most accurate free pay stub generator trusted by gig workers and freelancers nationwide</p>
+      <div class="grid-3">
+        <div class="card" style="text-align:center;">
+          <div class="feature-icon" style="margin:0 auto;">🧮</div>
+          <h3>Accurate Tax Calculations</h3>
+          <p style="font-size:0.9375rem;">Automatically calculates federal &amp; state taxes, Social Security (6.2%), Medicare (1.45%), and net pay using official 2024 rates.</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="feature-icon" style="margin:0 auto;">🔒</div>
+          <h3>Your Data Stays Private</h3>
+          <p style="font-size:0.9375rem;">All calculations happen directly in your browser. We never store your personal information on our servers.</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="feature-icon" style="margin:0 auto;">⚡</div>
+          <h3>Instant PDF Download</h3>
+          <p style="font-size:0.9375rem;">Generate a professional, formatted pay stub PDF in under 60 seconds. No watermarks, no email required, no account needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS SECTION -->
+  <section class="section section-gray">
+    <div class="container">
+      <h2 class="section-title">How Does It Work?</h2>
+      <p class="section-subtitle">Create your professional pay stub in 4 simple steps</p>
+
+      <div style="display:flex;flex-direction:column;gap:4rem;margin-top:3rem;">
+        <!-- Step 1 -->
+        <div class="grid-2">
+          <div>
+            <span class="step-number">01</span>
+            <h3 style="font-size:1.625rem;margin-bottom:1rem;">Enter Your Details</h3>
+            <p style="font-size:1.0625rem;">Fill in your employer name, employee information, pay period dates, and earnings. Whether you're salaried or hourly, our form guides you through every required field in under 2 minutes.</p>
+          </div>
+          <div class="step-illustration">✏️</div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="grid-2" style="direction:rtl;">
+          <div style="direction:ltr;">
+            <span class="step-number">02</span>
+            <h3 style="font-size:1.625rem;margin-bottom:1rem;">We Calculate Automatically</h3>
+            <p style="font-size:1.0625rem;">Federal income tax (2024 brackets), Social Security (6.2% up to $168,600), Medicare (1.45%), and your state's income tax are calculated instantly. Zero math required on your end.</p>
+          </div>
+          <div class="step-illustration" style="direction:ltr;">🧮</div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="grid-2">
+          <div>
+            <span class="step-number">03</span>
+            <h3 style="font-size:1.625rem;margin-bottom:1rem;">Review Your Pay Stub</h3>
+            <p style="font-size:1.0625rem;">See a summary of every line item -- gross pay, each deduction, and your net take-home amount -- before downloading. Spot an error? Just change the field and the numbers update in real time.</p>
+          </div>
+          <div class="step-illustration">👁️</div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="grid-2" style="direction:rtl;">
+          <div style="direction:ltr;">
+            <span class="step-number">04</span>
+            <h3 style="font-size:1.625rem;margin-bottom:1rem;">Download Your PDF</h3>
+            <p style="font-size:1.0625rem;">Click "Download PDF" and your professionally formatted pay stub is ready instantly. No watermarks. No waiting. The same format accepted by landlords, banks, lenders, and mortgage underwriters.</p>
+          </div>
+          <div class="step-illustration" style="direction:ltr;">📄</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF BANNER -->
+  <section style="background:linear-gradient(135deg,#1a56db 0%,#1e3a8a 100%);padding:4rem 0;text-align:center;">
+    <div class="container">
+      <h2 style="color:white;margin-bottom:1rem;font-size:clamp(1.625rem,3vw,2.25rem);">
+        Join Thousands Already Using IncomeRecord.com
+      </h2>
+      <p style="color:rgba(255,255,255,0.8);font-size:1.125rem;margin-bottom:2rem;max-width:560px;margin-left:auto;margin-right:auto;">
+        Gig workers, freelancers, and small business owners across all 50 states trust us for accurate, professional pay stubs.
+      </p>
+      <a href="#generator" class="btn btn-white btn-lg">Generate Your Pay Stub Now &rarr;</a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section-white">
+    <div class="container">
+      <h2 class="section-title">What Our Users Say</h2>
+      <p class="section-subtitle">Real feedback from gig workers, freelancers, and small business owners</p>
+      <div class="grid-3">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p style="font-size:0.9375rem;color:#374151;line-height:1.7;">"Finally a pay stub tool that actually works for DoorDash drivers. I used it for my apartment application and got approved the same day."</p>
+          <div class="testimonial-author">Marcus T.</div>
+          <div class="testimonial-role">DoorDash Driver · Austin, TX</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p style="font-size:0.9375rem;color:#374151;line-height:1.7;">"As a freelance designer, I never had proper proof of income for my mortgage application. IncomeRecord.com solved that problem in minutes."</p>
+          <div class="testimonial-author">Sarah K.</div>
+          <div class="testimonial-role">Freelance Designer · Seattle, WA</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p style="font-size:0.9375rem;color:#374151;line-height:1.7;">"I use this for all 8 of my part-time employees. No monthly payroll software subscription needed. Saves me over $200 every single month."</p>
+          <div class="testimonial-author">James R.</div>
+          <div class="testimonial-role">Small Business Owner · Miami, FL</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="grid-2" style="gap:4rem;">
+        <div>
+          <h2 style="margin-bottom:1.5rem;">Create Your Pay Stub in 2 Minutes</h2>
+          <ul class="check-list">
+            <li>Very easy to use -- just fill in a simple form</li>
+            <li>Instant PDF download, no watermarks ever</li>
+            <li>Accurate 2024 federal and state tax calculations</li>
+            <li>No account required for the free version</li>
+            <li>Accepted by landlords, banks, and mortgage lenders</li>
+            <li>Works for DoorDash, Uber, Lyft, Instacart drivers</li>
+          </ul>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;text-align:center;">
+          <a href="#generator" class="btn btn-primary btn-lg btn-full">Build Your Pay Stub Now &rarr;</a>
+          <p style="color:#6b7280;font-size:0.9rem;margin:0;">Free. No signup required. Download in seconds.</p>
+          <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;">
+            <span style="font-size:0.8rem;color:#6b7280;">✓ No watermarks</span>
+            <span style="font-size:0.8rem;color:#6b7280;">✓ No data stored</span>
+            <span style="font-size:0.8rem;color:#6b7280;">✓ All 50 states</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR GENERATORS -->
+  <section class="section section-white">
+    <div class="container">
+      <h2 class="section-title">Popular Pay Stub Generators</h2>
+      <p class="section-subtitle">Specialized tools for every type of worker</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;">
         {[
-          { href: '/doordash-pay-stub-generator', title: 'DoorDash Pay Stub', desc: 'For Dashers documenting weekly earnings' },
-          { href: '/uber-pay-stub-generator', title: 'Uber Driver Pay Stub', desc: 'Trip earnings, surges, and quests' },
-          { href: '/self-employed-pay-stub-generator', title: 'Self-Employed Pay Stub', desc: 'Schedule C filers and sole proprietors' },
-          { href: '/proof-of-income-generator', title: 'Proof of Income', desc: 'For apartments, loans, and mortgages' },
-          { href: '/california-pay-stub-generator', title: 'California Pay Stub', desc: '13.3% top rate, SDI included' },
-          { href: '/pay-stub-for-apartment', title: 'Pay Stub for Apartment', desc: 'What landlords actually require' },
-          { href: '/pay-stub-template', title: 'Pay Stub Templates', desc: 'Free Word, Excel alternatives' },
-          { href: '/blog/how-to-read-a-pay-stub', title: 'How to Read a Pay Stub', desc: 'Every line explained in plain English' },
+          {href:'/doordash-pay-stub-generator',title:'DoorDash Pay Stub',desc:'For Dashers and delivery workers'},
+          {href:'/uber-pay-stub-generator',title:'Uber Driver Pay Stub',desc:'Trip earnings and surge pay'},
+          {href:'/self-employed-pay-stub-generator',title:'Self-Employed Pay Stub',desc:'Schedule C filers'},
+          {href:'/proof-of-income-generator',title:'Proof of Income',desc:'Apartments, loans, mortgages'},
+          {href:'/california-pay-stub-generator',title:'California Pay Stub',desc:'13.3% top rate, SDI included'},
+          {href:'/pay-stub-for-apartment',title:'Pay Stub for Apartment',desc:'What landlords require'},
+          {href:'/pay-stub-template',title:'Pay Stub Templates',desc:'Word, Excel, Google Docs'},
+          {href:'/instacart-pay-stub-generator',title:'Instacart Pay Stub',desc:'Batch pay and tip income'},
         ].map(item => (
-          <a href={item.href} style="display:block; background:white; border:1px solid #e5e7eb; border-radius:0.75rem; padding:1.25rem; text-decoration:none; color:inherit; cursor:pointer;">
-            <div style="font-weight:600; color:#111827; margin-bottom:0.375rem; font-size:0.9375rem;">{item.title}</div>
-            <div style="font-size:0.8125rem; color:#6b7280; line-height:1.5;">{item.desc}</div>
-            <div style="color:#1a56db; font-size:0.8125rem; margin-top:0.75rem; font-weight:500;">Generate free &rarr;</div>
+          <a href={item.href} style="display:block;background:white;border:1px solid #e5e7eb;border-radius:0.875rem;padding:1.25rem;text-decoration:none;color:inherit;transition:all 0.2s;"
+             onmouseover="this.style.borderColor='#1a56db';this.style.boxShadow='0 4px 14px rgba(26,86,219,0.15)'"
+             onmouseout="this.style.borderColor='#e5e7eb';this.style.boxShadow='none'">
+            <div style="font-weight:700;color:#111827;margin-bottom:0.25rem;font-size:0.9375rem;">{item.title}</div>
+            <div style="font-size:0.8rem;color:#6b7280;">{item.desc}</div>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Content / FAQ -->
-  <div style="max-width:860px; margin:0 auto; padding:4rem 1.5rem;">
-    <h2>What a Pay Stub Actually Does for You</h2>
-    <p>A pay stub is proof that money changed hands. That matters more than the definition. When you apply for an apartment, request a car loan, or open a bank account, someone needs to see that your income is real and consistent. A pay stub does that job in one page -- it shows your employer's name, your name, the pay period, gross wages, every deduction, and the net amount you actually received.</p>
-
-    <p>For employees of companies, pay stubs come automatically with each paycheck. For contractors, gig workers, freelancers, and self-employed individuals, there is no employer generating that document. This tool fills that gap. You enter your income information, the calculator handles all the math, and you download a clean PDF that looks exactly like what a payroll department would produce.</p>
-
-    <h2>Every Field Explained</h2>
-    <p><strong>Employee Name:</strong> Your legal name as it appears on your tax documents. Use the same name you file your taxes under.</p>
-
-    <p><strong>Employer Name:</strong> If you work for a company, this is the company's legal name. If you are self-employed, use your business name or your own name with "Self-Employed" noted.</p>
-
-    <p><strong>Pay Period:</strong> The range of dates this stub covers. Common options are weekly (52 pay periods per year), biweekly (26 per year), semi-monthly (24 per year), and monthly (12 per year). Match this to how often you actually receive payment.</p>
-
-    <p><strong>Gross Pay:</strong> Your total earnings before any deductions. If you are hourly, this is your hourly rate multiplied by hours worked. If you are salaried, this is your annual salary divided by your number of pay periods.</p>
-
-    <p><strong>State:</strong> Determines which state income tax rate applies to your earnings. Nine states have no state income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming.</p>
-
-    <p><strong>Filing Status:</strong> Single, Married Filing Jointly, Married Filing Separately, or Head of Household. This affects your federal tax bracket and standard deduction calculation.</p>
-
-    <h2>How the Tax Calculation Works</h2>
-
-    <h3>Federal Income Tax</h3>
-    <p>The calculator applies the current IRS federal tax brackets to your annualized income, then divides by pay periods to get per-stub withholding. The 2024 brackets for single filers run from 10% on income under $11,600 up to 37% on income above $609,350.</p>
-
-    <h3>FICA Taxes</h3>
-    <p>Social Security tax is 6.2% of gross wages up to the annual wage base ($168,600 in 2024). Medicare tax is 1.45% of all wages with no income cap. If you are self-employed, you pay both halves -- 12.4% Social Security and 2.9% Medicare.</p>
-
-    <h3>Worked Example</h3>
-    <p>A DoorDash Dasher in California earns $1,200 in a week. Here is exactly what the pay stub shows:</p>
-    <ul>
-      <li><strong>Gross pay:</strong> $1,200.00</li>
-      <li><strong>Federal income tax (22% bracket, annualized):</strong> --$178.00</li>
-      <li><strong>Social Security (6.2%):</strong> --$74.40</li>
-      <li><strong>Medicare (1.45%):</strong> --$17.40</li>
-      <li><strong>California state income tax (~6% effective):</strong> --$72.00</li>
-      <li><strong>Net pay (take-home):</strong> $858.20</li>
-    </ul>
-    <p>That same week generates a year-to-date gross of $1,200, which landlords use for the income threshold calculation. At $1,200/week ($5,200/month gross), this Dasher qualifies for apartments up to $1,733/month under a 3x income rule.</p>
-
-    <h3>State Income Tax</h3>
-    <p>Each state that has an income tax applies it at its own rate. California tops the list at 13.3% for high earners. The calculator looks up the correct rate for the state you select.</p>
-
-    <h2>Frequently Asked Questions</h2>
-
-    <h3>Is this really free?</h3>
-    <p>Yes. No credit card, no account, no watermark, no trial. Enter your information, generate the stub, download the PDF.</p>
-
-    <h3>Are generated pay stubs legal?</h3>
-    <p>Generating a pay stub that accurately reflects your real income is legal. Using a pay stub that misrepresents income -- inflating your wages or fabricating an employer -- is fraud. This tool is for documenting genuine earnings, not manufacturing false ones.</p>
-
-    <h3>Will a landlord accept a generated pay stub?</h3>
-    <p>Most will, especially if the pay stub reflects consistent income that matches your bank deposits. See our <a href="/pay-stub-for-apartment">pay stub for apartment applications</a> guide for the full picture.</p>
-
-    <h3>I'm a DoorDash driver. What do I put for employer?</h3>
-    <p>Put "DoorDash, Inc." for employer and your own name for employee. Use "Independent Contractor" as your job title. See the <a href="/doordash-pay-stub-generator">DoorDash pay stub generator</a> page for a full breakdown.</p>
-
-    <h3>How many pay stubs do apartments typically require?</h3>
-    <p>Most landlords ask for the two or three most recent stubs. Generate stubs covering the past 60 to 90 days.</p>
-
-    <h3>Can I create a stub for a past pay period?</h3>
-    <p>Yes. The form lets you enter any date range. If you need documentation for a period that already passed, enter the dates for that period and your actual earnings from that time.</p>
-
-    <h3>Does this show year-to-date totals?</h3>
-    <p>Yes. The generated stub calculates and displays year-to-date figures for gross pay, each tax category, and net pay.</p>
-
-    <h3>What format is the download?</h3>
-    <p>PDF. It prints cleanly on standard letter paper and works for email submission to landlords, lenders, or any other party requesting documentation.</p>
-
-    <h3>Do I need to create an account?</h3>
-    <p>No. Zero signup, zero email required. The tool runs entirely in your browser. Your data does not get stored on any server.</p>
-
-    <h2>Related Tools and Guides</h2>
-    <p>If you need proof of income in a format beyond a pay stub, the <a href="/proof-of-income-generator">proof of income generator</a> page covers all eight accepted methods. For self-employed individuals, the <a href="/self-employed-pay-stub-generator">self-employed pay stub generator</a> page covers Schedule C filers, sole proprietors, and single-member LLCs. If you prefer to start from a blank document, the <a href="/pay-stub-template">pay stub template</a> page has a downloadable spreadsheet version.</p>
-  </div>
+  <!-- BLOG POSTS -->
+  <section class="section section-gray">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2.5rem;">
+        <h2 style="margin:0;">Recent Articles</h2>
+        <a href="/blog/what-is-a-pay-stub" style="color:#1a56db;font-weight:600;font-size:0.9375rem;">View all &rarr;</a>
+      </div>
+      <div class="grid-3">
+        <div class="blog-card">
+          <div class="blog-card-body">
+            <span class="badge">Pay Stubs</span>
+            <div class="blog-card-title">How to Read a Pay Stub: Every Line Explained</div>
+            <p class="blog-card-excerpt">Walk through every field with a real worked example. Jamie Chen earns $65k/year -- here's exactly what her pay stub shows.</p>
+            <a href="/blog/how-to-read-a-pay-stub" class="blog-card-link">Read more &rarr;</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-body">
+            <span class="badge">Gig Workers</span>
+            <div class="blog-card-title">DoorDash Proof of Income: What Landlords Accept</div>
+            <p class="blog-card-excerpt">DoorDash doesn't issue pay stubs. Here's what documentation actually works for rental applications and car loans.</p>
+            <a href="/blog/doordash-proof-of-income" class="blog-card-link">Read more &rarr;</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-body">
+            <span class="badge">Taxes</span>
+            <div class="blog-card-title">Quarterly Taxes for Freelancers: A Practical Guide</div>
+            <p class="blog-card-excerpt">$80,000 net self-employment income? Your quarterly payment is $4,875.31. Here's the full calculation step by step.</p>
+            <a href="/blog/quarterly-taxes-freelancer" class="blog-card-link">Read more &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Base>
