@@ -28,113 +28,57 @@ const company = [
   { href: '/terms', label: 'Terms of Service' },
 ];
 ---
-<footer style="background:#111827; color:#9ca3af;">
-  <div class="container" style="padding-top:3.5rem; padding-bottom:3.5rem;">
-
-    <!-- Columns grid -->
-    <div class="footer-grid" style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1fr; gap:2.5rem; margin-bottom:3rem;">
-
-      <!-- Brand column -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
       <div>
-        <div style="font-size:1.125rem; font-weight:800; color:white; margin-bottom:1rem; letter-spacing:-0.01em;">
-          IncomeRecord<span style="color:#4b5563;">.com</span>
-        </div>
-        <p style="font-size:0.875rem; line-height:1.7; color:#9ca3af; margin-bottom:1.5rem;">
+        <div class="footer-logo">IncomeRecord<span>.com</span></div>
+        <p class="footer-tagline">
           Free pay stub generator for gig workers, freelancers, and employees. No account required, no watermarks, instant PDF download.
         </p>
-        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem;">
-          {[
-            '🔒 No data stored on our servers',
-            '📄 Instant PDF download',
-            '✅ 2024 federal & state tax rates',
-            '🆓 Always free, no hidden fees',
-          ].map(item => (
-            <li style="font-size:0.8125rem; color:#6b7280; line-height:1.5;">{item}</li>
-          ))}
-        </ul>
+        <div style="margin-top:1.25rem;font-size:0.8rem;color:#6b7280;line-height:1.8;">
+          🔒 No data stored<br/>
+          📄 Instant PDF download<br/>
+          ✅ 2024 federal &amp; state tax rates<br/>
+          🆓 Always free
+        </div>
       </div>
-
-      <!-- Tools -->
       <div>
-        <div style="font-size:0.6875rem; font-weight:700; color:white; margin-bottom:1.25rem; text-transform:uppercase; letter-spacing:0.1em;">Tools</div>
-        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.625rem;">
+        <div class="footer-heading">Tools</div>
+        <ul class="footer-links">
           {tools.map(l => (
-            <li>
-              <a href={l.href} style="font-size:0.875rem; color:#9ca3af; text-decoration:none; transition:color 0.15s;"
-                 onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">{l.label}</a>
-            </li>
+            <li><a href={l.href}>{l.label}</a></li>
           ))}
         </ul>
       </div>
-
-      <!-- Learn -->
       <div>
-        <div style="font-size:0.6875rem; font-weight:700; color:white; margin-bottom:1.25rem; text-transform:uppercase; letter-spacing:0.1em;">Learn</div>
-        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.625rem;">
+        <div class="footer-heading">Learn</div>
+        <ul class="footer-links">
           {resources.map(l => (
-            <li>
-              <a href={l.href} style="font-size:0.875rem; color:#9ca3af; text-decoration:none; transition:color 0.15s;"
-                 onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">{l.label}</a>
-            </li>
+            <li><a href={l.href}>{l.label}</a></li>
           ))}
         </ul>
       </div>
-
-      <!-- By State -->
       <div>
-        <div style="font-size:0.6875rem; font-weight:700; color:white; margin-bottom:1.25rem; text-transform:uppercase; letter-spacing:0.1em;">By State</div>
-        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.625rem;">
+        <div class="footer-heading">By State</div>
+        <ul class="footer-links">
           {states.map(l => (
-            <li>
-              <a href={l.href} style="font-size:0.875rem; color:#9ca3af; text-decoration:none; transition:color 0.15s;"
-                 onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">{l.label}</a>
-            </li>
+            <li><a href={l.href}>{l.label}</a></li>
           ))}
+          <li><a href="/pay-stub-requirements-by-state" style="font-size:0.75rem;color:#4b5563;">View all 50 states &rarr;</a></li>
         </ul>
-        <a href="/pay-stub-requirements-by-state" style="font-size:0.75rem; color:#4b5563; display:block; margin-top:0.75rem; text-decoration:none;"
-           onmouseover="this.style.color='#9ca3af'" onmouseout="this.style.color='#4b5563'">View all 50 states &rarr;</a>
       </div>
-
-      <!-- Company -->
       <div>
-        <div style="font-size:0.6875rem; font-weight:700; color:white; margin-bottom:1.25rem; text-transform:uppercase; letter-spacing:0.1em;">Company</div>
-        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.625rem;">
+        <div class="footer-heading">Company</div>
+        <ul class="footer-links">
           {company.map(l => (
-            <li>
-              <a href={l.href} style="font-size:0.875rem; color:#9ca3af; text-decoration:none; transition:color 0.15s;"
-                 onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">{l.label}</a>
-            </li>
+            <li><a href={l.href}>{l.label}</a></li>
           ))}
         </ul>
       </div>
-
     </div>
-
-    <!-- Bottom bar -->
-    <div style="border-top:1px solid #1f2937; padding-top:1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.75rem;">
-      <div style="font-size:0.8125rem; color:#6b7280;">
-        &copy; 2024 IncomeRecord.com &middot; All rights reserved
-      </div>
-      <div style="font-size:0.8125rem; color:#4b5563;">
-        Not a substitute for professional tax or legal advice
-      </div>
+    <div class="footer-bottom">
+      &copy; 2024 IncomeRecord.com &middot; All rights reserved &middot; Not a substitute for professional tax or legal advice
     </div>
-
   </div>
 </footer>
-
-<style>
-  @media (max-width: 900px) {
-    .footer-grid {
-      grid-template-columns: 1fr 1fr 1fr !important;
-    }
-    .footer-grid > div:first-child {
-      grid-column: 1 / -1;
-    }
-  }
-  @media (max-width: 600px) {
-    .footer-grid {
-      grid-template-columns: 1fr 1fr !important;
-    }
-  }
-</style>
