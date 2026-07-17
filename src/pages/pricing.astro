@@ -2,214 +2,109 @@
 import Base from '../layouts/Base.astro';
 ---
 <Base
-  title="IncomeRecord.com Pricing -- Free Pay Stub Generator"
-  description="IncomeRecord.com is free: unlimited pay stubs, no watermark, PDF download, no account needed. Pro and Business tiers coming soon. See what's included in each plan."
+  title="Pricing -- IncomeRecord.com"
+  description="Free pay stub generator with no watermarks. Pro and Business plans coming soon."
   canonical="https://incomerecord.com/pricing"
 >
-  <main class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-4xl font-bold text-gray-900 mb-4">IncomeRecord.com Pricing</h1>
-    <p class="text-xl text-gray-600 mb-12">Everything is free right now. Pro and Business tiers are coming soon — we're building them properly. Until then, use the generator as much as you need, no strings attached.</p>
+  <!-- Page hero -->
+  <section style="background:linear-gradient(135deg,#1a56db 0%,#1e3a8a 100%);padding:4rem 0;text-align:center;">
+    <div class="container">
+      <div style="display:inline-block;background:rgba(255,255,255,0.15);color:white;font-size:0.8rem;font-weight:600;padding:0.375rem 1rem;border-radius:9999px;margin-bottom:1rem;letter-spacing:0.05em;text-transform:uppercase;">Simple Pricing</div>
+      <h1 style="color:white;font-size:2.25rem;font-weight:800;margin-bottom:1rem;line-height:1.2;">Start Free. Upgrade When You Need More.</h1>
+      <p style="color:rgba(255,255,255,0.85);font-size:1.125rem;max-width:520px;margin:0 auto;">Generate professional pay stubs for free. No watermarks, no account required.</p>
+    </div>
+  </section>
 
-    <div class="grid md:grid-cols-3 gap-6 mb-16">
+  <!-- Pricing cards -->
+  <section style="padding:4rem 0;background:#f9fafb;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1000px;margin:0 auto;align-items:start;">
 
-      <!-- Free Tier -->
-      <div class="border-2 border-blue-600 rounded-xl p-8 relative">
-        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white text-sm font-semibold px-4 py-1 rounded-full">Current Plan</div>
-        <h2 class="text-2xl font-bold text-gray-900 mb-2">Free</h2>
-        <div class="text-4xl font-bold text-gray-900 mb-1">$0</div>
-        <div class="text-gray-500 text-sm mb-6">always free</div>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>Generate unlimited pay stubs</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>No watermark on PDFs</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>Instant PDF download</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>No account required</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>2024 federal and state tax calculations</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>All 50 states supported</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>W-2 employee and self-employed modes</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>No data stored server-side</span>
-          </li>
-        </ul>
-        <a href="/" class="block w-full text-center bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">Generate a Pay Stub</a>
+        <!-- FREE tier -->
+        <div style="background:white;border:2px solid #1a56db;border-radius:1.25rem;padding:2rem;box-shadow:0 4px 20px rgba(26,86,219,0.15);position:relative;">
+          <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:#1a56db;color:white;font-size:0.75rem;font-weight:700;padding:0.25rem 1rem;border-radius:0 0 0.5rem 0.5rem;text-transform:uppercase;letter-spacing:0.05em;white-space:nowrap;">Most Popular</div>
+          <div style="margin-top:1rem;">
+            <h2 style="font-size:1.25rem;font-weight:700;color:#111827;margin-bottom:0.5rem;">Free</h2>
+            <div style="font-size:3rem;font-weight:900;color:#1a56db;line-height:1;margin-bottom:0.25rem;">$0</div>
+            <div style="color:#6b7280;font-size:0.875rem;margin-bottom:1.5rem;">Forever free</div>
+            <a href="/" style="display:block;width:100%;text-align:center;background:#1a56db;color:white;padding:0.875rem;border-radius:0.625rem;font-weight:700;font-size:1rem;text-decoration:none;margin-bottom:1.5rem;box-shadow:0 4px 14px rgba(26,86,219,0.35);">Generate Pay Stub →</a>
+            <ul style="list-style:none;padding:0;margin:0;">
+              {['Unlimited pay stub generation','No watermarks ever','2024 federal & state tax calculations','All 50 states supported','Instant PDF download','No account required','No credit card needed'].map(f => (
+                <li style="display:flex;align-items:flex-start;gap:0.625rem;margin-bottom:0.75rem;font-size:0.9rem;color:#374151;">
+                  <span style="color:#10b981;font-weight:800;flex-shrink:0;">✓</span>{f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- PRO tier -->
+        <div style="background:white;border:1px solid #e5e7eb;border-radius:1.25rem;padding:2rem;box-shadow:0 4px 6px rgba(0,0,0,0.07);">
+          <div style="display:inline-block;background:#fef3c7;color:#92400e;font-size:0.7rem;font-weight:700;padding:0.25rem 0.75rem;border-radius:9999px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem;">Coming Soon</div>
+          <h2 style="font-size:1.25rem;font-weight:700;color:#111827;margin-bottom:0.5rem;">Pro</h2>
+          <div style="font-size:3rem;font-weight:900;color:#111827;line-height:1;margin-bottom:0.25rem;">$9<span style="font-size:1rem;font-weight:400;color:#6b7280;">/mo</span></div>
+          <div style="color:#6b7280;font-size:0.875rem;margin-bottom:1.5rem;">Billed monthly</div>
+          <div style="display:block;width:100%;text-align:center;background:#f3f4f6;color:#9ca3af;padding:0.875rem;border-radius:0.625rem;font-weight:600;font-size:0.9rem;margin-bottom:1.5rem;cursor:not-allowed;">Coming Soon</div>
+          <p style="font-size:0.8rem;color:#6b7280;margin-bottom:1rem;">Everything in Free, plus:</p>
+          <ul style="list-style:none;padding:0;margin:0;">
+            {['Save stub history (unlimited)','Custom company logo on PDF','Multiple employer profiles','Email PDF directly','Premium PDF template','Priority support'].map(f => (
+              <li style="display:flex;align-items:flex-start;gap:0.625rem;margin-bottom:0.75rem;font-size:0.9rem;color:#374151;">
+                <span style="color:#d1d5db;font-weight:800;flex-shrink:0;">✓</span>{f}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- BUSINESS tier -->
+        <div style="background:white;border:1px solid #e5e7eb;border-radius:1.25rem;padding:2rem;box-shadow:0 4px 6px rgba(0,0,0,0.07);">
+          <div style="display:inline-block;background:#fef3c7;color:#92400e;font-size:0.7rem;font-weight:700;padding:0.25rem 0.75rem;border-radius:9999px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem;">Coming Soon</div>
+          <h2 style="font-size:1.25rem;font-weight:700;color:#111827;margin-bottom:0.5rem;">Business</h2>
+          <div style="font-size:3rem;font-weight:900;color:#111827;line-height:1;margin-bottom:0.25rem;">$29<span style="font-size:1rem;font-weight:400;color:#6b7280;">/mo</span></div>
+          <div style="color:#6b7280;font-size:0.875rem;margin-bottom:1.5rem;">Billed monthly</div>
+          <div style="display:block;width:100%;text-align:center;background:#f3f4f6;color:#9ca3af;padding:0.875rem;border-radius:0.625rem;font-weight:600;font-size:0.9rem;margin-bottom:1.5rem;cursor:not-allowed;">Coming Soon</div>
+          <p style="font-size:0.8rem;color:#6b7280;margin-bottom:1rem;">Everything in Pro, plus:</p>
+          <ul style="list-style:none;padding:0;margin:0;">
+            {['Up to 25 employees','Bulk stub generation','Excel/CSV export','Team member access','API access','Dedicated support'].map(f => (
+              <li style="display:flex;align-items:flex-start;gap:0.625rem;margin-bottom:0.75rem;font-size:0.9rem;color:#374151;">
+                <span style="color:#d1d5db;font-weight:800;flex-shrink:0;">✓</span>{f}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      <!-- Pro Tier -->
-      <div class="border border-gray-200 rounded-xl p-8 opacity-75">
-        <h2 class="text-2xl font-bold text-gray-900 mb-2">Pro</h2>
-        <div class="text-4xl font-bold text-gray-900 mb-1">$9</div>
-        <div class="text-gray-500 text-sm mb-2">per month</div>
-        <div class="inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded mb-6">Coming Soon</div>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>Everything in Free</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>Save stub history (access past stubs anytime)</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>Premium professional PDF template</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>Save multiple employer profiles</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>Employee profile presets</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>Email delivery to yourself</span>
-          </li>
-        </ul>
-        <button disabled class="block w-full text-center bg-gray-200 text-gray-500 py-3 rounded-lg font-semibold cursor-not-allowed">Coming Soon</button>
-      </div>
-
-      <!-- Business Tier -->
-      <div class="border border-gray-200 rounded-xl p-8 opacity-75">
-        <h2 class="text-2xl font-bold text-gray-900 mb-2">Business</h2>
-        <div class="text-4xl font-bold text-gray-900 mb-1">$29</div>
-        <div class="text-gray-500 text-sm mb-2">per month</div>
-        <div class="inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded mb-6">Coming Soon</div>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>Everything in Pro</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>Up to 25 employees</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>Bulk pay stub generation</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>Excel export for payroll records</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>Company logo on PDFs</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>Employee portal (stub delivery)</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
-            <span>Priority support</span>
-          </li>
-        </ul>
-        <button disabled class="block w-full text-center bg-gray-200 text-gray-500 py-3 rounded-lg font-semibold cursor-not-allowed">Coming Soon</button>
+      <div style="text-align:center;margin-top:2.5rem;color:#6b7280;font-size:0.9rem;">
+        <span style="margin:0 1rem;">🔒 No credit card ever required for Free</span>
+        <span style="margin:0 1rem;">✓ Cancel anytime</span>
+        <span style="margin:0 1rem;">📄 Data never sold</span>
       </div>
     </div>
+  </section>
 
-    <section class="mb-16">
-      <h2 class="text-3xl font-bold text-gray-900 mb-8">What's Included in the Free Plan</h2>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">Tax Calculations</h3>
-          <p class="text-gray-700 mb-4">Our free generator uses current 2024 federal withholding tables from IRS Publication 15-T. Enter your gross pay, filing status, and state — we calculate federal income tax, Social Security (6.2%), Medicare (1.45%), and state income tax for all 50 states automatically.</p>
-          <p class="text-gray-700">You can also enter voluntary deductions like 401(k) contributions and health insurance premiums, and we'll calculate the correct pre-tax treatment for each.</p>
+  <!-- FAQ -->
+  <section style="padding:4rem 0;background:white;">
+    <div class="container" style="max-width:700px;">
+      <h2 style="font-size:1.75rem;font-weight:800;text-align:center;margin-bottom:2.5rem;">Pricing FAQ</h2>
+      {[
+        {q:'Is the Free tier really free?',a:"Yes. IncomeRecord.com's free tier is free forever. No credit card, no trial period, no hidden fees. Generate unlimited pay stubs at no cost."},
+        {q:"What's the catch with the free version?",a:'There is no catch. The free version has no watermarks and no generation limits. We plan to add account-based features in paid tiers, but the core generator stays free.'},
+        {q:'When will Pro and Business launch?',a:"We're building the account system and Pro features now. The core generator is fully functional today."},
+        {q:'Can I use this for my employees?',a:'Yes. The free version works for any number of employees -- just generate a stub for each one. Business tier will add bulk generation.'},
+      ].map(item => (
+        <div style="border-bottom:1px solid #e5e7eb;padding:1.5rem 0;">
+          <div style="font-weight:700;color:#111827;font-size:1rem;margin-bottom:0.75rem;">{item.q}</div>
+          <div style="color:#6b7280;font-size:0.9375rem;line-height:1.7;">{item.a}</div>
         </div>
+      ))}
+    </div>
+  </section>
 
-        <div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">Professional PDF Output</h3>
-          <p class="text-gray-700 mb-4">The generated PDF includes all standard pay stub fields: employee and employer information, pay period dates, gross pay, every deduction line with current and YTD columns, and net pay. The design is clean and professional — what a landlord, lender, or HR department expects to see.</p>
-          <p class="text-gray-700">No watermarks. No "Sample" diagonals. A clean, legitimate pay stub document.</p>
-        </div>
-
-        <div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">No Account Required</h3>
-          <p class="text-gray-700 mb-4">We built this so gig workers and self-employed people can generate documentation quickly without creating yet another account. Enter your information, generate the stub, download the PDF. Done.</p>
-          <p class="text-gray-700">Your data never leaves your device for the free tier — calculations run client-side in your browser. We don't store your income or employer information.</p>
-        </div>
-
-        <div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">Multiple Pay Frequencies</h3>
-          <p class="text-gray-700 mb-4">The free generator supports all standard pay frequencies: weekly (52 periods/year), bi-weekly (26 periods/year), semi-monthly (24 periods/year), and monthly (12 periods/year). Each affects how federal income tax is calculated — we handle the annualization correctly for each.</p>
-          <p class="text-gray-700">YTD calculations are automatic — enter how many pay periods have elapsed this year and we populate all YTD fields correctly.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="mb-16">
-      <h2 class="text-3xl font-bold text-gray-900 mb-8">Pricing FAQ</h2>
-
-      <div class="space-y-6">
-        <div class="border-b border-gray-200 pb-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Is the free plan really free forever?</h3>
-          <p class="text-gray-700">Yes. The core pay stub generator — unlimited stubs, no watermarks, PDF download, no account — will remain free permanently. We're building paid tiers for users who want history saving, multiple employer profiles, and bulk generation features. The free tier doesn't go away when paid tiers launch.</p>
-        </div>
-
-        <div class="border-b border-gray-200 pb-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Why is it free? What's the catch?</h3>
-          <p class="text-gray-700">We're building paid tiers for business and Pro users who need features beyond basic stub generation. The free tier serves individual users and funds itself through eventual paid conversions. There's no advertising, no data selling, and no hidden costs. We generate revenue when Pro and Business tiers launch.</p>
-        </div>
-
-        <div class="border-b border-gray-200 pb-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">When will Pro and Business tiers launch?</h3>
-          <p class="text-gray-700">We're actively building them. We don't have a hard launch date to promise yet — we'd rather ship them right than rush and ship something broken. When they launch, free tier users who want to upgrade will get early access.</p>
-        </div>
-
-        <div class="border-b border-gray-200 pb-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">How many pay stubs can I generate for free?</h3>
-          <p class="text-gray-700">Unlimited. Generate as many as you need. There's no daily limit, no monthly cap, no "you've used your free stubs" message. Use the tool as often as you need it.</p>
-        </div>
-
-        <div class="border-b border-gray-200 pb-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Do I need to create an account for the free tier?</h3>
-          <p class="text-gray-700">No. The free generator works without any account creation. The Pro and Business tiers will require an account (to save stub history and manage multiple employers), but the core generator is always account-free.</p>
-        </div>
-
-        <div class="border-b border-gray-200 pb-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">What's the difference between the free and Pro PDF templates?</h3>
-          <p class="text-gray-700">The free template is clean, professional, and complete — all required fields, no watermarks. The upcoming Pro template will have an enhanced design with additional customization options (custom header colors, logo placement, alternative layouts). The free template is already accepted by landlords and lenders because it contains all required information. The Pro template will look more polished but contain the same core data.</p>
-        </div>
-
-        <div class="border-b border-gray-200 pb-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Can I use the free generator for my employees?</h3>
-          <p class="text-gray-700">Yes, with some limitations. The free generator can produce pay stubs for individual employees one at a time. If you have more than a few employees and need to generate stubs in bulk or maintain payroll records, the Business tier (coming soon) is designed for that use case. For now, generate each employee's stub individually — it works fine for small teams.</p>
-        </div>
-
-        <div class="border-b border-gray-200 pb-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Will the paid tiers use subscription billing?</h3>
-          <p class="text-gray-700">The Pro tier will be a monthly subscription ($9/month). The Business tier will also be monthly ($29/month) with an option for annual billing at a discount. Payments will be processed through a secure third-party payment processor — your card details never touch our servers. No free trials with credit card required — we'll offer a 14-day money-back guarantee instead.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-blue-50 rounded-xl p-8 text-center">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4">Ready to Generate Your First Pay Stub?</h2>
-      <p class="text-gray-700 mb-6 max-w-xl mx-auto">The free generator is live right now. No account, no watermarks, no cost. Generate a professional pay stub in about 2 minutes.</p>
-      <a href="/" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">Generate Free Pay Stub</a>
-    </section>
-  </main>
+  <!-- Bottom CTA -->
+  <section style="background:linear-gradient(135deg,#1a56db 0%,#1e3a8a 100%);padding:4rem 0;text-align:center;">
+    <div class="container">
+      <h2 style="color:white;font-size:2rem;font-weight:800;margin-bottom:1rem;">Start Generating Pay Stubs Free</h2>
+      <p style="color:rgba(255,255,255,0.85);margin-bottom:2rem;">No account. No credit card. Just fill in the form and download.</p>
+      <a href="/" style="display:inline-block;background:white;color:#1a56db;padding:1rem 2.5rem;border-radius:0.625rem;font-weight:700;font-size:1.1rem;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,0.15);">Generate Free Pay Stub →</a>
+    </div>
+  </section>
 </Base>
