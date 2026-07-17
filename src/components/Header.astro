@@ -10,8 +10,8 @@ const pathname = Astro.url?.pathname ?? '/';
 ---
 <header style="background:white; border-bottom:1px solid #e5e7eb; position:sticky; top:0; z-index:50; box-shadow:0 1px 3px rgba(0,0,0,0.05);">
   <div class="container" style="display:flex; align-items:center; justify-content:space-between; height:64px;">
-    <a href="/" style="font-size:1.25rem; font-weight:800; color:#1a56db; text-decoration:none; letter-spacing:-0.025em;">
-      IncomeRecord<span style="color:#111827;">.com</span>
+    <a href="/" style="text-decoration:none; display:flex; align-items:center;">
+      <img src="/logo.png" width="180" height="40" alt="IncomeRecord.com" style="height:40px; width:auto;" />
     </a>
     <nav class="hide-mobile" style="display:flex; gap:1.5rem; align-items:center;">
       {navLinks.map(link => (
