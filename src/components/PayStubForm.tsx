@@ -21,6 +21,7 @@ const STATE_RATES: Record<string, number> = {
   OH: 0.035, GA: 0.0549, NC: 0.045, MI: 0.0425, AZ: 0.025, WA: 0,
   CO: 0.044, NV: 0, TN: 0, VA: 0.0575, NJ: 0.0637, MA: 0.05,
   MN: 0.0785, OR: 0.0875, UT: 0.0465, IN: 0.0305, WI: 0.053, MO: 0.048, MD: 0.0575,
+  AL: 0.05, SC: 0.065, LA: 0.0425,
   OTHER: 0,
 };
 
