@@ -1,5 +1,6 @@
 ---
 import Base from './Base.astro';
+import TrustBar from '../components/TrustBar.astro';
 
 interface Props {
   title: string;
@@ -19,15 +20,29 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
 });
 ---
 <Base title={title} description={description} canonical={canonical} ogImage={ogImage}>
-  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <header class="mb-8">
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">{h1}</h1>
-      <time datetime={date} class="text-sm text-gray-500">
+  <TrustBar compact={true} />
+  <article style="max-width:700px; margin:0 auto; padding:2rem 1.5rem 4rem;">
+    <!-- Breadcrumb -->
+    <nav style="font-size:0.8125rem; color:#6b7280; margin-bottom:2rem; display:flex; align-items:center; gap:0.5rem;">
+      <a href="/" style="color:#1a56db; text-decoration:none; font-weight:500;">Home</a>
+      <span style="color:#d1d5db;">›</span>
+      <a href="/blog" style="color:#1a56db; text-decoration:none; font-weight:500;">Blog</a>
+      <span style="color:#d1d5db;">›</span>
+      <span style="color:#6b7280;">{h1}</span>
+    </nav>
+    <header style="margin-bottom:2rem;">
+      <h1 style="font-size:2rem; font-weight:800; color:#111827; margin-bottom:0.75rem; line-height:1.2; letter-spacing:-0.02em;">{h1}</h1>
+      <time datetime={date} style="font-size:0.875rem; color:#6b7280;">
         Published {formattedDate}
       </time>
     </header>
-    <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+    <div class="prose" style="max-width:none; line-height:1.8; color:#374151;">
       <slot />
+    </div>
+    <div style="margin-top:3rem; padding:1.5rem; background:#eff6ff; border-radius:0.75rem; border:1px solid #bfdbfe;">
+      <p style="font-size:0.9375rem; font-weight:600; color:#1e40af; margin-bottom:0.5rem;">Ready to generate your pay stub?</p>
+      <p style="font-size:0.875rem; color:#1e40af; margin-bottom:1rem;">Free, instant, no signup required.</p>
+      <a href="/" class="btn-primary" style="font-size:0.9rem; padding:0.625rem 1.25rem;">Generate Free Pay Stub &rarr;</a>
     </div>
   </article>
 </Base>

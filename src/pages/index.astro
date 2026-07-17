@@ -1,102 +1,173 @@
 ---
-import ToolPage from '../layouts/ToolPage.astro';
+import Base from '../layouts/Base.astro';
+import TrustBar from '../components/TrustBar.astro';
+import PayStubForm from '../components/PayStubForm';
 ---
-<ToolPage
+<Base
   title="Free Pay Stub Generator | IncomeRecord.com"
   description="Generate a professional pay stub instantly. Free, no watermark, no signup. Calculates federal and state taxes automatically."
   canonical="https://incomerecord.com/"
-  h1="Free Pay Stub Generator"
 >
+  <TrustBar />
 
-<h2>What a Pay Stub Actually Does for You</h2>
-<p>A pay stub is proof that money changed hands. That matters more than the definition. When you apply for an apartment, request a car loan, or open a bank account, someone needs to see that your income is real and consistent. A pay stub does that job in one page -- it shows your employer's name, your name, the pay period, gross wages, every deduction, and the net amount you actually received.</p>
+  <!-- Hero -->
+  <div style="text-align:center; padding:3rem 1.5rem 2rem; max-width:760px; margin:0 auto;">
+    <div style="display:inline-block; background:#eff6ff; color:#1e40af; font-size:0.8rem; font-weight:600; padding:0.375rem 0.875rem; border-radius:9999px; margin-bottom:1.25rem; border:1px solid #bfdbfe;">
+      Free · No sign-up · Instant PDF
+    </div>
+    <h1 style="font-size:2.5rem; font-weight:800; color:#111827; margin-bottom:1rem; line-height:1.15; letter-spacing:-0.025em;">
+      Generate a Professional<br/>Pay Stub in 60 Seconds
+    </h1>
+    <p style="font-size:1.125rem; color:#6b7280; margin-bottom:0; max-width:560px; margin-left:auto; margin-right:auto; line-height:1.6;">
+      Free, accurate, no account required. Trusted by DoorDash drivers, freelancers, and small businesses across all 50 states.
+    </p>
+  </div>
 
-<p>For employees of companies, pay stubs come automatically with each paycheck. For contractors, gig workers, freelancers, and self-employed individuals, there is no employer generating that document. This tool fills that gap. You enter your income information, the calculator handles all the math, and you download a clean PDF that looks exactly like what a payroll department would produce.</p>
+  <!-- Form -->
+  <div style="max-width:860px; margin:0 auto; padding:0 1.5rem 2rem;">
+    <PayStubForm client:load defaultState="CA" />
+  </div>
 
-<h2>Every Field Explained</h2>
-<p><strong>Employee Name:</strong> Your legal name as it appears on your tax documents. Use the same name you file your taxes under.</p>
+  <!-- How It Works -->
+  <section style="background:white; padding:4rem 1.5rem; margin-top:3rem;">
+    <div class="container">
+      <h2 style="text-align:center; font-size:1.75rem; font-weight:800; color:#111827; margin-bottom:0.75rem;">How It Works</h2>
+      <p style="text-align:center; color:#6b7280; margin-bottom:3rem; font-size:1rem;">Three steps to a professional pay stub</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2rem; max-width:900px; margin:0 auto;">
+        <div style="text-align:center;">
+          <div style="width:64px; height:64px; background:#eff6ff; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem; font-size:1.75rem;">✏️</div>
+          <div style="font-size:0.8rem; font-weight:700; color:#1a56db; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.5rem;">Step 1</div>
+          <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:0.5rem; color:#111827;">Enter Your Details</h3>
+          <p style="font-size:0.875rem; color:#6b7280; line-height:1.6;">Employer name, employee info, pay period, and earnings. Takes under a minute.</p>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:64px; height:64px; background:#eff6ff; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem; font-size:1.75rem;">🧮</div>
+          <div style="font-size:0.8rem; font-weight:700; color:#1a56db; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.5rem;">Step 2</div>
+          <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:0.5rem; color:#111827;">Auto-Calculate Taxes</h3>
+          <p style="font-size:0.875rem; color:#6b7280; line-height:1.6;">Federal brackets, Social Security, Medicare, and your state tax -- all calculated instantly.</p>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:64px; height:64px; background:#eff6ff; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem; font-size:1.75rem;">📄</div>
+          <div style="font-size:0.8rem; font-weight:700; color:#1a56db; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.5rem;">Step 3</div>
+          <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:0.5rem; color:#111827;">Download Your PDF</h3>
+          <p style="font-size:0.875rem; color:#6b7280; line-height:1.6;">Professional pay stub PDF downloads instantly to your device. No email required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p><strong>Employer Name:</strong> If you work for a company, this is the company's legal name. If you are self-employed, use your business name or your own name with "Self-Employed" noted.</p>
+  <!-- Who uses it -->
+  <section style="padding:4rem 1.5rem; background:#f9fafb;">
+    <div class="container">
+      <h2 style="text-align:center; font-size:1.5rem; font-weight:800; color:#111827; margin-bottom:0.5rem;">Who Uses IncomeRecord.com</h2>
+      <p style="text-align:center; color:#6b7280; margin-bottom:2.5rem; font-size:0.9375rem;">Built for people whose employers don't provide pay documentation</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5rem; max-width:900px; margin:0 auto;">
+        <div style="background:white; border-radius:0.75rem; padding:1.5rem; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+          <div style="font-size:1.75rem; margin-bottom:0.75rem;">🚗</div>
+          <h3 style="font-size:1rem; font-weight:700; color:#111827; margin-bottom:0.5rem;">Gig Workers</h3>
+          <p style="font-size:0.875rem; color:#6b7280; line-height:1.6;">DoorDash, Uber, Instacart, and Lyft drivers who need official income documentation for apartments and loans.</p>
+        </div>
+        <div style="background:white; border-radius:0.75rem; padding:1.5rem; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+          <div style="font-size:1.75rem; margin-bottom:0.75rem;">💼</div>
+          <h3 style="font-size:1rem; font-weight:700; color:#111827; margin-bottom:0.5rem;">Freelancers</h3>
+          <p style="font-size:0.875rem; color:#6b7280; line-height:1.6;">Consultants, designers, and contractors who need standardized pay records for banks and landlords.</p>
+        </div>
+        <div style="background:white; border-radius:0.75rem; padding:1.5rem; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+          <div style="font-size:1.75rem; margin-bottom:0.75rem;">🏢</div>
+          <h3 style="font-size:1rem; font-weight:700; color:#111827; margin-bottom:0.5rem;">Small Businesses</h3>
+          <p style="font-size:0.875rem; color:#6b7280; line-height:1.6;">Business owners with 1-5 employees who need professional pay documentation without full payroll software.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p><strong>Pay Period:</strong> The range of dates this stub covers. Common options are weekly (52 pay periods per year), biweekly (26 per year), semi-monthly (24 per year), and monthly (12 per year). Match this to how often you actually receive payment.</p>
+  <!-- Popular generators grid -->
+  <section style="padding:4rem 1.5rem; background:white;">
+    <div class="container">
+      <h2 style="font-size:1.5rem; font-weight:800; color:#111827; margin-bottom:0.5rem;">Popular Pay Stub Generators</h2>
+      <p style="color:#6b7280; margin-bottom:2rem; font-size:0.9375rem;">Find the right generator for your situation</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:1rem;">
+        {[
+          { href: '/doordash-pay-stub-generator', title: 'DoorDash Pay Stub', desc: 'For Dashers documenting weekly earnings' },
+          { href: '/uber-pay-stub-generator', title: 'Uber Driver Pay Stub', desc: 'Trip earnings, surges, and quests' },
+          { href: '/self-employed-pay-stub-generator', title: 'Self-Employed Pay Stub', desc: 'Schedule C filers and sole proprietors' },
+          { href: '/proof-of-income-generator', title: 'Proof of Income', desc: 'For apartments, loans, and mortgages' },
+          { href: '/california-pay-stub-generator', title: 'California Pay Stub', desc: '13.3% top rate, SDI included' },
+          { href: '/pay-stub-for-apartment', title: 'Pay Stub for Apartment', desc: 'What landlords actually require' },
+          { href: '/pay-stub-template', title: 'Pay Stub Templates', desc: 'Free Word, Excel alternatives' },
+          { href: '/blog/how-to-read-a-pay-stub', title: 'How to Read a Pay Stub', desc: 'Every line explained in plain English' },
+        ].map(item => (
+          <a href={item.href} style="display:block; background:white; border:1px solid #e5e7eb; border-radius:0.75rem; padding:1.25rem; text-decoration:none; color:inherit; cursor:pointer;">
+            <div style="font-weight:600; color:#111827; margin-bottom:0.375rem; font-size:0.9375rem;">{item.title}</div>
+            <div style="font-size:0.8125rem; color:#6b7280; line-height:1.5;">{item.desc}</div>
+            <div style="color:#1a56db; font-size:0.8125rem; margin-top:0.75rem; font-weight:500;">Generate free &rarr;</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
 
-<p><strong>Gross Pay:</strong> Your total earnings before any deductions. If you are hourly, this is your hourly rate multiplied by hours worked. If you are salaried, this is your annual salary divided by your number of pay periods.</p>
+  <!-- Content / FAQ -->
+  <div style="max-width:860px; margin:0 auto; padding:4rem 1.5rem;">
+    <h2>What a Pay Stub Actually Does for You</h2>
+    <p>A pay stub is proof that money changed hands. That matters more than the definition. When you apply for an apartment, request a car loan, or open a bank account, someone needs to see that your income is real and consistent. A pay stub does that job in one page -- it shows your employer's name, your name, the pay period, gross wages, every deduction, and the net amount you actually received.</p>
 
-<p><strong>State:</strong> Determines which state income tax rate applies to your earnings. Nine states have no state income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. All other states have rates ranging from under 3% to over 13%.</p>
+    <p>For employees of companies, pay stubs come automatically with each paycheck. For contractors, gig workers, freelancers, and self-employed individuals, there is no employer generating that document. This tool fills that gap. You enter your income information, the calculator handles all the math, and you download a clean PDF that looks exactly like what a payroll department would produce.</p>
 
-<p><strong>Filing Status:</strong> Single, Married Filing Jointly, Married Filing Separately, or Head of Household. This affects your federal tax bracket and standard deduction calculation.</p>
+    <h2>Every Field Explained</h2>
+    <p><strong>Employee Name:</strong> Your legal name as it appears on your tax documents. Use the same name you file your taxes under.</p>
 
-<p><strong>Allowances / Withholding:</strong> How much federal tax gets held back from each check. More allowances means less withheld per check but potentially a tax bill at year end. Fewer allowances means more withheld but likely a refund.</p>
+    <p><strong>Employer Name:</strong> If you work for a company, this is the company's legal name. If you are self-employed, use your business name or your own name with "Self-Employed" noted.</p>
 
-<h2>Who Uses This Tool</h2>
-<p><strong>Gig workers and delivery drivers:</strong> DoorDash, Uber, Instacart, Lyft, and Amazon Flex do not issue pay stubs. They issue annual 1099 forms and weekly deposit summaries, but those do not work for apartment applications or loan requests that specifically ask for pay stubs. A generated stub based on your actual earnings is the correct documentation tool.</p>
+    <p><strong>Pay Period:</strong> The range of dates this stub covers. Common options are weekly (52 pay periods per year), biweekly (26 per year), semi-monthly (24 per year), and monthly (12 per year). Match this to how often you actually receive payment.</p>
 
-<p><strong>Freelancers and consultants:</strong> Upwork, Fiverr, and direct client work produces project invoices and platform earnings reports, not pay stubs. When a landlord or lender asks for "the last three pay stubs," they want a standardized document showing gross pay, deductions, and net pay -- not a Upwork earnings export.</p>
+    <p><strong>Gross Pay:</strong> Your total earnings before any deductions. If you are hourly, this is your hourly rate multiplied by hours worked. If you are salaried, this is your annual salary divided by your number of pay periods.</p>
 
-<p><strong>Self-employed sole proprietors:</strong> People who file Schedule C have no employer issuing documentation. They can generate stubs reflecting their business income on any pay schedule they choose.</p>
+    <p><strong>State:</strong> Determines which state income tax rate applies to your earnings. Nine states have no state income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming.</p>
 
-<p><strong>Small business owners paying employees:</strong> A business with two to five employees does not necessarily need full payroll software. Generated stubs can handle record-keeping at this scale.</p>
+    <p><strong>Filing Status:</strong> Single, Married Filing Jointly, Married Filing Separately, or Head of Household. This affects your federal tax bracket and standard deduction calculation.</p>
 
-<p><strong>Cash workers:</strong> Construction laborers, housekeepers, farm workers, and others paid in cash still need documentation for banking, housing, and loans. Generated stubs based on actual cash income provide that documentation.</p>
+    <h2>How the Tax Calculation Works</h2>
 
-<p><strong>People between jobs:</strong> Someone who recently started a new position and does not yet have three months of stubs from the new employer can generate stubs showing the new salary based on their offer letter.</p>
+    <h3>Federal Income Tax</h3>
+    <p>The calculator applies the current IRS federal tax brackets to your annualized income, then divides by pay periods to get per-stub withholding. The 2024 brackets for single filers run from 10% on income under $11,600 up to 37% on income above $609,350.</p>
 
-<h2>How the Tax Calculation Works</h2>
+    <h3>FICA Taxes</h3>
+    <p>Social Security tax is 6.2% of gross wages up to the annual wage base ($168,600 in 2024). Medicare tax is 1.45% of all wages with no income cap. If you are self-employed, you pay both halves -- 12.4% Social Security and 2.9% Medicare.</p>
 
-<h3>Federal Income Tax</h3>
-<p>The calculator applies the current IRS federal tax brackets to your annualized income, then divides by pay periods to get per-stub withholding. The 2024 brackets for single filers run from 10% on income under $11,600 up to 37% on income above $609,350, with several rates in between. Married filing jointly brackets are roughly double the single filer thresholds.</p>
+    <h3>State Income Tax</h3>
+    <p>Each state that has an income tax applies it at its own rate. California tops the list at 13.3% for high earners. The calculator looks up the correct rate for the state you select.</p>
 
-<p>The calculator does not compute your actual tax liability for the year -- it estimates withholding per paycheck, which is what appears on a stub. Your actual annual tax liability depends on total income from all sources, deductions, and credits that are outside the scope of a pay stub calculation.</p>
+    <h2>Frequently Asked Questions</h2>
 
-<h3>FICA Taxes</h3>
-<p>FICA stands for Federal Insurance Contributions Act. It covers two programs. Social Security tax is 6.2% of gross wages up to the annual wage base ($168,600 in 2024). Medicare tax is 1.45% of all wages with no income cap. Employees pay these rates; employers pay a matching amount on top. If you are self-employed, you pay both halves -- 12.4% Social Security and 2.9% Medicare -- which is called self-employment tax.</p>
+    <h3>Is this really free?</h3>
+    <p>Yes. No credit card, no account, no watermark, no trial. Enter your information, generate the stub, download the PDF.</p>
 
-<h3>State Income Tax</h3>
-<p>Each state that has an income tax applies it at its own rate, and some states use graduated brackets similar to federal taxes while others use a flat rate. California tops the list at 13.3% for high earners. A flat-rate state like Colorado applies 4.4% regardless of income level. The calculator looks up the correct rate for the state you select.</p>
+    <h3>Are generated pay stubs legal?</h3>
+    <p>Generating a pay stub that accurately reflects your real income is legal. Using a pay stub that misrepresents income -- inflating your wages or fabricating an employer -- is fraud. This tool is for documenting genuine earnings, not manufacturing false ones.</p>
 
-<h3>Other Deductions</h3>
-<p>Health insurance premiums, 401(k) contributions, HSA contributions, and similar pre-tax deductions reduce your taxable gross pay before federal and state taxes are applied. You can add these in the form if they apply to your situation.</p>
+    <h3>Will a landlord accept a generated pay stub?</h3>
+    <p>Most will, especially if the pay stub reflects consistent income that matches your bank deposits. See our <a href="/pay-stub-for-apartment">pay stub for apartment applications</a> guide for the full picture.</p>
 
-<h2>Frequently Asked Questions</h2>
+    <h3>I'm a DoorDash driver. What do I put for employer?</h3>
+    <p>Put "DoorDash, Inc." for employer and your own name for employee. Use "Independent Contractor" as your job title. See the <a href="/doordash-pay-stub-generator">DoorDash pay stub generator</a> page for a full breakdown.</p>
 
-<h3>Is this really free?</h3>
-<p>Yes. No credit card, no account, no watermark, no trial. Enter your information, generate the stub, download the PDF.</p>
+    <h3>How many pay stubs do apartments typically require?</h3>
+    <p>Most landlords ask for the two or three most recent stubs. Generate stubs covering the past 60 to 90 days.</p>
 
-<h3>Are generated pay stubs legal?</h3>
-<p>Generating a pay stub that accurately reflects your real income is legal. Using a pay stub that misrepresents income -- inflating your wages or fabricating an employer -- is fraud. This tool is for documenting genuine earnings, not manufacturing false ones.</p>
+    <h3>Can I create a stub for a past pay period?</h3>
+    <p>Yes. The form lets you enter any date range. If you need documentation for a period that already passed, enter the dates for that period and your actual earnings from that time.</p>
 
-<h3>Will a landlord accept a generated pay stub?</h3>
-<p>Most will, especially if the pay stub reflects consistent income that matches your bank deposits. Some landlords, particularly at larger property management companies, may ask for additional documentation like bank statements or tax returns alongside stubs. See our <a href="/pay-stub-for-apartment">pay stub for apartment applications</a> guide for the full picture.</p>
+    <h3>Does this show year-to-date totals?</h3>
+    <p>Yes. The generated stub calculates and displays year-to-date figures for gross pay, each tax category, and net pay.</p>
 
-<h3>I'm a DoorDash driver. What do I put for employer?</h3>
-<p>Put "DoorDash, Inc." for employer and your own name for employee. Use "Independent Contractor" as your job title. Your gross pay is your total DoorDash earnings for the pay period. See the <a href="/doordash-pay-stub-generator">DoorDash pay stub generator</a> page for a full breakdown of how to enter each income component.</p>
+    <h3>What format is the download?</h3>
+    <p>PDF. It prints cleanly on standard letter paper and works for email submission to landlords, lenders, or any other party requesting documentation.</p>
 
-<h3>How many pay stubs do apartments typically require?</h3>
-<p>Most landlords ask for the two or three most recent stubs. The goal is to see that income is current and consistent. A single stub usually is not enough; stubs from six months ago usually are not recent enough. Generate stubs covering the past 60 to 90 days.</p>
+    <h3>Do I need to create an account?</h3>
+    <p>No. Zero signup, zero email required. The tool runs entirely in your browser. Your data does not get stored on any server.</p>
 
-<h3>Can I create a stub for a past pay period?</h3>
-<p>Yes. The form lets you enter any date range. If you need documentation for a period that already passed, enter the dates for that period and your actual earnings from that time.</p>
-
-<h3>Does this show year-to-date totals?</h3>
-<p>Yes. The generated stub calculates and displays year-to-date figures for gross pay, each tax category, and net pay -- the same format payroll departments use.</p>
-
-<h3>What format is the download?</h3>
-<p>PDF. It prints cleanly on standard letter paper and works for email submission to landlords, lenders, or any other party requesting documentation.</p>
-
-<h3>Do I need to create an account?</h3>
-<p>No. Zero signup, zero email required. The tool runs entirely in your browser. Your data does not get stored on any server.</p>
-
-<h3>Can I use this for a loan application?</h3>
-<p>Yes, for personal loans and auto loans especially. Mortgage applications have stricter requirements -- see our <a href="/pay-stub-for-mortgage">pay stub for mortgage</a> page for what underwriters actually need. For personal loans, the <a href="/pay-stub-for-loan">pay stub for loan applications</a> guide covers each lender type.</p>
-
-<h2>What Employers Are Required to Show on a Pay Stub</h2>
-<p>No federal law requires employers to issue pay stubs at all -- the federal Fair Labor Standards Act mandates recordkeeping but not stub issuance. State law fills this gap. As of 2024, approximately 36 states require employers to provide some form of pay statement with each paycheck. Of those, California, New York, Colorado, and Washington have the most detailed requirements, specifying what line items must appear.</p>
-
-<p>A compliant pay stub in a state with disclosure requirements must generally include: the pay period dates, gross wages earned, a breakdown of all deductions (showing the reason and amount for each), net wages paid, the basis of pay (hourly rate and hours, or salary), and year-to-date totals. Some states add requirements: California requires the employer's registered address, Colorado requires the employee's last four SSN digits, and New York requires the "applicable overtime rate" even when no overtime was worked that period.</p>
-
-<p>For self-employed workers creating their own stubs, matching the disclosure requirements of your state (or the state of the employer you list) builds credibility with reviewers who know what stubs should contain.</p>
-
-<h2>Related Tools and Guides</h2>
-<p>If you need proof of income in a format beyond a pay stub, the <a href="/proof-of-income-generator">proof of income generator</a> page covers all eight accepted methods ranked by how widely they are accepted. If your situation is apartment-specific, start with the <a href="/pay-stub-for-apartment">pay stub for apartment applications</a> guide. For self-employed individuals, the <a href="/self-employed-pay-stub-generator">self-employed pay stub generator</a> page covers Schedule C filers, sole proprietors, and single-member LLCs. If you prefer to start from a blank document, the <a href="/pay-stub-template">pay stub template</a> page has a downloadable spreadsheet version. For gig workers specifically, check the dedicated page for your platform starting with <a href="/doordash-pay-stub-generator">DoorDash</a>.</p>
-
-</ToolPage>
+    <h2>Related Tools and Guides</h2>
+    <p>If you need proof of income in a format beyond a pay stub, the <a href="/proof-of-income-generator">proof of income generator</a> page covers all eight accepted methods. For self-employed individuals, the <a href="/self-employed-pay-stub-generator">self-employed pay stub generator</a> page covers Schedule C filers, sole proprietors, and single-member LLCs. If you prefer to start from a blank document, the <a href="/pay-stub-template">pay stub template</a> page has a downloadable spreadsheet version.</p>
+  </div>
+</Base>

@@ -178,12 +178,12 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
   const errorClass = 'text-red-500 text-xs mt-1';
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+    <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden" style={{ background: 'white', borderRadius: '0.75rem', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06)', border: '1px solid #e5e7eb', overflow: 'hidden' }}>
       {/* Form */}
       <div className="p-6 space-y-6">
         {/* Employer & Employee Info */}
         <div>
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Employer &amp; Employee Information</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4" style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', borderLeft: '3px solid #1a56db', paddingLeft: '0.75rem', marginBottom: '1.25rem', marginTop: '0.5rem' }}>Employer &amp; Employee Information</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className={labelClass}>Employer Name</label>
@@ -233,7 +233,7 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
 
         {/* Pay Period */}
         <div>
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Pay Period</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4" style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', borderLeft: '3px solid #1a56db', paddingLeft: '0.75rem', marginBottom: '1.25rem', marginTop: '1.5rem' }}>Pay Period</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <label className={labelClass}>Period Start</label>
@@ -279,7 +279,7 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
 
         {/* Earnings */}
         <div>
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Earnings</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4" style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', borderLeft: '3px solid #1a56db', paddingLeft: '0.75rem', marginBottom: '1.25rem', marginTop: '1.5rem' }}>Earnings</h2>
           <div className="mb-4">
             <label className={labelClass}>Pay Type</label>
             <div className="flex gap-4">
@@ -361,6 +361,7 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
         <button
           onClick={calculate}
           className="w-full md:w-auto bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+          style={{ width: '100%', background: '#1a56db', color: 'white', padding: '1rem', borderRadius: '0.5rem', fontSize: '1.0625rem', fontWeight: '700', border: 'none', cursor: 'pointer', marginTop: '2rem', letterSpacing: '0.01em' }}
         >
           Calculate Pay Stub
         </button>
@@ -369,7 +370,7 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
       {/* Results */}
       {results && (
         <div className="border-t border-gray-200 bg-gray-50 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Pay Stub Summary</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4" style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', borderLeft: '3px solid #1a56db', paddingLeft: '0.75rem', marginBottom: '1.25rem' }}>Pay Stub Summary</h2>
 
           <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
             {/* Earnings section */}
@@ -441,7 +442,7 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
             </table>
 
             {/* Net Pay */}
-            <div className="px-4 py-4 bg-primary-600 text-white flex justify-between items-center">
+            <div className="px-4 py-4 bg-primary-600 text-white flex justify-between items-center" style={{ padding: '1rem', background: '#1a56db', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span className="font-bold text-lg">Net Pay</span>
               <span className="font-bold text-2xl font-mono">{fmt(results.net)}</span>
             </div>
@@ -456,6 +457,7 @@ export default function PayStubForm({ defaultState = 'CA' }: PayStubFormProps) {
           <button
             onClick={downloadPDF}
             className="flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#111827', color: 'white', fontWeight: '600', padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: 'none', cursor: 'pointer', fontSize: '0.9375rem' }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
