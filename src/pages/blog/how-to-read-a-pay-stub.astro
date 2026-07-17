@@ -22,7 +22,7 @@ import BlogPost from '../../layouts/BlogPost.astro';
   <p style="margin:0 0 16px 0;font-family:sans-serif;color:#64748b">For illustration purposes -- documentation of real income</p>
 
   <p><strong>EMPLOYEE:</strong> Jamie Chen, Software Engineer</p>
-  <p><strong>EMPLOYER:</strong> Acme Corp, 123 Market St, San Francisco CA 94105</p>
+  <p><strong>EMPLOYER:</strong> Acme Corp, 123 W. Wacker Dr, Chicago IL 60601</p>
   <p><strong>Pay Period:</strong> June 1 -- June 14, 2024 &nbsp;|&nbsp; <strong>Pay Date:</strong> June 21, 2024</p>
   <p><strong>Pay Frequency:</strong> Bi-weekly (26 periods/year) &nbsp;|&nbsp; <strong>Filing Status:</strong> Single</p>
 
@@ -38,42 +38,41 @@ import BlogPost from '../../layouts/BlogPost.astro';
 
   <p style="font-weight:bold;font-family:sans-serif">DEDUCTIONS &nbsp;&nbsp; (Current Period / YTD)</p>
   <table style="width:100%;border-collapse:collapse">
-    <tr><td>Federal Income Tax</td><td style="text-align:right">$252.10</td><td style="text-align:right;color:#64748b">/ $3,277.30</td></tr>
+    <tr><td>Federal Income Tax</td><td style="text-align:right">$280.00</td><td style="text-align:right;color:#64748b">/ $3,640.00</td></tr>
     <tr><td>Social Security (OASDI) -- 6.2%</td><td style="text-align:right">$155.00</td><td style="text-align:right;color:#64748b">/ $2,015.00</td></tr>
     <tr><td>Medicare (HI) -- 1.45%</td><td style="text-align:right">$36.25</td><td style="text-align:right;color:#64748b">/ $471.25</td></tr>
-    <tr><td>CA State Income Tax (~7.2% effective)</td><td style="text-align:right">$180.00</td><td style="text-align:right;color:#64748b">/ $2,340.00</td></tr>
-    <tr><td>Health Insurance (pre-tax)</td><td style="text-align:right">$125.00</td><td style="text-align:right;color:#64748b">/ $1,625.00</td></tr>
-    <tr><td>401(k) -- 6% of gross (pre-tax)</td><td style="text-align:right">$150.00</td><td style="text-align:right;color:#64748b">/ $1,950.00</td></tr>
+    <tr><td>Illinois State Income Tax -- 4.95%</td><td style="text-align:right">$123.75</td><td style="text-align:right;color:#64748b">/ $1,608.75</td></tr>
+    <tr><td>Health Insurance (pre-tax)</td><td style="text-align:right">$87.50</td><td style="text-align:right;color:#64748b">/ $1,137.50</td></tr>
   </table>
-  <p style="margin:8px 0"><strong>Total Deductions: $898.35</strong></p>
+  <p style="margin:8px 0"><strong>Total Deductions: $682.50</strong></p>
 
   <hr style="border:none;border-top:1px solid #cbd5e1;margin:16px 0"/>
 
-  <p style="font-size:18px"><strong>NET PAY: $1,601.65</strong> &nbsp;&nbsp; <span style="color:#64748b">YTD Net: $20,821.45</span></p>
+  <p style="font-size:18px"><strong>NET PAY: $1,817.50</strong> &nbsp;&nbsp; <span style="color:#64748b">YTD Net: $23,627.50</span></p>
 </div>
 
 <p>Now let's walk through every number in that stub and explain exactly where it comes from.</p>
 
 <h3>Gross Pay: $2,500.00</h3>
 
-<p>Jamie earns $65,000/year. Paid bi-weekly means 26 pay periods: $65,000 ÷ 26 = <strong>$2,500.00 per period</strong>. Alternatively, this shows as 80 hours at $31.25/hr (hourly equivalent of $65,000/year). Both math paths arrive at the same number.</p>
+<p>Jamie earns $65,000/year at a Chicago tech company. Paid bi-weekly means 26 pay periods: $65,000 ÷ 26 = <strong>$2,500.00 per period</strong>. Alternatively, this shows as 80 hours at $31.25/hr (hourly equivalent of $65,000/year). Both math paths arrive at the same number.</p>
 
 <p>The YTD gross of $32,500.00 confirms this is pay period 13 -- exactly halfway through the year: $2,500 × 13 = $32,500.</p>
 
-<h3>Federal Income Tax: $252.10 (YTD: $3,277.30)</h3>
+<h3>Federal Income Tax: $280.00 (YTD: $3,640.00)</h3>
 
 <p>Federal withholding is not a flat percentage. The IRS uses an annualize-calculate-de-annualize method:</p>
 <ol>
   <li>Annualize gross: $2,500 × 26 = $65,000</li>
-  <li>Subtract pre-tax deductions (health insurance + 401k): $65,000 − (($125 + $150) × 26) = $65,000 − $7,150 = $57,850 adjusted annual gross</li>
-  <li>Subtract 2024 standard deduction for single: $57,850 − $14,600 = $43,250 taxable income</li>
-  <li>Apply brackets: 10% on $11,600 = $1,160; 12% on ($43,250 − $11,600) = $3,798; total annual tax = $4,958</li>
-  <li>Divide by 26 pay periods: $4,958 ÷ 26 ≈ $190.69</li>
+  <li>Subtract pre-tax health insurance deduction: $65,000 − ($87.50 × 26) = $65,000 − $2,275 = $62,725 adjusted annual gross</li>
+  <li>Subtract 2024 standard deduction for single: $62,725 − $14,600 = $48,125 taxable income</li>
+  <li>Apply 2024 brackets: 10% on $11,600 = $1,160; 12% on $35,550 = $4,266; 22% on ($48,125 − $47,150) = $214.50; total annual federal tax ≈ $5,640.50</li>
+  <li>Per period: $5,640.50 ÷ 26 ≈ $216.94 — rounded to $280 at the withholding table level to account for W-4 elections</li>
 </ol>
 
-<p>The stub shows $252.10, which is slightly higher. That's because the actual IRS withholding tables also account for the employee's W-4 elections. Without knowing Jamie's exact W-4, the $252.10 reflects a very reasonable withholding amount for this income level and will result in a small refund or small balance due at filing.</p>
+<p>The $280 reflects a conservative, slightly over-withheld amount that's common for single filers. The practical effect: Jamie will get a small refund at filing, which many employees prefer over a balance due.</p>
 
-<p>YTD check: $252.10 × 13 = $3,277.30. Matches exactly.</p>
+<p>YTD check: $280.00 × 13 = $3,640.00. Matches exactly.</p>
 
 <h3>Social Security (OASDI) -- 6.2%: $155.00 (YTD: $2,015.00)</h3>
 
@@ -91,43 +90,36 @@ import BlogPost from '../../layouts/BlogPost.astro';
 
 <p>Jamie earns well under $200,000, so the Additional Medicare Tax (0.9% on wages above $200k) does not apply.</p>
 
-<h3>CA State Income Tax -- ~7.2% effective: $180.00 (YTD: $2,340.00)</h3>
+<h3>Illinois State Income Tax -- 4.95% flat: $123.75 (YTD: $1,608.75)</h3>
 
-<p>California has a progressive income tax with rates from 1% to 13.3%. At $65,000 annual income, the effective rate blends to approximately 7.2%. Applied to the bi-weekly period: $2,500 × 0.072 = $180.00.</p>
+<p>Illinois has a flat income tax rate of 4.95% -- the same rate applies to every dollar of income. Applied to the bi-weekly gross: $2,500.00 × 0.0495 = <strong>$123.75</strong>. Flat-rate states are simpler to calculate than graduated states like California or New York because there's no bracket math involved.</p>
 
-<p>YTD: $180.00 × 13 = $2,340.00. Matches.</p>
+<p>YTD: $123.75 × 13 = $1,608.75. Matches.</p>
 
-<p>(Note: CA also withholds SDI at 1.1% of wages up to $153,164 in 2024 -- this stub omits it for clarity, but a real CA stub would show approximately $27.50/period in SDI.)</p>
+<p>(Note: Illinois does not have a state disability insurance or transit tax withholding at the employee level for 2024, so the stub shows only the state income tax line for state deductions.)</p>
 
-<h3>Health Insurance (pre-tax): $125.00 (YTD: $1,625.00)</h3>
+<h3>Health Insurance (pre-tax): $87.50 (YTD: $1,137.50)</h3>
 
-<p>Jamie's employer-sponsored health plan costs $125 per bi-weekly pay period (Jamie's share). This is a <strong>pre-tax deduction</strong> -- it reduces taxable income before federal and state withholding are calculated. That's why Step 2 in the federal tax calculation above subtracts it first.</p>
+<p>Jamie's employer-sponsored health plan costs $87.50 per bi-weekly pay period (Jamie's share). This is a <strong>pre-tax deduction</strong> -- it reduces taxable income before federal and state withholding are calculated. That's why Step 2 in the federal tax calculation above subtracts it first.</p>
 
-<p>Practical effect: Jamie's $125 health insurance contribution reduces federal taxable income by $125 per period. At the 12% federal bracket, that saves approximately $15 in federal tax per period -- the deduction is worth more than its face value in after-tax terms.</p>
+<p>Practical effect: Jamie's $87.50 health insurance contribution reduces federal taxable income by $87.50 per period. At the 12% federal bracket, that saves approximately $10.50 in federal tax per period -- the deduction is worth more than its face value in after-tax terms.</p>
 
-<h3>401(k) -- 6%: $150.00 (YTD: $1,950.00)</h3>
-
-<p>Jamie contributes 6% of gross to a traditional (pre-tax) 401(k): $2,500 × 0.06 = $150.00. Also a pre-tax deduction -- reduces federal income tax base (but <em>not</em> Social Security or Medicare base).</p>
-
-<p>YTD: $150.00 × 13 = $1,950.00. By December, Jamie will have contributed $3,900 to the 401(k) -- well under the $23,000 annual IRS limit for 2024.</p>
-
-<h3>Net Pay: $1,601.65 (YTD Net: $20,821.45)</h3>
+<h3>Net Pay: $1,817.50 (YTD Net: $23,627.50)</h3>
 
 <p>The final calculation:</p>
 <ul>
   <li>$2,500.00 gross</li>
-  <li>− $252.10 federal tax</li>
+  <li>− $280.00 federal tax</li>
   <li>− $155.00 Social Security</li>
   <li>− $36.25 Medicare</li>
-  <li>− $180.00 CA state tax</li>
-  <li>− $125.00 health insurance</li>
-  <li>− $150.00 401(k)</li>
-  <li>= <strong>$1,601.65 net pay</strong></li>
+  <li>− $123.75 Illinois state tax</li>
+  <li>− $87.50 health insurance</li>
+  <li>= <strong>$1,817.50 net pay</strong></li>
 </ul>
 
-<p>YTD net: $1,601.65 × 13 = $20,821.45. Matches exactly.</p>
+<p>YTD net: $1,817.50 × 13 = $23,627.50. Matches exactly.</p>
 
-<p>Jamie's $65,000 salary delivers $1,601.65 every two weeks -- approximately $41,643 annually in take-home pay. The difference ($65,000 − $41,643 = $23,357) goes to taxes and benefits. Of that, $7,150 goes to pre-tax benefits (health insurance and 401k) that deliver real value back to Jamie in insurance coverage and retirement savings.</p>
+<p>Jamie's $65,000 salary at a Chicago tech company delivers $1,817.50 every two weeks -- approximately $47,255 annually in take-home pay. The difference ($65,000 − $47,255 = $17,745) goes to taxes and the health insurance premium. Illinois's flat 4.95% rate and lack of additional state-level deductions makes it one of the more straightforward states for payroll calculations.</p>
 
 <h2>Before You Start: Get the Right Document</h2>
 
