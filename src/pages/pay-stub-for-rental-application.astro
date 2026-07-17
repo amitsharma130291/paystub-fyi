@@ -1,0 +1,107 @@
+---
+import Base from '../layouts/Base.astro';
+import PayStubForm from '../components/PayStubForm.tsx';
+---
+<Base
+  title="Pay Stub for Rental Application | Complete Renter's Guide"
+  description="Exactly what landlords require for income verification. Income thresholds, number of stubs, what self-employed renters need, and how to handle rejection."
+  canonical="https://incomerecord.com/pay-stub-for-rental-application"
+>
+  <main class="max-w-4xl mx-auto px-4 py-8 prose prose-lg max-w-none text-gray-700">
+    <h1>Pay Stub for Rental Application -- Complete Renter's Guide</h1>
+
+    <p>When you apply for an apartment, the landlord needs to know you can pay rent. Pay stubs are the primary income verification document for rental applications -- more important than your credit score for many landlords because they show current income directly. This guide covers exactly what landlords require, how many stubs they need, and what to do if you are self-employed, work gig jobs, or have non-traditional income.</p>
+
+    <h2>The Standard Rental Application Income Requirements</h2>
+
+    <h3>Income-to-rent ratios</h3>
+    <p>Every landlord applies some version of an income threshold:</p>
+    <ul>
+      <li><strong>2x monthly rent:</strong> Minimum standard, common in smaller markets and with independent landlords. A $1,200/month apartment requires $2,400/month gross income.</li>
+      <li><strong>2.5x monthly rent:</strong> Common with mid-size property management companies. A $1,200 apartment requires $3,000/month gross.</li>
+      <li><strong>3x monthly rent:</strong> Standard in competitive urban markets and larger professional management companies. A $1,200 apartment requires $3,600/month gross. This is the benchmark most applicants should plan for.</li>
+    </ul>
+    <p>These thresholds apply to gross income -- what you earn before taxes, not what arrives in your bank account after deductions.</p>
+
+    <h3>Worked example: qualifying for a specific apartment</h3>
+    <p>A DoorDash driver wants to rent a $1,500/month studio in Austin. The property manager uses 3x income. Required gross monthly income: $4,500. At $1,100/week in DoorDash earnings, this driver grosses $4,762/month (weekly x 4.33). Three months of weekly pay stubs showing $1,100 average weekly earnings would document $4,762/month gross -- comfortably above the $4,500 threshold. Supporting bank statements showing weekly DoorDash deposits averaging $850-$900 (after the driver sets aside 25% for taxes) corroborate the gross income claim.</p>
+
+    <h2>How Many Pay Stubs Rental Applications Need</h2>
+    <p>Standard requests fall into two categories:</p>
+
+    <p><strong>Count-based:</strong> "Two most recent pay stubs" or "three most recent pay stubs." The most common requests. For weekly pay, two stubs covers two weeks. For biweekly pay, two stubs covers one month. For monthly pay, two stubs covers two months.</p>
+
+    <p><strong>Time-based:</strong> "Last 30 days of pay stubs" or "last 60 days." This produces a variable count depending on pay frequency. Weekly payers provide four or five stubs for 30 days; biweekly payers provide two or three.</p>
+
+    <p>For gig workers and self-employed applicants, providing more than the minimum (three to six months of stubs) is strategically smart. The additional documentation shows income consistency over time, which is the landlord's real concern with non-traditional income sources.</p>
+
+    <h2>What Landlords Check on Your Pay Stubs</h2>
+    <p>When a landlord reviews your stubs, they are looking at:</p>
+
+    <p><strong>Gross pay:</strong> Total before taxes. This is the income figure used for the 3x calculation.</p>
+
+    <p><strong>Employer name:</strong> For verification purposes. A large property management company may call to confirm employment at the employer listed. An individual landlord typically will not call.</p>
+
+    <p><strong>Dates:</strong> Are these recent? Stubs from six months ago raise questions about whether you are still employed. Most landlords want stubs from within the last 30-60 days.</p>
+
+    <p><strong>Consistency:</strong> Is the income stable? A weekly stub showing $2,000 one week and $400 the next raises more concern than consistent $1,200/week stubs. For gig workers, some variation is expected and normal -- the average over the documentation period matters more than any single stub.</p>
+
+    <h2>Generate Your Pay Stubs Here</h2>
+
+    <PayStubForm client:load />
+
+    <h2>Rental Applications When You Are Self-Employed or a Gig Worker</h2>
+    <p>Self-employed renters and gig workers do not receive employer-issued pay stubs. The solution is generating your own based on actual earnings. The key principles:</p>
+
+    <p><strong>Use real numbers:</strong> Generate stubs that accurately reflect what you actually earned in each pay period. Pull your weekly totals from DoorDash, Uber, Fiverr, or wherever your income comes from. Use those exact figures.</p>
+
+    <p><strong>Pair with bank statements:</strong> Bank statements showing matching deposits are the strongest corroboration for self-generated stubs. When the stub says you earned $1,100 last week and the bank statement shows a $1,100 deposit from DoorDash that week, the documentation is self-corroborating. This combination passes scrutiny at most property management companies.</p>
+
+    <p><strong>Document consistently:</strong> Create stubs at the frequency that matches your actual payment receipts. DoorDash pays weekly -- create weekly stubs. Fiverr pays monthly -- create monthly stubs.</p>
+
+    <h2>Rental Application Income Documentation by Income Type</h2>
+
+    <h3>W-2 employees</h3>
+    <p>Use your employer-issued pay stubs. Most payroll systems (ADP, Workday, Gusto, Paychex) make these available through an employee self-service portal. Download PDFs from the portal. Two to three recent stubs is typically sufficient.</p>
+
+    <h3>Gig platform workers (DoorDash, Uber, Instacart, etc.)</h3>
+    <p>Generate stubs using your weekly or biweekly platform earnings. Each major platform has specific guidance: <a href="/doordash-pay-stub-generator">DoorDash</a>, <a href="/uber-pay-stub-generator">Uber</a>, <a href="/lyft-pay-stub-generator">Lyft</a>, <a href="/instacart-pay-stub-generator">Instacart</a>, <a href="/grubhub-pay-stub-generator">Grubhub</a>. Pair with bank statements.</p>
+
+    <h3>Freelancers and contractors</h3>
+    <p>Create monthly stubs using your total client invoice receipts for each month. Use "Self-Employed" or your business name as the employer. Three to six months of monthly stubs plus bank statements is the standard documentation package. See the <a href="/freelancer-pay-stub-generator">freelancer income documentation guide</a>.</p>
+
+    <h3>Self-employed with Schedule C</h3>
+    <p>Recent monthly stubs plus last year's Schedule C (or full 1040) is the ideal package. The tax return establishes prior-year income history; the recent stubs demonstrate current earning level. See the <a href="/self-employed-pay-stub-generator">self-employed pay stub generator</a>.</p>
+
+    <h2>What to Do If a Landlord Rejects Your Documentation</h2>
+    <p>If a landlord or property manager says they cannot work with self-generated stubs, you have several options:</p>
+
+    <p><strong>Add bank statements:</strong> If you presented stubs alone, adding bank statements showing matching deposits addresses the verification concern. Property managers who are skeptical of stubs alone are often satisfied when the bank record confirms the income.</p>
+
+    <p><strong>Offer a larger deposit:</strong> Some landlords will accept additional security deposit (typically one or two additional months) in lieu of meeting income documentation requirements precisely. This is a negotiation, not a right. Some states cap security deposits (California at 2x monthly rent for unfurnished units; check your state's rules).</p>
+
+    <p><strong>Get a co-signer or guarantor:</strong> A financially qualified person who agrees to be responsible for the rent if you cannot pay. Common for college students, recent graduates, and applicants with non-traditional income. The co-signer's income and credit are used for qualification.</p>
+
+    <p><strong>Prepay several months:</strong> Offering to pay two to three months of rent upfront demonstrates financial stability and reduces the landlord's perceived risk. In most states, prepaid rent is not capped the way security deposits are.</p>
+
+    <p><strong>Apply through a co-applicant:</strong> If you have a partner, family member, or roommate whose income can be combined with yours, a joint application may meet the income threshold even when yours alone does not.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Will a landlord call my employer to verify the pay stub?</h3>
+    <p>Large property management companies sometimes do employment verification calls. Individual landlords rarely do. For gig workers, the "employer" (DoorDash, Uber, etc.) cannot confirm individual contractor earnings to third parties, so a call to verify would be inconclusive either way. Bank statements become more important when employer verification is unavailable.</p>
+
+    <h3>What if my income barely meets the threshold?</h3>
+    <p>Being right at the threshold puts you in a marginal approval zone. A larger security deposit offer, a co-signer, or prepaid rent can compensate for the borderline income level. In competitive markets, landlords with multiple qualified applicants will often choose the one with the clearest income documentation and highest income margin above the threshold.</p>
+
+    <h3>My income is very variable -- some weeks are much higher than others. How does the landlord see that?</h3>
+    <p>Present the average. If you have six months of stubs with variable weekly income (some weeks $700, some $1,600), the average matters more than the individual weeks. Calculate your average monthly income across the documentation period and make sure it clearly exceeds 3x the monthly rent.</p>
+
+    <h3>How recent do the stubs need to be?</h3>
+    <p>Within the last 60 days for most landlords. Some require stubs from the last 30 days. The closer to the application date, the better. Stubs from three or four months ago raise questions about current employment status.</p>
+
+    <h2>Related Resources</h2>
+    <p>For additional guidance: <a href="/pay-stub-for-apartment">pay stub for apartment applications</a> (the 3x rule in depth), <a href="/proof-of-income-generator">all proof of income methods</a>, <a href="/pay-stub-for-apartment-no-employer">no-employer apartment application guide</a>, and the specific gig platform pages for generating accurate stubs from your actual platform earnings.</p>
+
+  </main>
+</Base>

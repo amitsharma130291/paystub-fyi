@@ -11,16 +11,18 @@ import ToolPage from '../layouts/ToolPage.astro';
 <h2>How Instacart Pays Its Shoppers</h2>
 <p>Instacart's pay model is one of the more complex among gig platforms, partly because two types of shoppers exist with meaningfully different pay structures.</p>
 
-<p><strong>Full-service shoppers:</strong> These are independent contractors who both shop the store and deliver to the customer. Pay has three components: a base batch pay, an item-based adjustment, and the full tip from the customer. Full-service shoppers choose which batches to accept from the Instacart app and are paid per batch rather than hourly.</p>
+<p><strong>Full-service shoppers:</strong> These are independent contractors who both shop the store and deliver to the customer. Pay follows a specific formula per batch:</p>
+<p><strong>Batch pay = $7--$10 base pay + 5% of order subtotal + 100% of customer tip</strong></p>
+<p>For example, a $120 grocery order earns $7--$10 base + $6 (5% of $120) + whatever the customer tips. A $200 order earns $7--$10 base + $10 (5% of $200) + tip. The percentage component means larger orders pay meaningfully more. Full-service shoppers choose which batches to accept from the Instacart app and are paid per batch rather than hourly.</p>
 
 <p><strong>In-store shoppers:</strong> These are Instacart part-time employees (W-2, not 1099) who shop orders in the store but do not deliver. They are paid hourly, typically $10-15 per hour depending on market, and receive actual employer-issued pay stubs through Instacart's payroll system. If you are an in-store shopper, you should be receiving pay stubs from Instacart already. This tool is primarily useful for full-service shoppers who do not receive employer stubs.</p>
 
 <h3>Full-Service Shopper Batch Pay Formula</h3>
 <p>Each batch (one or more orders shopped and delivered in one trip) pays according to this structure:</p>
 
-<p><strong>Base batch pay:</strong> Typically $7 to $10 per batch, adjusted by Instacart's algorithm based on the estimated difficulty of the batch (number of items, weight, distance, complexity).</p>
+<p><strong>Base batch pay:</strong> The $7--$10 base varies by estimated difficulty (number of items, weight, distance). A standard 20-item grocery run may get $7; a large 50-item order with heavy products may get $10.</p>
 
-<p><strong>Item and weight adjustment:</strong> More items, heavier orders, and orders with specialized items (alcohol requiring ID, bulky items, refrigerated items needing care) receive a higher base batch pay. Instacart does not publicly break down exactly how this adjustment is calculated, but it is reflected in the offered batch pay before you accept.</p>
+<p><strong>The 5% order component:</strong> You earn 5% of the order subtotal (not including taxes or fees). This is where the real earnings difference lies between small and large orders. A $75 order adds $3.75; a $250 order adds $12.50. Targeting higher-value orders is the most reliable way to increase your effective hourly rate on Instacart.</p>
 
 <p><strong>Distance adjustment:</strong> Longer delivery distances -- particularly relevant for less-dense markets -- add to base batch pay.</p>
 

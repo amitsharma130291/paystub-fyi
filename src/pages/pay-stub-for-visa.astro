@@ -1,0 +1,105 @@
+---
+import Base from '../layouts/Base.astro';
+import PayStubForm from '../components/PayStubForm.tsx';
+---
+<Base
+  title="Pay Stub for Visa Application | Income Proof Guide"
+  description="What immigration officers and consular staff want for income verification. Which visas require pay stubs, what specific documents they need, and alternatives for self-employed applicants."
+  canonical="https://incomerecord.com/pay-stub-for-visa"
+>
+  <main class="max-w-4xl mx-auto px-4 py-8 prose prose-lg max-w-none text-gray-700">
+    <h1>Pay Stub for Visa Application -- Income Proof Guide</h1>
+
+    <p>Visa applications that require proof of income want to establish one thing: that you have stable income sufficient to support yourself (and any dependents) during the period the visa covers, and that you have financial ties to your home country that make you likely to return. Pay stubs are one of the most commonly accepted income documents for this purpose.</p>
+
+    <h2>Which Visa Categories Typically Require Pay Stubs</h2>
+
+    <h3>US Visitor Visa (B-1/B-2)</h3>
+    <p>The B-1 (business) and B-2 (tourism) non-immigrant visas require demonstrating that you have ties to your home country and sufficient funds for your intended visit. Pay stubs from your employer show ongoing employment, stable income, and a financial reason to return. Three to six months of recent pay stubs from your primary employer are standard supporting documentation.</p>
+
+    <h3>US Work Visas (H-1B, L-1, O-1)</h3>
+    <p>For H-1B and similar work visas, the petition is filed by the employer, and the employer's documentation (including the employee's pay stubs from prior employment) may be included to support the petition. An H-1B worker documenting their current status for a visa extension or change of status would need recent pay stubs from the petitioning employer showing the prevailing wage rate is being met.</p>
+
+    <h3>Family and Spousal Visas (I-864 Affidavit of Support)</h3>
+    <p>US citizens sponsoring a family member for a green card must file Form I-864 (Affidavit of Support). This form requires proving income at 125% of the Federal Poverty Level for the household size. Pay stubs -- typically the three most recent -- are the primary documentation for the income field. For 2024, a single sponsor supporting a household of two (sponsor + beneficiary) needs income above $24,650/year ($2,054/month).</p>
+
+    <p>The full income requirement for I-864: multiply the Federal Poverty Guideline for your household size by 125%. For a two-person household (2024): $20,120 x 125% = $25,150/year minimum. Most USCIS adjudicators want recent pay stubs plus the most recent federal tax return (Form 1040 with W-2) to establish both current and prior-year income.</p>
+
+    <h3>Schengen Visa (Europe)</h3>
+    <p>Schengen area visa applications for EU tourism from non-EU citizens typically require bank statements showing sufficient funds for the trip, along with income documentation proving you can afford the trip and have employment ties. Three months of pay stubs plus a letter from your employer confirming your position and leave approval are standard requirements. Specific requirements vary by country processing the application (you apply at the embassy of the Schengen country you will spend the most time in).</p>
+
+    <h3>UK Standard Visitor Visa</h3>
+    <p>The UK requires evidence of financial means to cover your visit without working. Three to six months of pay stubs demonstrating employment and income are standard. Bank statements showing funds available are also commonly required alongside the stubs.</p>
+
+    <h2>Worked Example: I-864 Income Calculation</h2>
+    <p>A US citizen is sponsoring their spouse for a green card. The household will have two people (sponsor + beneficiary). The 125% Federal Poverty Line for a household of two in 2024 is approximately $25,150/year. The sponsor earns $58,000/year as a graphic designer, paid biweekly ($2,230.77 per biweekly stub). The income documentation package:</p>
+    <ul>
+      <li>Three most recent biweekly pay stubs showing $2,230.77 gross each</li>
+      <li>Most recent W-2 showing $58,000 in wages</li>
+      <li>Most recent 1040 tax return</li>
+      <li>I-864 form with income listed as $58,000 (well above the $25,150 threshold)</li>
+    </ul>
+    <p>The annual income ($58,000) is 230% of the poverty guideline for a two-person household -- significantly above the 125% requirement. The pay stubs confirm the income is current and ongoing.</p>
+
+    <h2>Self-Employed Applicants and Visa Income Documentation</h2>
+    <p>Self-employed visa applicants -- including gig workers, freelancers, and contractors -- face additional documentation requirements because their income lacks the employer verification that W-2 stubs provide. For US visitors visas and Schengen applications, the documentation stack for self-employed applicants typically includes:</p>
+
+    <p>Six months of self-generated pay stubs based on actual earnings. Bank statements for the same period showing consistent deposits. Most recent one to two years of tax returns (Schedule C for sole proprietors). Business registration documents if you have a registered business. Client contracts or invoices showing ongoing income (optional but strengthens the case).</p>
+
+    <p>For I-864 Affidavit of Support, self-employed sponsors use Schedule C net income as their qualifying income figure. If Schedule C shows $45,000 net profit, that is the income number. The pay stubs you generate support current income documentation, but the tax return is the primary document.</p>
+
+    <h2>Gig Worker Income and Visa Applications</h2>
+    <p>Visa applicants whose primary income comes from gig platforms (DoorDash, Uber, Fiverr, Upwork) are in the same position as self-employed contractors. The income is real, but it requires more documentation than a W-2 position. For a B-2 tourist visa supporting document package, a Fiverr seller earning $4,200/month might provide:</p>
+
+    <ul>
+      <li>Six months of monthly pay stubs (total: $4,200 x 6 = $25,200 in documented income)</li>
+      <li>Six months of bank statements showing matching monthly Fiverr deposits</li>
+      <li>The most recent annual 1099-K from Fiverr</li>
+      <li>Most recent Schedule C showing net profit</li>
+    </ul>
+
+    <p>The combination demonstrates that the income is established, consistent, and ongoing -- making return to home employment after the visit highly likely.</p>
+
+    <h2>Generate Your Pay Stubs</h2>
+
+    <PayStubForm client:load />
+
+    <h2>What Consular Officers Look For</h2>
+    <p>For non-immigrant visas (B-1/B-2, Schengen, UK), consular officers evaluating income documentation are assessing:</p>
+
+    <p><strong>Stability:</strong> Is the income consistent over the documentation period? A single high-income month surrounded by low-income months is less convincing than steady monthly income at a moderate level. Three to six months of stubs showing consistent earnings establishes a pattern.</p>
+
+    <p><strong>Ties to home country:</strong> Does the income show you have employment or business reasons to return? An employee with regular payroll income has a job to return to. A business owner with ongoing client revenue has a business to return to. Both are stronger than unstructured cash income with no clear employment relationship.</p>
+
+    <p><strong>Sufficiency for the trip:</strong> Does the income, combined with available bank funds, cover the estimated cost of the trip? The visa application often asks about trip length and purpose. A two-week European vacation for someone earning $4,000/month with $8,000 in a bank account is financially plausible. The same trip for someone with $400/month income raises questions about who is actually funding the visit.</p>
+
+    <h2>How Many Pay Stubs to Submit</h2>
+    <p>The specific requirement varies by visa type and issuing country, but general guidance:</p>
+
+    <p><strong>US non-immigrant visas (B-1/B-2):</strong> Three to six months of recent pay stubs. More is better when the income is variable or self-employment-based.</p>
+
+    <p><strong>Schengen visa:</strong> Three months is typically the stated minimum. Check the specific country's requirements as some want six months.</p>
+
+    <p><strong>I-864 Affidavit of Support:</strong> Three most recent pay stubs plus the most recent tax return. USCIS instructions specify these requirements directly on the form.</p>
+
+    <p><strong>UK visitor visa:</strong> Six months of pay stubs is commonly cited by UK immigration advisors as the appropriate documentation depth.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Can self-generated pay stubs be used for visa applications?</h3>
+    <p>Yes, for self-employed applicants who have no employer to issue stubs. The key is pairing them with corroborating documentation (bank statements, tax returns) that establishes the income is real and consistent. A self-generated stub alone, without supporting documents, is unlikely to satisfy a consular officer.</p>
+
+    <h3>What if my income is in a foreign currency?</h3>
+    <p>For US visa applications, income documentation in foreign currencies is acceptable and should be accompanied by a note about the conversion rate. Use the current exchange rate at the time of application. Consular officers are familiar with multi-currency documentation.</p>
+
+    <h3>Do I need an apostille or certified translation for foreign pay stubs?</h3>
+    <p>For US visa applications: documents in languages other than English typically need certified translation. An apostille is not generally required for visa applications (as opposed to legal proceedings). Check the specific embassy instructions for the country you are applying to.</p>
+
+    <h3>My income comes from multiple gig platforms. How do I document that?</h3>
+    <p>Generate separate pay stubs for each platform and present them as a set. Add up the monthly totals from all platforms to show total monthly income. Pair with bank statements that show all platform deposits, which together corroborate the combined income figure.</p>
+
+    <h2>Related Resources</h2>
+    <p>For related income documentation situations, see the <a href="/proof-of-income-generator">proof of income generator</a> covering all accepted methods, the <a href="/pay-stub-for-bank-account">pay stub for bank account opening</a> guide, and the <a href="/self-employed-pay-stub-generator">self-employed pay stub generator</a> for sole proprietors and contractors documenting their income.</p>
+
+  </main>
+</Base>
